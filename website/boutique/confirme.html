@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b30400">
+  <title>NIZAL — Finaliser la commande</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#b30400",
+            "primary-container": "#e10600",
+            secondary: "#0042c7",
+            tertiary: "#004dcb",
+            surface: "#f9f9ff",
+            "surface-container": "#ededf3",
+            "surface-container-low": "#f3f3f9",
+            "surface-container-high": "#e8e8ed",
+            "on-surface": "#1a1c20",
+            "on-surface-variant": "#5e3f3a",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            outline: "#936e68",
+            "outline-variant": "#e9bcb5"
+          },
+          fontFamily: {
+            headline: ["Oswald", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #f9f9ff;
+      color: #1a1c20;
+      font-family: "Inter", sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    input,
+    select {
+      border: 1px solid #e2e2e8;
+    }
+
+    input:focus,
+    select:focus {
+      outline: 2px solid #0042c7;
+      outline-offset: 1px;
+      border-color: #0042c7;
+    }
+
+    .font-headline {
+      font-family: "Oswald", sans-serif;
+    }
+
+    .checkout-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgb(26 28 32 / 5%);
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .field {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px;
+      background: #fff;
+      border-radius: 8px;
+      color: #1a1c20;
+    }
+
+    .shipping-option {
+      width: 100%;
+      text-align: left;
+      border: 1px solid #e2e2e8;
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, box-shadow .2s;
+    }
+
+    .shipping-option.selected {
+      border: 2px solid #0042c7;
+      background: #f3f3f9;
+      box-shadow: 0 2px 8px rgb(0 66 199 / 8%);
+    }
+
+    .shipping-option:focus-visible,
+    .submit-button:focus-visible {
+      outline: 3px solid #0042c7;
+      outline-offset: 3px;
+    }
+
+    .shipping-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ededf3;
+      color: transparent;
+      flex-shrink: 0;
+    }
+
+    .shipping-option.selected .shipping-check {
+      background: #0042c7;
+      color: white;
+    }
+
+    .product-image {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #ededf3;
+      flex-shrink: 0;
+    }
+
+    .summary-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .summary-row> :last-child {
+      text-align: right;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .notice {
+      display: none;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .notice.visible {
+      display: block;
+    }
+
+    .notice.error {
+      background: #fff0ef;
+      border: 1px solid #f1b8b4;
+      color: #930300;
+    }
+
+    .notice.success {
+      background: #edf9f0;
+      border: 1px solid #b6dfc0;
+      color: #176b32;
+    }
+
+    .notice.info {
+      background: #eef3ff;
+      border: 1px solid #c4d3ff;
+      color: #003ab2;
+    }
+
+    .submit-button:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 640px) {
+      .checkout-card {
+        padding: 16px;
+      }
+
+      .summary-row {
+        font-size: 13px;
+      }
+
+      .product-image {
+        width: 68px;
+        height: 68px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="min-h-screen">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-8 flex flex-col gap-6">
+
+      <!-- Page heading -->
+      <header class="flex flex-col gap-2">
+        <a href="shop.html"
+          class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-tertiary hover:text-primary">
+          <span class="material-symbols-outlined text-lg">arrow_back</span>
+          Annuler et retourner à la boutique
+        </a>
+
+        <h1 class="font-headline text-3xl sm:text-4xl uppercase font-bold">
+          Finaliser votre commande
+        </h1>
+
+        <p class="text-sm text-on-surface-variant">
+          Complétez vos informations pour préparer votre commande.
+        </p>
+      </header>
+
+      <!-- Checkout steps -->
+      <section
+        class="bg-white rounded-xl shadow-sm p-3 sm:p-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
+        aria-label="Étapes de commande">
+
+        <div class="flex items-center gap-3 px-2 py-2">
+          <span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center">
+            <span class="material-symbols-outlined text-tertiary text-base">check</span>
+          </span>
+          <span class="text-xs sm:text-sm text-on-surface-variant">1. Panier</span>
+        </div>
+
+        <div class="hidden sm:block h-px flex-1 bg-surface-container-high"></div>
+
+        <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-container-low">
+          <span
+            class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center text-xs font-bold">02</span>
+          <div>
+            <p class="text-sm font-bold text-secondary uppercase">Livraison</p>
+            <p class="text-xs text-on-surface-variant">Étape en cours</p>
+          </div>
+        </div>
+
+        <div class="hidden sm:block h-px flex-1 bg-surface-container-high"></div>
+
+        <div class="flex items-center gap-3 px-2 py-2 opacity-60">
+          <span
+            class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-xs font-bold">03</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant">Confirmation</span>
+        </div>
+      </section>
+
+      <!-- Empty cart -->
+      <section id="emptyCart" hidden class="checkout-card text-center py-12">
+
+        <span class="material-symbols-outlined text-5xl text-secondary">shopping_cart</span>
+
+        <h2 class="font-headline text-2xl uppercase mt-4">
+          Votre panier est vide
+        </h2>
+
+        <p class="text-sm text-on-surface-variant mt-2">
+          Ajoutez des produits avant de finaliser votre commande.
+        </p>
+
+        <a href="shop.html"
+          class="inline-flex mt-6 px-6 py-3 rounded-lg bg-primary text-white font-bold uppercase text-sm">
+          Retour à la boutique
+        </a>
+      </section>
+
+      <!-- Checkout content -->
+      <div id="checkoutContent" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Left column -->
+        <form id="checkoutForm" class="lg:col-span-8 flex flex-col gap-6" novalidate>
+
+          <!-- Personal information -->
+          <section class="checkout-card flex flex-col gap-5">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-6 bg-secondary rounded-full"></span>
+                <h2 class="font-headline text-xl uppercase">
+                  1. Informations personnelles
+                </h2>
+              </div>
+              <span class="hidden sm:block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
+                Coordonnées
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="firstName" class="field-label">Prénom *</label>
+                <input id="firstName" name="firstName" class="field" type="text" autocomplete="given-name"
+                  placeholder="Votre prénom" required maxlength="80">
+              </div>
+
+              <div>
+                <label for="lastName" class="field-label">Nom *</label>
+                <input id="lastName" name="lastName" class="field" type="text" autocomplete="family-name"
+                  placeholder="Votre nom" required maxlength="80">
+              </div>
+
+              <div>
+                <label for="email" class="field-label">E-mail *</label>
+                <input id="email" name="email" class="field" type="email" autocomplete="email"
+                  placeholder="nom@exemple.com" required maxlength="150">
+              </div>
+
+              <div>
+                <label for="phone" class="field-label">Téléphone mobile *</label>
+                <input id="phone" name="phone" class="field" type="tel" autocomplete="tel" placeholder="0550 12 34 56"
+                  required maxlength="25">
+              </div>
+            </div>
+          </section>
+
+          <!-- Delivery address -->
+          <section class="checkout-card flex flex-col gap-5">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-6 bg-secondary rounded-full"></span>
+                <h2 class="font-headline text-xl uppercase">
+                  2. Adresse de livraison
+                </h2>
+              </div>
+              <span class="hidden sm:block text-xs font-bold uppercase text-secondary">
+                Algérie
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="sm:col-span-2">
+                <label for="address" class="field-label">Adresse complète *</label>
+                <input id="address" name="address" class="field" type="text" autocomplete="street-address"
+                  placeholder="Rue, avenue, numéro, bâtiment..." required maxlength="250">
+              </div>
+
+              <div>
+                <label for="wilaya" class="field-label">Wilaya *</label>
+                <select id="wilaya" name="wilaya" class="field" required>
+                  <option value="">Choisir une wilaya</option>
+                  <option value="01">01 - Adrar</option>
+                  <option value="02">02 - Chlef</option>
+                  <option value="03">03 - Laghouat</option>
+                  <option value="04">04 - Oum El Bouaghi</option>
+                  <option value="05">05 - Batna</option>
+                  <option value="06">06 - Béjaïa</option>
+                  <option value="07">07 - Biskra</option>
+                  <option value="08">08 - Béchar</option>
+                  <option value="09">09 - Blida</option>
+                  <option value="10">10 - Bouira</option>
+                  <option value="11">11 - Tamanrasset</option>
+                  <option value="12">12 - Tébessa</option>
+                  <option value="13">13 - Tlemcen</option>
+                  <option value="14">14 - Tiaret</option>
+                  <option value="15">15 - Tizi Ouzou</option>
+                  <option value="16">16 - Alger</option>
+                  <option value="17">17 - Djelfa</option>
+                  <option value="18">18 - Jijel</option>
+                  <option value="19">19 - Sétif</option>
+                  <option value="20">20 - Saïda</option>
+                  <option value="21">21 - Skikda</option>
+                  <option value="22">22 - Sidi Bel Abbès</option>
+                  <option value="23">23 - Annaba</option>
+                  <option value="24">24 - Guelma</option>
+                  <option value="25">25 - Constantine</option>
+                  <option value="26">26 - Médéa</option>
+                  <option value="27">27 - Mostaganem</option>
+                  <option value="28">28 - M'Sila</option>
+                  <option value="29">29 - Mascara</option>
+                  <option value="30">30 - Ouargla</option>
+                  <option value="31">31 - Oran</option>
+                  <option value="32">32 - El Bayadh</option>
+                  <option value="33">33 - Illizi</option>
+                  <option value="34">34 - Bordj Bou Arreridj</option>
+                  <option value="35">35 - Boumerdès</option>
+                  <option value="36">36 - El Tarf</option>
+                  <option value="37">37 - Tindouf</option>
+                  <option value="38">38 - Tissemsilt</option>
+                  <option value="39">39 - El Oued</option>
+                  <option value="40">40 - Khenchela</option>
+                  <option value="41">41 - Souk Ahras</option>
+                  <option value="42">42 - Tipaza</option>
+                  <option value="43">43 - Mila</option>
+                  <option value="44">44 - Aïn Defla</option>
+                  <option value="45">45 - Naâma</option>
+                  <option value="46">46 - Aïn Témouchent</option>
+                  <option value="47">47 - Ghardaïa</option>
+                  <option value="48">48 - Relizane</option>
+                  <option value="49">49 - Timimoun</option>
+                  <option value="50">50 - Bordj Badji Mokhtar</option>
+                  <option value="51">51 - Ouled Djellal</option>
+                  <option value="52">52 - Béni Abbès</option>
+                  <option value="53">53 - In Salah</option>
+                  <option value="54">54 - In Guezzam</option>
+                  <option value="55">55 - Touggourt</option>
+                  <option value="56">56 - Djanet</option>
+                  <option value="57">57 - El M'Ghair</option>
+                  <option value="58">58 - El Meniaa</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="city" class="field-label">Ville / Commune *</label>
+                <input id="city" name="city" class="field" type="text" autocomplete="address-level2"
+                  placeholder="Votre ville ou commune" required maxlength="100">
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="deliveryNotes" class="field-label">
+                  Instructions de livraison (facultatif)
+                </label>
+                <input id="deliveryNotes" name="deliveryNotes" class="field" type="text"
+                  placeholder="Repère, étage, informations utiles..." maxlength="300">
+              </div>
+            </div>
+          </section>
+
+          <!-- Delivery method -->
+          <section class="checkout-card flex flex-col gap-5">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-6 bg-secondary rounded-full"></span>
+              <h2 class="font-headline text-xl uppercase">
+                3. Mode de livraison
+              </h2>
+            </div>
+
+            <div id="deliverySelector" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <button type="button" class="shipping-option selected" data-shipping="bureau" aria-pressed="true">
+
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <span
+                      class="inline-block bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">
+                      Recommandé
+                    </span>
+
+                    <h3 class="font-headline text-xl uppercase mt-3">Bureau</h3>
+                    <p class="text-sm text-on-surface-variant mt-2">
+                      Retrait auprès du bureau du transporteur.
+                    </p>
+                  </div>
+
+                  <span class="shipping-check">
+                    <span class="material-symbols-outlined text-base">check</span>
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-between mt-5 pt-3 border-t border-gray-200">
+                  <span class="text-xs font-bold uppercase text-on-surface-variant">Tarif</span>
+                  <span class="font-headline text-xl font-bold text-secondary">500 DA</span>
+                </div>
+              </button>
+
+              <button type="button" class="shipping-option" data-shipping="domicile" aria-pressed="false">
+
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <span
+                      class="inline-block bg-surface-container text-on-surface-variant text-[10px] font-bold px-2 py-1 rounded-full uppercase">
+                      À domicile
+                    </span>
+
+                    <h3 class="font-headline text-xl uppercase mt-3">Domicile</h3>
+                    <p class="text-sm text-on-surface-variant mt-2">
+                      Livraison à l'adresse indiquée.
+                    </p>
+                  </div>
+
+                  <span class="shipping-check">
+                    <span class="material-symbols-outlined text-base">check</span>
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-between mt-5 pt-3 border-t border-gray-200">
+                  <span class="text-xs font-bold uppercase text-on-surface-variant">Tarif</span>
+                  <span class="font-headline text-xl font-bold text-secondary">900 DA</span>
+                </div>
+              </button>
+
+            </div>
+          </section>
+
+          <!-- Payment -->
+          <section class="checkout-card flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-6 bg-secondary rounded-full"></span>
+              <h2 class="font-headline text-xl uppercase">4. Paiement</h2>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 rounded-lg bg-surface-container-low border border-gray-200">
+              <span class="material-symbols-outlined text-secondary text-2xl">payments</span>
+              <div>
+                <p class="font-bold text-sm">Paiement à la livraison</p>
+                <p class="text-sm text-on-surface-variant">
+                  Réglez votre commande à la réception.
+                </p>
+              </div>
+              <span class="ml-auto material-symbols-outlined text-secondary">check_circle</span>
+            </div>
+          </section>
+
+          <div id="checkoutMessage" class="notice" role="status" aria-live="polite"></div>
+
+        </form>
+
+        <!-- Right column: order summary -->
+        <aside id="orderSummary" class="lg:col-span-4 lg:sticky lg:top-6 flex flex-col gap-4">
+
+          <section class="checkout-card flex flex-col gap-5">
+            <div class="flex items-center justify-between gap-3">
+              <h2 class="font-headline text-xl uppercase">
+                Résumé de la commande
+              </h2>
+
+              <span id="itemCount"
+                class="bg-surface-container-low text-secondary text-xs font-bold px-3 py-1 rounded-full">
+                0 article
+              </span>
+            </div>
+
+            <!-- Products inserted by checkout.js -->
+            <div id="checkoutItems" class="flex flex-col gap-4"></div>
+
+            <div class="bg-surface-container-low rounded-lg p-4 flex flex-col gap-3">
+
+              <div class="summary-row">
+                <span class="text-on-surface-variant">Sous-total avant remises</span>
+                <span id="summaryOriginalSubtotal">0 DA</span>
+              </div>
+
+              <div class="summary-row">
+                <span class="text-on-surface-variant">Remises produits</span>
+                <span id="summaryDiscount" class="text-secondary">− 0 DA</span>
+              </div>
+
+              <div class="summary-row">
+                <span class="text-on-surface-variant">Sous-total articles</span>
+                <span id="summarySubtotal">0 DA</span>
+              </div>
+
+              <div class="summary-row">
+                <span class="text-on-surface-variant">
+                  Livraison (<span id="summaryShippingLabel">Bureau</span>)
+                </span>
+                <span id="summaryShippingCost">500 DA</span>
+              </div>
+
+              <div class="border-t border-gray-300 pt-4 mt-1">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-xs font-bold uppercase text-on-surface-variant">
+                      Total à régler
+                    </p>
+                    <p class="text-xs text-secondary mt-1">
+                      Paiement à la livraison
+                    </p>
+                  </div>
+
+                  <span id="summaryGrandTotal" class="font-headline text-2xl font-bold text-primary text-right">
+                    500 DA
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button id="submitCheckoutBtn" form="checkoutForm" type="submit"
+              class="submit-button w-full min-h-14 bg-primary hover:bg-primary-container text-white font-headline text-lg uppercase tracking-wider rounded-lg shadow-md transition-all flex items-center justify-center gap-2">
+              <span id="submitButtonText">Confirmer la commande</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Votre commande sera envoyée uniquement lorsqu'une API de commande valide sera configurée.
+              Aucun paiement en ligne n'est effectué sur cette page.
+            </p>
+          </section>
+
+          <!-- Trust information -->
+          <section class="bg-white p-4 rounded-xl shadow-sm grid grid-cols-3 gap-2 text-center">
+            <div class="flex flex-col items-center gap-1">
+              <span class="material-symbols-outlined text-secondary text-2xl">sports_martial_arts</span>
+              <span class="text-[10px] font-bold">NIZAL</span>
+              <span class="text-[10px] text-on-surface-variant">Boutique officielle</span>
+            </div>
+
+            <div class="flex flex-col items-center gap-1 border-x border-gray-200 px-1">
+              <span class="material-symbols-outlined text-secondary text-2xl">local_shipping</span>
+              <span class="text-[10px] font-bold">58 WILAYAS</span>
+              <span class="text-[10px] text-on-surface-variant">Livraison</span>
+            </div>
+
+            <div class="flex flex-col items-center gap-1">
+              <span class="material-symbols-outlined text-secondary text-2xl">support_agent</span>
+              <span class="text-[10px] font-bold">SUPPORT</span>
+              <span class="text-[10px] text-on-surface-variant">Assistance client</span>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    "use strict";
+
+    /* =========================================
+       CONFIGURATION
+    ========================================= */
+
+    const ORDER_API_URL = "http://localhost:5000/api/orders";
+    const CART_KEY = "nizalCart";
+
+    const SHIPPING_PRICES = {
+      bureau: 500,
+      domicile: 900
+    };
+
+    const SHIPPING_LABELS = {
+      bureau: "Bureau",
+      domicile: "Domicile"
+    };
+
+
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+
+    const checkoutForm = document.getElementById("checkoutForm");
+    const checkoutContent = document.getElementById("checkoutContent");
+    const emptyCart = document.getElementById("emptyCart");
+
+    const checkoutItems = document.getElementById("checkoutItems");
+    const itemCount = document.getElementById("itemCount");
+
+    const summaryOriginalSubtotal =
+      document.getElementById("summaryOriginalSubtotal");
+
+    const summaryDiscount =
+      document.getElementById("summaryDiscount");
+
+    const summarySubtotal =
+      document.getElementById("summarySubtotal");
+
+    const summaryShippingLabel =
+      document.getElementById("summaryShippingLabel");
+
+    const summaryShippingCost =
+      document.getElementById("summaryShippingCost");
+
+    const summaryGrandTotal =
+      document.getElementById("summaryGrandTotal");
+
+    const submitCheckoutBtn =
+      document.getElementById("submitCheckoutBtn");
+
+    const submitButtonText =
+      document.getElementById("submitButtonText");
+
+    const checkoutMessage =
+      document.getElementById("checkoutMessage");
+
+    const shippingOptions =
+      document.querySelectorAll("[data-shipping]");
+
+
+    /* =========================================
+       STATE
+    ========================================= */
+
+    let cart = [];
+    let currentShipping = "bureau";
+    let isSubmitting = false;
+
+
+    /* =========================================
+       HELPERS
+    ========================================= */
+
+    function formatPrice(value) {
+      return `${Math.round(Number(value) || 0).toLocaleString("fr-FR")} DA`;
+    }
+
+    function toNumber(value) {
+      if (typeof value === "number") {
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      if (typeof value === "string") {
+        const cleaned = value
+          .replace(/\s/g, "")
+          .replace(/DA/gi, "")
+          .replace(/DZD/gi, "")
+          .replace(",", ".");
+
+        const number = Number(cleaned);
+        return Number.isFinite(number) ? number : 0;
+      }
+
+      return 0;
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, character => {
+        const entities = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        };
+
+        return entities[character];
+      });
+    }
+
+    function getQuantity(item) {
+      const quantity = Math.floor(toNumber(item.quantity));
+      return quantity > 0 ? quantity : 1;
+    }
+
+    function getFinalPrice(item) {
+      return Math.max(0, toNumber(item.price));
+    }
+
+    function getOriginalPrice(item) {
+      const finalPrice = getFinalPrice(item);
+
+      if (
+        item.originalPrice !== undefined &&
+        item.originalPrice !== null &&
+        item.originalPrice !== ""
+      ) {
+        return Math.max(finalPrice, toNumber(item.originalPrice));
+      }
+
+      return finalPrice + Math.max(0, toNumber(item.discount));
+    }
+
+    function getItemDiscount(item) {
+      return Math.max(0, getOriginalPrice(item) - getFinalPrice(item));
+    }
+
+    function getProductName(item) {
+      return item.name || item.productName || "Produit NIZAL";
+    }
+
+    function getProductImage(item) {
+      return (
+        item.image ||
+        item.imageBase64 ||
+        item.image_base64 ||
+        item.photo ||
+        item.imageUrl ||
+        item.image_url ||
+        item.cover_image ||
+        ""
+      );
+    }
+
+    function getProductId(item) {
+      return item.productId ?? item.id ?? item._id ?? null;
+    }
+
+    function getVariantId(item) {
+      return item.variantId ?? item.variant_id ?? null;
+    }
+
+    function getCart() {
+      try {
+        const storedCart = localStorage.getItem(CART_KEY);
+
+        if (!storedCart) return [];
+
+        const parsedCart = JSON.parse(storedCart);
+
+        return Array.isArray(parsedCart)
+          ? parsedCart.filter(item => item && typeof item === "object")
+          : [];
+      } catch (error) {
+        console.error("Impossible de lire le panier :", error);
+        return [];
+      }
+    }
+
+    function showMessage(message, type = "info") {
+      if (!checkoutMessage) {
+        console.error(message);
+        return;
+      }
+
+      checkoutMessage.textContent = message;
+      checkoutMessage.className = `notice visible ${type} `;
+
+      checkoutMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+
+    function clearMessage() {
+      if (!checkoutMessage) return;
+
+      checkoutMessage.textContent = "";
+      checkoutMessage.className = "notice";
+    }
+
+
+    /* =========================================
+       TOTALS
+       Display only. Backend recalculates totals.
+    ========================================= */
+
+    function getTotals() {
+      let originalSubtotal = 0;
+      let subtotal = 0;
+      let discount = 0;
+      let totalQuantity = 0;
+
+      cart.forEach(item => {
+        const quantity = getQuantity(item);
+        const originalPrice = getOriginalPrice(item);
+        const finalPrice = getFinalPrice(item);
+
+        originalSubtotal += originalPrice * quantity;
+        subtotal += finalPrice * quantity;
+        discount += getItemDiscount(item) * quantity;
+        totalQuantity += quantity;
+      });
+
+      const shippingCost = SHIPPING_PRICES[currentShipping];
+
+      return {
+        originalSubtotal,
+        subtotal,
+        discount,
+        shippingCost,
+        total: subtotal + shippingCost,
+        totalQuantity
+      };
+    }
+
+
+    /* =========================================
+       RENDER PRODUCTS
+    ========================================= */
+
+    function renderProducts() {
+      if (!checkoutItems) return;
+
+      if (cart.length === 0) {
+        checkoutItems.innerHTML = "";
+        return;
+      }
+
+      checkoutItems.innerHTML = cart.map(item => {
+        const name = getProductName(item);
+        const image = String(getProductImage(item) || "").trim();
+
+        const quantity = getQuantity(item);
+        const finalPrice = getFinalPrice(item);
+        const originalPrice = getOriginalPrice(item);
+        const discount = getItemDiscount(item);
+
+        const variantDetails = [item.color, item.size]
+          .filter(Boolean)
+          .map(escapeHTML)
+          .join(" · ");
+
+        let imageSrc = image;
+
+        // Support Base64, data URLs and HTTP URLs.
+        if (
+          image &&
+          !/^data:image\//i.test(image) &&
+          !/^https?:\/\//i.test(image)
+        ) {
+          const mimeType = image.startsWith("iVBORw0KGgo")
+            ? "image/png"
+            : image.startsWith("/9j/")
+              ? "image/jpeg"
+              : "image/jpeg";
+
+          imageSrc = `data:${mimeType}; base64, ${image} `;
+        }
+
+        const imageHTML = imageSrc
+          ? `
+      <img
+    class="product-image"
+    src = "${escapeHTML(imageSrc)}"
+    alt = "${escapeHTML(name)}"
+    loading = "lazy"
+      >
+      `
+          : `
+      <div class="product-image flex items-center justify-center" >
+        <span class="material-symbols-outlined text-3xl text-gray-400">
+          sports_martial_arts
+        </span>
+        </div>
+      `;
+
+        const originalPriceHTML = discount > 0
+          ? `
+      <span class="text-xs text-on-surface-variant line-through" >
+        ${formatPrice(originalPrice * quantity)}
+        </span>
+      `
+          : "";
+
+        const discountHTML = discount > 0
+          ? `
+      <span class="text-xs font-bold text-secondary" >
+        Remise : −${formatPrice(discount * quantity)}
+        </span>
+      `
+          : "";
+
+        return `
+      <article class="flex gap-3 items-center" >
+        ${imageHTML}
+
+    <div class="flex-1 min-w-0">
+      <h3 class="text-sm font-bold break-words">
+        ${escapeHTML(name)}
+      </h3>
+
+      ${variantDetails
+            ? `
+                <p class="text-xs text-on-surface-variant mt-1">
+                  ${variantDetails}
+                </p>
+              `
+            : ""
+          }
+
+      <p class="text-xs text-on-surface-variant mt-1">
+        Quantité : ${quantity}
+      </p>
+
+      <div class="flex flex-col gap-1 mt-2">
+        ${originalPriceHTML}
+
+        <span class="text-sm font-bold">
+          ${formatPrice(finalPrice * quantity)}
+        </span>
+
+        ${discountHTML}
+      </div>
+    </div>
+      </article>
+      `;
+      }).join("");
+
+      checkoutItems.querySelectorAll("img").forEach(img => {
+        img.addEventListener("error", () => {
+          const placeholder = document.createElement("div");
+          placeholder.className =
+            "product-image flex items-center justify-center";
+
+          const icon = document.createElement("span");
+          icon.className =
+            "material-symbols-outlined text-3xl text-gray-400";
+
+          icon.textContent = "sports_martial_arts";
+          placeholder.appendChild(icon);
+
+          img.replaceWith(placeholder);
+        }, { once: true });
+      });
+    }
+
+
+    /* =========================================
+       UPDATE TOTALS
+    ========================================= */
+
+    function updateTotals() {
+      const totals = getTotals();
+
+      if (summaryOriginalSubtotal) {
+        summaryOriginalSubtotal.textContent =
+          formatPrice(totals.originalSubtotal);
+      }
+
+      if (summaryDiscount) {
+        summaryDiscount.textContent =
+          `− ${formatPrice(totals.discount)} `;
+      }
+
+      if (summarySubtotal) {
+        summarySubtotal.textContent =
+          formatPrice(totals.subtotal);
+      }
+
+      if (summaryShippingLabel) {
+        summaryShippingLabel.textContent =
+          SHIPPING_LABELS[currentShipping];
+      }
+
+      if (summaryShippingCost) {
+        summaryShippingCost.textContent =
+          formatPrice(totals.shippingCost);
+      }
+
+      if (summaryGrandTotal) {
+        summaryGrandTotal.textContent =
+          formatPrice(totals.total);
+      }
+
+      if (itemCount) {
+        itemCount.textContent =
+          `${totals.totalQuantity} ${totals.totalQuantity === 1 ? "article" : "articles"
+          } `;
+      }
+
+      if (!isSubmitting && submitButtonText && cart.length > 0) {
+        submitButtonText.textContent = "Confirmer la commande";
+      }
+    }
+
+    function renderCheckout() {
+      const isEmpty = cart.length === 0;
+
+      if (emptyCart) emptyCart.hidden = !isEmpty;
+      if (checkoutContent) checkoutContent.hidden = isEmpty;
+
+      renderProducts();
+      updateTotals();
+    }
+
+    function loadCart() {
+      cart = getCart();
+      renderCheckout();
+    }
+
+
+    /* =========================================
+       SHIPPING
+    ========================================= */
+
+    function selectShipping(type) {
+      if (!Object.prototype.hasOwnProperty.call(SHIPPING_PRICES, type)) {
+        return;
+      }
+
+      currentShipping = type;
+
+      shippingOptions.forEach(option => {
+        const selected = option.dataset.shipping === type;
+
+        option.classList.toggle("selected", selected);
+        option.setAttribute("aria-pressed", String(selected));
+      });
+
+      clearMessage();
+      updateTotals();
+    }
+
+    shippingOptions.forEach(option => {
+      option.addEventListener("click", () => {
+        selectShipping(option.dataset.shipping);
+      });
+    });
+
+
+    /* =========================================
+       VALIDATE FORM
+    ========================================= */
+
+    function validateCheckoutForm() {
+      if (!checkoutForm) {
+        showMessage("Le formulaire de commande est introuvable.", "error");
+        return false;
+      }
+
+      const requiredFields = Array.from(
+        checkoutForm.querySelectorAll("[required]")
+      );
+
+      for (const field of requiredFields) {
+        if (typeof field.value === "string") {
+          field.value = field.value.trim();
+        }
+
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          field.focus();
+          return false;
+        }
+      }
+
+      const phone = document.getElementById("phone");
+
+      if (phone) {
+        const phoneDigits = phone.value.replace(/\D/g, "");
+
+        if (phoneDigits.length < 9 || phoneDigits.length > 15) {
+          phone.setCustomValidity(
+            "Veuillez saisir un numéro de téléphone valide."
+          );
+
+          phone.reportValidity();
+          phone.focus();
+          phone.setCustomValidity("");
+
+          return false;
+        }
+      }
+
+      if (cart.length === 0) {
+        showMessage(
+          "Votre panier est vide. Ajoutez des produits avant de continuer.",
+          "error"
+        );
+
+        return false;
+      }
+
+      for (const item of cart) {
+        const productId = Number(getProductId(item));
+        const variantId = Number(getVariantId(item));
+        const quantity = Number(item.quantity);
+
+        if (
+          !Number.isSafeInteger(productId) ||
+          productId <= 0 ||
+          !Number.isSafeInteger(variantId) ||
+          variantId <= 0 ||
+          !Number.isSafeInteger(quantity) ||
+          quantity <= 0
+        ) {
+          showMessage(
+            "Un produit du panier ne possède pas un identifiant de variante valide. " +
+            "Retournez à la fiche produit, sélectionnez sa couleur et sa taille, " +
+            "puis ajoutez-le de nouveau.",
+            "error"
+          );
+
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+
+    /* =========================================
+       BUILD ORDER PAYLOAD
+    ========================================= */
+
+    function buildOrderPayload() {
+      const selectedWilaya = document.getElementById("wilaya");
+
+      const selectedWilayaName = selectedWilaya
+        ? selectedWilaya.options[selectedWilaya.selectedIndex]?.text || ""
+        : "";
+
+      return {
+        customer: {
+          firstName: document.getElementById("firstName").value.trim(),
+          lastName: document.getElementById("lastName").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          phone: document.getElementById("phone").value.trim()
+        },
+
+        deliveryAddress: {
+          address: document.getElementById("address").value.trim(),
+          wilayaCode: selectedWilaya ? selectedWilaya.value : "",
+          wilayaName: selectedWilayaName,
+          city: document.getElementById("city").value.trim(),
+          notes: document.getElementById("deliveryNotes").value.trim()
+        },
+
+        delivery: {
+          method: currentShipping,
+          label: SHIPPING_LABELS[currentShipping]
+        },
+
+        payment: {
+          method: "cash_on_delivery"
+        },
+
+        items: cart.map(item => ({
+          productId: Number(getProductId(item)),
+          variantId: Number(getVariantId(item)),
+          color: item.color || null,
+          size: item.size || null,
+          quantity: getQuantity(item)
+        }))
+      };
+    }
+
+
+    /* =========================================
+       SUBMIT ORDER
+    ========================================= */
+
+    if (checkoutForm) {
+      checkoutForm.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        if (isSubmitting) return;
+
+        clearMessage();
+
+        if (!validateCheckoutForm()) return;
+
+        const payload = buildOrderPayload();
+
+        isSubmitting = true;
+
+        if (submitCheckoutBtn) {
+          submitCheckoutBtn.disabled = true;
+        }
+
+        if (submitButtonText) {
+          submitButtonText.textContent = "Vérification du stock...";
+        }
+
+        try {
+          const response = await fetch(ORDER_API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+
+          let result;
+
+          try {
+            result = await response.json();
+          } catch {
+            throw new Error(
+              "Le serveur a renvoyé une réponse invalide. Vérifiez le backend."
+            );
+          }
+
+          if (!response.ok || result.success !== true) {
+            throw new Error(
+              result.message ||
+              `Impossible d'enregistrer la commande (HTTP ${response.status}).`
+            );
+          }
+
+          /*
+           * SUCCESS:
+           * The backend confirmed that the order was created.
+           */
+
+          const orderNumber =
+            result.data?.orderNumber ??
+            result.data?.order_number ??
+            null;
+
+          // Keep the order information for done.html.
+          try {
+            sessionStorage.setItem(
+              "nizalLastOrder",
+              JSON.stringify({
+                orderNumber,
+                customer: payload.customer,
+                delivery: payload.delivery,
+                payment: payload.payment,
+                items: payload.items
+              })
+            );
+          } catch (storageError) {
+            console.warn(
+              "Impossible de sauvegarder les détails de confirmation :",
+              storageError
+            );
+          }
+
+          // Clear the cart only after confirmed backend success.
+          localStorage.removeItem(CART_KEY);
+          cart = [];
+
+          // Redirect to done.html in the same folder.
+          window.location.href = "done.html";
+          return;
+
+        } catch (error) {
+          console.error("Erreur lors de la commande :", error);
+
+          showMessage(
+            error.message ||
+            "Impossible d'envoyer la commande. Vérifiez votre connexion et réessayez.",
+            "error"
+          );
+
+        } finally {
+          isSubmitting = false;
+
+          if (submitCheckoutBtn) {
+            submitCheckoutBtn.disabled = false;
+          }
+
+          if (cart.length > 0 && submitButtonText) {
+            submitButtonText.textContent = "Confirmer la commande";
+          }
+        }
+      });
+    } else {
+      console.error(
+        'Formulaire introuvable : vérifiez que votre HTML contient id="checkoutForm".'
+      );
+    }
+
+
+    /* =========================================
+       CART CHANGES IN OTHER TABS
+    ========================================= */
+
+    window.addEventListener("storage", event => {
+      if (event.key === CART_KEY) {
+        loadCart();
+      }
+    });
+
+
+    /* =========================================
+       INITIALIZE
+    ========================================= */
+
+    selectShipping("bureau");
+    loadCart();
+  </script>
+</body>
+
+</html>

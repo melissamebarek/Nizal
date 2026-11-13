@@ -1,0 +1,316 @@
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #fff;
+    box-shadow: none;
+    position: relative;
+    z-index: 1000;
+    transition:
+        box-shadow 0.35s ease,
+        padding 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.10);
+}
+
+header .logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+header .logo {
+    width: 120px;
+    display: block;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 16px;
+    color: #442424;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+nav a.active {
+    color: #c30000;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #c30000;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+header .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .actions a {
+    font-size: 16px;
+    color: #5E3F3A;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+header .actions a:hover {
+    color: #c30000;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+header .menu-toggle {
+    display: none;
+
+    border: none;
+    background: none;
+
+    font-size: 22px;
+    color: #442424;
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease;
+}
+
+header .menu-toggle:hover {
+    color: #c30000;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 10px 30px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 105px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+
+    /* ACTIONS */
+
+    header .actions {
+        gap: 18px;
+    }
+
+    header .actions a {
+        font-size: 17px;
+    }
+
+
+    /* HAMBURGER */
+
+    header .menu-toggle {
+        display: block;
+    }
+
+
+    /* =========================
+       MOBILE NAV
+    ========================= */
+
+    nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #fff;
+
+        /* CLOSED STATE */
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        pointer-events: none;
+
+        box-shadow:
+            0 10px 20px rgba(0, 0, 0, 0.08);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.35s ease,
+            visibility 0.35s ease;
+    }
+
+
+    /* OPEN STATE */
+
+    nav.open {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+
+        pointer-events: auto;
+    }
+
+
+    /* =========================
+       MENU LIST
+    ========================= */
+
+    nav ul {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+    }
+
+
+    nav ul li {
+        width: 100%;
+        opacity: 0;
+        transform: translateY(-25px);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+        text-align: center;
+    }
+
+
+    /* ITEMS APPEAR WHEN MENU OPENS */
+
+    nav.open ul li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    /* STAGGER ANIMATION */
+
+    nav.open ul li:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+
+    nav.open ul li:nth-child(2) {
+        transition-delay: 0.10s;
+    }
+
+    nav.open ul li:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+
+    nav.open ul li:nth-child(4) {
+        transition-delay: 0.20s;
+    }
+
+
+    /* LINKS */
+
+    nav ul li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 17px 20px;
+
+        font-size: 15px;
+
+        border-bottom: 1px solid #eee;
+
+        transition:
+            background-color 0.2s ease,
+            padding-left 0.25s ease,
+            color 0.2s ease;
+    }
+
+
+    nav ul li a:hover {
+        background-color: #fafafa;
+
+        padding-left: 28px;
+
+        color: #c30000;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    header {
+        padding: 10px 15px;
+    }
+
+    header .logo {
+        width: 85px;
+    }
+
+    header .actions {
+        gap: 14px;
+    }
+
+    header .actions a {
+        font-size: 16px;
+    }
+
+    header .menu-toggle {
+        font-size: 20px;
+    }
+}

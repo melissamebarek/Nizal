@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Commandes — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="orders.css">
+    <script defer src="../sidebar.js"></script>
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <div class="logo-mark">N</div>
+
+                <div>
+                    <strong>NIZAL</strong>
+                    <span>Administration</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+
+                <a href="products.html">
+                    <i class="fa-solid fa-store"></i>
+                    <span>Produits & Boutique</span>
+                </a>
+
+                <a href="competitions.html">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Compétitions</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Inscriptions</span>
+                </a>
+
+                <a href="orders.html" class="active">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Commandes</span>
+                </a>
+            </nav>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <section class="page-content">
+
+                <!-- HEADER -->
+                <div class="page-header">
+                    <div>
+                        <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+
+                        <div>
+                            <h1>Commandes</h1>
+                            <p>Consultez et gérez les commandes de la boutique.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEARCH AND FILTER -->
+                <div class="toolbar">
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="searchInput" placeholder="Rechercher une commande, un client..."
+                            aria-label="Rechercher une commande">
+                    </div>
+
+                    <select id="statusFilter" aria-label="Filtrer par statut">
+                        <option value="all">Tous les statuts</option>
+                        <option value="Nouvelle commande">Nouvelle commande</option>
+                        <option value="En préparation">En préparation</option>
+                        <option value="Expédiée">Expédiée</option>
+                        <option value="Livrée">Livrée</option>
+                        <option value="Annulée">Annulée</option>
+                    </select>
+
+                </div>
+
+                <!-- ORDERS TABLE -->
+                <div class="table-card">
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>N° commande</th>
+                                    <th>Client</th>
+                                    <th>Produits</th>
+                                    <th>Total</th>
+                                    <th>Date</th>
+                                    <th>Statut</th>
+                                    <th aria-label="Actions"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="ordersTable">
+                                <!-- Orders loaded from the API by orders.js -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- EMPTY STATE -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+
+                        <h3>Aucune commande trouvée</h3>
+                        <p>Aucune commande ne correspond à votre recherche.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+    <script src="./orders.js"></script>
+
+</body>
+
+</html>

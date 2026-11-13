@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Recherchez les actualités, événements et produits NIZAL.">
+  <title>Recherche | NIZAL</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="./nav.css">
+</head>
+
+<body>
+  <header class="" id="header">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo-link">
+      <img src="../assest/logo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+      <ul>
+        <li>
+          <a href="index.html" class="active">HOME</a>
+        </li>
+
+        <li>
+          <a href="articles/actualites.html">ACTUALIT?S</a>
+        </li>
+
+        <li>
+          <a href="event/events.html">?V?NEMENTS</a>
+        </li>
+
+        <li>
+          <a href="boutique/shop.html">BOUTIQUE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+
+      <a href="search.html" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </a>
+
+      <a href="boutique/shop.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </header>
+
+  <main class="search-main">
+    <p class="eyebrow">EXPLORER NIZAL</p>
+    <h1>Que recherchez-vous&nbsp;?</h1>
+    <p class="intro">Trouvez rapidement un article, un événement ou un produit.</p>
+
+    <form class="search-form" id="site-search-form" role="search">
+      <label class="sr-only" for="site-search-input">Rechercher sur NIZAL</label>
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input id="site-search-input" name="q" type="search" placeholder="Essayez « gants », « Alger » ou « MMA »"
+        autocomplete="off">
+      <button type="submit">Rechercher</button>
+    </form>
+    <p class="search-hint">La recherche tolère les fautes de frappe et les accents.</p>
+
+    <div class="filters" role="group" aria-label="Filtrer les résultats">
+      <button class="filter-button active" type="button" data-type="all" aria-pressed="true">Tout</button>
+      <button class="filter-button" type="button" data-type="article" aria-pressed="false">Actualités</button>
+      <button class="filter-button" type="button" data-type="event" aria-pressed="false">Événements</button>
+      <button class="filter-button" type="button" data-type="product" aria-pressed="false">Produits</button>
+    </div>
+
+    <section class="results-section" aria-live="polite" aria-labelledby="results-heading">
+      <div class="results-heading-row">
+        <h2 id="results-heading">Résultats</h2>
+        <span id="result-count"></span>
+      </div>
+      <div class="results-grid" id="search-results"></div>
+      <p class="empty-state" id="empty-state" hidden>Aucun résultat trouvé. Essayez un autre mot ou une autre
+        orthographe.</p>
+    </section>
+  </main>
+  <script src="search.js"></script>
+  <script src="./nav.js"></script>
+</body>
+
+</html>

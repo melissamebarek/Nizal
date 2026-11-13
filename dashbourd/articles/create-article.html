@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nouvel article — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="create-article.css">
+
+    <link rel="stylesheet" href="../sidabar.css">
+
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+        <img src="../../assest/logo.png" alt="logo" class="logoimg">
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="../index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Accueil</span>
+        </a>
+
+        <a href="./articles.html" class="nav-item active">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Articles</span>
+        </a>
+
+        <a href="../boutique/products.html" class="nav-item">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Produits & Boutique</span>
+        </a>
+
+        <a href="../competitions/competitions.html" class="nav-item">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Compétitions</span>
+        </a>
+
+        <a href="../registrations/registrations.html" class="nav-item">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Inscriptions</span>
+        </a>
+
+        <a href="../orders/orders.html" class="nav-item">
+            <i class="fa-solid fa-box"></i>
+            <span>Commandes</span>
+        </a>
+
+    </nav>
+
+</aside>
+
+    <main class="main-content">
+
+        <section class="page-content">
+
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="breadcrumb">
+
+                <a href="articles.html">
+                    Articles
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>Nouvel article</span>
+
+            </div>
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Nouvel article</h1>
+
+                    <p>
+                        Créez un nouvel article pour les actualités de NIZAL.
+                    </p>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="articles.html" class="secondary-btn">
+                        Annuler
+                    </a>
+
+                    <button type="button" class="outline-btn" id="previewBtn">
+                        <i class="fa-solid fa-eye"></i>
+                        Aperçu
+                    </button>
+
+                    <button type="button" class="primary-btn" id="publishBtn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Publier
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 AUTO SAVE
+            ========================== -->
+
+            <div class="autosave-bar">
+
+                <div class="autosave-status">
+
+                    <span class="save-dot" id="saveDot"></span>
+
+                    <span id="autosaveText">
+                        Brouillon non enregistré
+                    </span>
+
+                </div>
+
+                <span class="autosave-info">
+                    Enregistrement automatique
+                </span>
+
+            </div>
+
+
+            <!-- =========================
+                 FORM GRID
+            ========================== -->
+
+            <form id="articleForm">
+
+                <div class="editor-layout">
+
+                    <!-- =====================
+                         MAIN EDITOR
+                    ====================== -->
+
+                    <div class="editor-main">
+
+                        <!-- TITLE -->
+
+                        <div class="card title-card">
+
+                            <label for="articleTitle">
+                                Titre de l'article
+                                <span>*</span>
+                            </label>
+
+                            <input type="text" id="articleTitle"
+                                placeholder="Ex. NIZAL Fight Championship : les résultats" autocomplete="off">
+
+                            <div class="field-error" id="titleError"></div>
+
+                        </div>
+
+
+                        <!-- EDITOR -->
+
+                        <div class="card editor-card">
+
+                            <div class="editor-header">
+
+                                <div>
+
+                                    <h2>
+                                        Contenu de l'article
+                                    </h2>
+
+                                    <p>
+                                        Rédigez votre article avec les outils
+                                        de mise en forme.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- TOOLBAR -->
+
+                            <div class="editor-toolbar">
+
+                                <!-- FORMAT -->
+
+                                <select id="formatBlock" title="Format">
+                                    <option value="p">
+                                        Paragraphe
+                                    </option>
+
+                                    <option value="h2">
+                                        Titre 2
+                                    </option>
+
+                                    <option value="h3">
+                                        Titre 3
+                                    </option>
+
+                                    <option value="blockquote">
+                                        Citation
+                                    </option>
+                                </select>
+
+
+                                <span class="toolbar-separator"></span>
+
+
+                                <!-- TEXT -->
+
+                                <button type="button" data-command="bold" title="Gras">
+                                    <i class="fa-solid fa-bold"></i>
+                                </button>
+
+                                <button type="button" data-command="italic" title="Italique">
+                                    <i class="fa-solid fa-italic"></i>
+                                </button>
+
+                                <button type="button" data-command="underline" title="Souligné">
+                                    <i class="fa-solid fa-underline"></i>
+                                </button>
+
+
+                                <span class="toolbar-separator"></span>
+
+
+                                <!-- LISTS -->
+
+                                <button type="button" data-command="insertUnorderedList" title="Liste à puces">
+                                    <i class="fa-solid fa-list-ul"></i>
+                                </button>
+
+                                <button type="button" data-command="insertOrderedList" title="Liste numérotée">
+                                    <i class="fa-solid fa-list-ol"></i>
+                                </button>
+
+
+                                <span class="toolbar-separator"></span>
+
+
+                                <!-- LINK -->
+
+                                <button type="button" id="linkBtn" title="Ajouter un lien">
+                                    <i class="fa-solid fa-link"></i>
+                                </button>
+
+
+                                <!-- IMAGE -->
+
+                                <button type="button" id="imageBtn" title="Ajouter une image">
+                                    <i class="fa-solid fa-image"></i>
+                                </button>
+
+
+                                <!-- VIDEO -->
+
+                                <button type="button" id="videoBtn" title="Ajouter une vidéo">
+                                    <i class="fa-solid fa-video"></i>
+                                </button>
+
+
+                                <span class="toolbar-separator"></span>
+
+
+                                <!-- UNDO -->
+
+                                <button type="button" data-command="undo" title="Annuler">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </button>
+
+                                <button type="button" data-command="redo" title="Rétablir">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </button>
+
+                            </div>
+
+
+                            <!-- CONTENTEDITABLE -->
+
+                            <div id="articleEditor" class="article-editor" contenteditable="true"
+                                data-placeholder="Commencez à rédiger votre article..."></div>
+
+
+                            <div class="editor-footer">
+
+                                <span id="wordCount">
+                                    0 mots
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-pen"></i>
+                                    Éditeur riche
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================
+                         SIDEBAR FORM
+                    ====================== -->
+
+                    <aside class="editor-sidebar">
+
+                        <!-- PUBLICATION -->
+
+                        <div class="card">
+
+                            <div class="card-heading">
+
+                                <i class="fa-solid fa-circle-info"></i>
+
+                                <h3>
+                                    Publication
+                                </h3>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="articleCategory">
+                                    Catégorie
+                                    <span>*</span>
+                                </label>
+
+                                <select id="articleCategory">
+                                    <option value="all">Toutes les catégories</option>
+                                    <option value="Karate">Karate</option>
+                                    <option value="Boxing">Boxing</option>
+                                    <option value="Judo">Judo</option>
+                                    <option value="Wrestling">Wrestling</option>
+                                    <option value="NIZAL News">NIZAL News</option>
+                                    <option value="Interviews">Interviews</option>
+                                    <option value="Events">Events</option>
+                                </select>
+
+                                <div class="field-error" id="categoryError"></div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Statut
+                                </label>
+
+                                <div class="status-preview">
+
+                                    <span class="draft-dot"></span>
+
+                                    <span>
+                                        Brouillon
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    L'article sera publié lorsque vous
+                                    cliquerez sur « Publier ».
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- COVER -->
+
+                        <div class="card">
+
+                            <div class="card-heading">
+
+                                <i class="fa-solid fa-image"></i>
+
+                                <h3>
+                                    Image de couverture
+                                </h3>
+
+                            </div>
+
+
+                            <div class="cover-upload" id="coverUpload">
+
+                                <div class="cover-preview" id="coverPreview">
+                                    <i class="fa-solid fa-image"></i>
+
+                                    <span>
+                                        Aucune image
+                                    </span>
+                                </div>
+
+                                <label for="coverInput" class="upload-btn">
+                                    <i class="fa-solid fa-upload"></i>
+                                    Choisir une image
+                                </label>
+
+                                <input type="file" id="coverInput" accept="image/*" hidden>
+
+                                <p>
+                                    JPG, PNG ou WebP
+                                    <br>
+                                    Taille recommandée : 1200 × 675 px
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SUMMARY -->
+
+                        <div class="card">
+
+                            <div class="card-heading">
+
+                                <i class="fa-solid fa-chart-simple"></i>
+
+                                <h3>
+                                    Résumé
+                                </h3>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Mots
+                                </span>
+
+                                <strong id="summaryWords">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Images
+                                </span>
+
+                                <strong id="summaryImages">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Vidéos
+                                </span>
+
+                                <strong id="summaryVideos">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         LINK MODAL
+    ========================== -->
+
+    <div class="modal-overlay" id="linkModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <h2>
+                    Ajouter un lien
+                </h2>
+
+                <button type="button" class="modal-close" data-close="linkModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+
+                    <label for="linkUrl">
+                        URL
+                    </label>
+
+                    <input type="url" id="linkUrl" placeholder="https://example.com">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="linkText">
+                        Texte du lien
+                    </label>
+
+                    <input type="text" id="linkText" placeholder="En savoir plus">
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="secondary-btn" data-close="linkModal">
+                    Annuler
+                </button>
+
+                <button type="button" class="primary-btn" id="insertLinkBtn">
+                    Ajouter
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         VIDEO MODAL
+    ========================== -->
+
+    <div class="modal-overlay" id="videoModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <h2>
+                    Ajouter une vidéo
+                </h2>
+
+                <button type="button" class="modal-close" data-close="videoModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+
+                    <label for="videoUrl">
+                        URL de la vidéo
+                    </label>
+
+                    <input type="url" id="videoUrl" placeholder="https://www.youtube.com/watch?v=...">
+
+                    <small>
+                        YouTube, Vimeo ou autre lien vidéo.
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="secondary-btn" data-close="videoModal">
+                    Annuler
+                </button>
+
+                <button type="button" class="primary-btn" id="insertVideoBtn">
+                    Ajouter
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         IMAGE INPUT
+    ========================== -->
+
+    <input type="file" id="articleImageInput" accept="image/*" hidden>
+
+
+    <!-- =========================
+         PREVIEW MODAL
+    ========================== -->
+
+    <div class="modal-overlay preview-modal" id="previewModal">
+
+        <div class="preview-container">
+
+            <div class="preview-header">
+
+                <strong>
+                    Aperçu de l'article
+                </strong>
+
+                <button type="button" class="modal-close" data-close="previewModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <div class="preview-content" id="previewContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div class="toast" id="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span>
+            Article enregistré.
+        </span>
+
+    </div>
+
+
+    <script src="create-article.js"></script>
+
+</body>
+
+</html>

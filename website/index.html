@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700amp;family=Oswald:wght@600;700amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./nav.css">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#ffdad4", "on-primary-container": "#fff2f0", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#003ea7", "secondary-fixed-dim": "#b6c4ff", "primary-fixed-dim": "#ffb4a8", "secondary-container": "#0056fd", "on-background": "#1a1c20", "surface-container-low": "#f3f3f9", "tertiary": "#004dcb", "tertiary-fixed": "#dbe1ff", "surface-dim": "#d9d9df", "surface-tint": "#c00500", "surface-bright": "#f9f9ff", "outline-variant": "#e9bcb5", "surface-container-high": "#e8e8ed", "primary": "#b30400", "on-surface": "#1a1c20", "on-tertiary-fixed": "#00174a", "on-secondary-fixed": "#001550", "on-secondary-fixed-variant": "#003ab2", "primary-container": "#e10600", "tertiary-container": "#0163ff", "on-secondary": "#ffffff", "on-primary-fixed": "#410100", "inverse-primary": "#ffb4a8", "outline": "#936e68", "on-secondary-container": "#e4e7ff", "on-tertiary-container": "#f4f4ff", "surface-variant": "#e2e2e8", "secondary": "#0042c7", "on-primary": "#ffffff", "error-container": "#ffdad6", "on-primary-fixed-variant": "#930300", "inverse-surface": "#2f3035", "inverse-on-surface": "#f0f0f6", "on-error": "#ffffff", "surface": "#f9f9ff", "secondary-fixed": "#dce1ff", "tertiary-fixed-dim": "#b4c5ff", "surface-container": "#ededf3", "on-surface-variant": "#5e3f3a", "background": "#f9f9ff", "on-error-container": "#93000a", "surface-container-highest": "#e2e2e8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "margin": "2rem", "margin-mobile": "1rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "gutter": "1.5rem" }, "fontFamily": { "display": ["Oswald"], "headline-md": ["Oswald"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Oswald"], "body-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "display-mobile": ["Oswald"], "headline-lg-mobile": ["Oswald"], "label-md": ["Inter"], "headline-sm": ["Oswald"] }, "fontSize": { "display": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }] } } } }</script>
+</head>
+
+<body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased">
+  <header class="" id="header">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo-link">
+      <img src="../assest/logo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+      <ul>
+        <li>
+          <a href="index.html" class="active">HOME</a>
+        </li>
+
+        <li>
+          <a href="articles/actualites.html">ACTUALITES</a>
+        </li>
+
+        <li>
+          <a href="event/events.html">EVENEMENTS</a>
+        </li>
+
+        <li>
+          <a href="boutique/shop.html">BOUTIQUE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+
+      <a href="search.html" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </a>
+
+      <a href="boutique/shop.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </header>
+  <main class="w-full bg-surface-container-lowest min-h-screen">
+    <div class="flex flex-col w-full">
+      <!-- 1. HERO SECTION — UNIVERS NIZAL -->
+      <section class="relative w-full overflow-hidden bg-surface-container-lowest">
+        <!-- Cinematic Dual Gradient Scrim over high-energy sports visual -->
+        <div class="relative w-full min-h-[580px] lg:min-h-[660px] flex items-center">
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('../assest/hero-bg.png');">
+          </div>
+          <!-- High contrast bright athletic scrim for crisp light mode fidelity -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/90 to-surface-container-lowest/30">
+          </div>
+          <!-- Subtle Brand Slash Motifs -->
+          <div class="absolute top-0 right-1/4 w-px h-full bg-secondary-container/20 -skew-x-12 hidden lg:block"></div>
+          <div class="absolute top-0 right-1/3 w-1.5 h-full bg-primary-container/20 -skew-x-12 hidden lg:block"></div>
+          <div class="relative max-w-7xl mx-auto px-gutter py-space-xl w-full">
+            <div class="max-w-2xl flex flex-col gap-space-md">
+              <!-- Badge -->
+              <div
+                class="inline-flex items-center gap-space-xs self-start px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold">
+                  Le monde des sports de combat
+                </span>
+                <span class="text-secondary-container font-bold text-xs">/</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Plateforme Officielle</span>
+              </div>
+              <!-- Main Impact Title -->
+              <h1 class="font-display text-display uppercase tracking-tight text-on-surface">
+                Vivez le combat <br>
+                <span class="text-primary-container">autrement.</span>
+              </h1>
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+                Actualités, athlètes, événements et équipement réunis au même endroit. La référence incontournable de la
+                performance pugilistique et martiale.
+              </p>
+              <!-- CTAs -->
+              <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+                <a class="inline-flex items-center justify-center h-12 px-space-xl rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-primary transition-all shadow-md active:translate-y-px"
+                  data-path="actualites" href="articles/actualites.html">
+                  Découvrir les actualités
+                </a>
+                <a class="inline-flex items-center justify-center h-12 px-space-xl rounded-lg bg-surface-container-lowest text-secondary-container font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary transition-all shadow-sm active:translate-y-px"
+                  data-path="evenements" href="event/events.html">
+                  Voir les événements
+                </a>
+              </div>
+              <!-- Live Meta Ribbon -->
+              <div
+                class="pt-space-md flex items-center gap-space-lg text-on-surface-variant font-label-md text-label-md">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                  <span class="">Classements Officiels</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">stadium</span>
+                  <span id="home-tournament-count">Chargement des événements…</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 2. ACCÈS RAPIDE — 4 MONDES (EXPLOREZ L'UNIVERS NIZAL) -->
+      <section class="w-full bg-surface-container-low py-space-xl">
+        <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-lg">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+            <div>
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container font-bold">Architecture
+                de combat</span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Explorez l'univers NIZAL</h2>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Quatre piliers interconnectés pour
+              accompagner chaque passionné, combattant et entraîneur.</p>
+          </div>
+          <!-- 4-Grid Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+            <!-- Tile 1: Actualités -->
+            <a class="group relative flex flex-col justify-end h-80 rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300"
+              data-path="actualites" href="articles/actualites.html">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style="background-image: url('../assest/explore1.png');">
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/40 to-transparent"></div>
+              <div class="relative p-space-md flex flex-col gap-space-xs z-10 text-surface-bright">
+                <span class="font-display text-headline-sm text-secondary-fixed">01</span>
+                <h3 class="font-headline-md text-headline-md uppercase text-surface-container-lowest leading-snug">
+                  Actualités</h3>
+                <p class="font-body-sm text-body-sm text-surface-dim line-clamp-2">Les dernières nouvelles du monde du
+                  combat, analyses et reportages exclusifs.</p>
+                <span
+                  class="inline-flex items-center gap-1 font-label-md text-label-md uppercase tracking-wider text-primary-fixed-dim pt-2 group-hover:translate-x-1 transition-transform">
+                  Lire les actualités <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </span>
+              </div>
+            </a>
+            <!-- Tile 3: Événements -->
+            <a class="group relative flex flex-col justify-end h-80 rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300"
+              data-path="evenements" href="event/events.html">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style="background-image: url('../assest/explore2.png');">
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/40 to-transparent"></div>
+              <div class="relative p-space-md flex flex-col gap-space-xs z-10 text-surface-bright">
+                <span class="font-display text-headline-sm text-secondary-fixed">02</span>
+                <h3 class="font-headline-md text-headline-md uppercase text-surface-container-lowest leading-snug">
+                  Événements</h3>
+                <p class="font-body-sm text-body-sm text-surface-dim line-clamp-2">Suivez les compétitions majeures et
+                  gérez vos inscriptions en direct.</p>
+                <span
+                  class="inline-flex items-center gap-1 font-label-md text-label-md uppercase tracking-wider text-primary-fixed-dim pt-2 group-hover:translate-x-1 transition-transform">
+                  Voir les événements <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </span>
+              </div>
+            </a>
+            <!-- Tile 4: Boutique -->
+            <a class="group relative flex flex-col justify-end h-80 rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300"
+              data-path="boutique" href="boutique/shop.html">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style="background-image: url('../assest/explore3.png');">
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/40 to-transparent"></div>
+              <div class="relative p-space-md flex flex-col gap-space-xs z-10 text-surface-bright">
+                <span class="font-display text-headline-sm text-secondary-fixed">04</span>
+                <h3 class="font-headline-md text-headline-md uppercase text-surface-container-lowest leading-snug">
+                  Boutique</h3>
+                <p class="font-body-sm text-body-sm text-surface-dim line-clamp-2">Tout l'équipement pro rigoureusement
+                  sélectionné pour votre pratique.</p>
+                <span
+                  class="inline-flex items-center gap-1 font-label-md text-label-md uppercase tracking-wider text-primary-fixed-dim pt-2 group-hover:translate-x-1 transition-transform">
+                  Visiter la boutique <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- 3. ACTUALITÉS — À LA UNE -->
+      <section class="w-full bg-surface-container-lowest py-space-xl">
+        <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-lg">
+          <div class="flex items-center justify-between border-b pb-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <span class="w-3 h-3 bg-primary-container rounded-sm"></span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">À la une</h2>
+            </div>
+            <a class="font-label-lg text-label-lg uppercase tracking-wider text-secondary flex items-center gap-1 hover:text-primary transition-colors"
+              data-path="actualites" href="articles/actualites.html">
+              Voir toutes les actualités <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+          <!-- Bento Grid News Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="home-feature-grid">
+            <!-- Large Featured Article (Left 7 Cols) -->
+            <article
+              class="lg:col-span-7 flex flex-col rounded-xl overflow-hidden bg-surface-container-low shadow-sm hover:shadow-md transition-shadow group">
+              <div class="relative h-72 sm:h-96 w-full overflow-hidden">
+                <img alt="Article vedette sports de combat"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="../assest/actuiles3.png">
+                <span
+                  class="absolute top-4 left-4 px-3 py-1 bg-primary-container text-on-primary font-headline-sm text-xs uppercase tracking-widest rounded">
+                  UFC SPECIAL
+                </span>
+              </div>
+              <div class="p-space-lg flex flex-col gap-space-xs flex-1 justify-between bg-surface-container-lowest">
+                <div>
+                  <div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm mb-2">
+                    <span class="text-secondary-container font-bold uppercase">MMA INTERNATIONAL</span>
+                    <span class="">•</span>
+                    <span class="">24 Octobre 2026</span>
+                  </div>
+                  <h3
+                    class="font-headline-md text-headline-md uppercase text-on-surface group-hover:text-primary transition-colors mb-2">
+                    Les grands rendez-vous du combat à ne pas manquer cette semaine
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Analyse prospective des cartes principales, des retours attendus dans l'octogone et du choc des
+                    prétendants mondiaux au titre unifié.
+                  </p>
+                </div>
+                <div class="pt-space-md flex items-center justify-between">
+                  <span
+                    class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold inline-flex items-center gap-1">
+                    Lire l'article complet <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                  </span>
+
+                </div>
+              </div>
+            </article>
+            <!-- 3 Secondary Articles (Right 5 Cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-space-md">
+              <!-- Secondary 1 -->
+              <article
+                class="flex gap-space-md p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors group">
+                <div class="w-32 h-24 sm:w-36 sm:h-28 rounded-md overflow-hidden shrink-0">
+                  <img alt="Championnat boxe anglaise"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    src="../assest/actuiles2.png">
+                </div>
+                <div class="flex flex-col justify-between flex-1 min-w-0">
+                  <div>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Boxe
+                      Anglaise</span>
+                    <h4
+                      class="font-headline-sm text-headline-sm uppercase text-on-surface truncate group-hover:text-secondary transition-colors">
+                      Les temps forts et knockouts de la soirée
+                    </h4>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Il y a 3 heures</span>
+                </div>
+              </article>
+              <!-- Secondary 2 -->
+              <article
+                class="flex gap-space-md p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors group">
+                <div class="w-32 h-24 sm:w-36 sm:h-28 rounded-md overflow-hidden shrink-0">
+                  <img alt="Glory Kickboxing Knockout"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    src="../assest/actuiles1.png">
+                </div>
+                <div class="flex flex-col justify-between flex-1 min-w-0">
+                  <div>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Kickboxing
+                      / Muay Thaï</span>
+                    <h4
+                      class="font-headline-sm text-headline-sm uppercase text-on-surface truncate group-hover:text-secondary transition-colors">
+                      Glory 95 : Les temps forts et knockouts de la soirée
+                    </h4>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Hier</span>
+                </div>
+              </article>
+              <!-- Secondary 3 -->
+              <article
+                class="flex gap-space-md p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors group">
+                <div class="w-32 h-24 sm:w-36 sm:h-28 rounded-md overflow-hidden shrink-0">
+                  <img alt="Judo &amp; Lutte olympique"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    src="../assest/actuiles4.png">
+                </div>
+                <div class="flex flex-col justify-between flex-1 min-w-0">
+                  <div>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Judo &amp;
+                      Grappling</span>
+                    <h4
+                      class="font-headline-sm text-headline-sm uppercase text-on-surface truncate group-hover:text-secondary transition-colors">
+                      Qualifications olympiques et nouvelles règles fédérales
+                    </h4>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">22 Octobre 2026</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 4. ÉVÉNEMENTS À VENIR -->
+      <section class="w-full bg-surface-container-low py-space-xl">
+        <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-lg">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Calendrier
+                officiel</span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Prochains événements</h2>
+            </div>
+            <a class="font-label-lg text-label-lg uppercase tracking-wider text-secondary flex items-center gap-1 hover:text-primary transition-colors"
+              data-path="evenements" href="event/events.html">
+              Voir tous les événements <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md" id="event-grid">
+            <!-- Event 1: Boxe Alger -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md">
+              <div class="flex items-start justify-between">
+                <div class="px-3 py-2 rounded bg-surface-container flex flex-col items-center min-w-[64px]">
+                  <span class="font-display text-headline-md text-primary leading-none">12</span>
+                  <span class="font-label-sm text-label-sm uppercase font-bold text-on-surface">OCT</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-label-sm uppercase bg-secondary-container/10 text-secondary-container font-bold">
+                  Boxe Anglaise
+                </span>
+              </div>
+              <div>
+                <span
+                  class="inline-flex items-center gap-1.5 text-xs text-on-surface-variant font-label-sm uppercase mb-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Ouvert aux inscriptions
+                </span>
+                <h3 class="font-headline-md text-headline-md uppercase text-on-surface">
+                  Championnat National d'Algérie
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+                  <span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                  Alger, Arène Harcha
+                </p>
+              </div>
+              <div class="pt-space-sm flex items-center justify-between">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Divisions Séniors &amp;
+                  Espoirs</span>
+                <a class="px-4 py-2 rounded bg-primary-container text-on-primary font-headline-sm text-xs uppercase tracking-wider hover:bg-primary transition-colors"
+                  data-path="evenements" href="event/eventDetails.html">
+                  Voir l'événement
+                </a>
+              </div>
+            </div>
+            <!-- Event 2: MMA NIZAL Fight Night -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-16 h-16 bg-primary-container/10 rounded-bl-full pointer-events-none">
+              </div>
+              <div class="flex items-start justify-between">
+                <div class="px-3 py-2 rounded bg-surface-container flex flex-col items-center min-w-[64px]">
+                  <span class="font-display text-headline-md text-primary leading-none">25</span>
+                  <span class="font-label-sm text-label-sm uppercase font-bold text-on-surface">OCT</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-label-sm uppercase bg-primary-container/10 text-primary-container font-bold">
+                  MMA Professionnel
+                </span>
+              </div>
+              <div>
+                <span
+                  class="inline-flex items-center gap-1.5 text-xs text-on-surface-variant font-label-sm uppercase mb-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Inscriptions ouvertes
+                </span>
+                <h3 class="font-headline-md text-headline-md uppercase text-on-surface">
+                  NIZAL Fight Night 01
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+                  <span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                  Alger, Coupole Olympique
+                </p>
+              </div>
+              <div class="pt-space-sm flex items-center justify-between">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">8 Combats Pro &amp; 4
+                  Titres</span>
+                <a class="px-4 py-2 rounded bg-secondary-container text-on-secondary font-headline-sm text-xs uppercase tracking-wider hover:bg-secondary transition-colors"
+                  data-path="evenements" href="event/eventDetails.html">
+                  Voir l'événement
+                </a>
+              </div>
+            </div>
+            <!-- Event 3: Grappling Open Submission -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md">
+              <div class="flex items-start justify-between">
+                <div class="px-3 py-2 rounded bg-surface-container flex flex-col items-center min-w-[64px]">
+                  <span class="font-display text-headline-md text-primary leading-none">14</span>
+                  <span class="font-label-sm text-label-sm uppercase font-bold text-on-surface">NOV</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-label-sm uppercase bg-tertiary/10 text-tertiary font-bold">
+                  Grappling &amp; BJJ
+                </span>
+              </div>
+              <div>
+                <span
+                  class="inline-flex items-center gap-1.5 text-xs text-on-surface-variant font-label-sm uppercase mb-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Phase de pesée
+                </span>
+                <h3 class="font-headline-md text-headline-md uppercase text-on-surface">
+                  Grand Prix Open Submission
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+                  <span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                  Oran, Palais des Sports
+                </p>
+              </div>
+              <div class="pt-space-sm flex items-center justify-between">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Toutes Catégories de
+                  Poids</span>
+                <a class="px-4 py-2 rounded bg-primary-container text-on-primary font-headline-sm text-xs uppercase tracking-wider hover:bg-primary transition-colors"
+                  data-path="evenements" href="event/eventDetails.html">
+                  Voir l'événement
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 6. BOUTIQUE — ÉQUIPEZ-VOUS (CATÉGORIES) -->
+      <section class="w-full bg-surface-container-low py-space-xl">
+        <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-lg">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Matériel &amp;
+                Équipement</span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Équipez-vous pour le combat.</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-1">
+                Gants, protections, vêtements et accessoires rigoureusement testés et sélectionnés pour les passionnés
+                de sports de combat.
+              </p>
+            </div>
+            <a class="inline-flex items-center gap-1 font-label-lg text-label-lg uppercase tracking-wider text-secondary hover:text-primary transition-colors"
+              data-path="boutique" href="boutique/shop.html">
+              Découvrir la boutique <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+          <!-- 4 Category Cards -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-space-md">
+            <!-- Category 1: Gants -->
+            <a class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center"
+              data-path="boutique" href="boutique/shop.html">
+              <div
+                class="w-full aspect-square bg-surface-container-low rounded-lg p-2 mb-space-sm overflow-hidden flex items-center justify-center">
+                <img alt="Gants de boxe NIZAL"
+                  class="max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  src="../assest/explore3.png">
+              </div>
+              <h3
+                class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-primary transition-colors">
+                Femme Vêtements
+              </h3>
+            </a>
+            <!-- Category 2: Protections -->
+            <a class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center"
+              data-path="boutique" href="boutique/shop.html">
+              <div
+                class="w-full aspect-square bg-surface-container-low rounded-lg p-2 mb-space-sm overflow-hidden flex items-center justify-center">
+                <img alt="Protections et casques combat"
+                  class="max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  src="../assest/screen.png">
+              </div>
+              <h3
+                class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-primary transition-colors">
+                Homme Vêtements</h3>
+            </a>
+            <!-- Category 3: Fightwear -->
+            <a class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center"
+              data-path="boutique" href="boutique/shop.html">
+              <div
+                class="w-full aspect-square bg-surface-container-low rounded-lg p-2 mb-space-sm overflow-hidden flex items-center justify-center">
+                <img alt="Fightwear et shorts"
+                  class="max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  src="../assest/studio_product_photography_of_professional_mma_compression_rashguard_fight_wear.png">
+
+              </div>
+              <h3
+                class="font-headline-sm text-headline-sm uppercase text-on-surface group-hover:text-primary transition-colors">
+                enfants Vêtements</h3>
+            </a>
+
+          </div>
+        </div>
+      </section>
+      <!-- 7. PRODUITS POPULAIRES (CAROUSEL / GRILLE) -->
+      <section class="w-full bg-surface-container-lowest py-space-xl">
+        <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-lg">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Best-sellers
+                officiels</span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Les produits populaires</h2>
+            </div>
+            <a class="font-label-lg text-label-lg uppercase tracking-wider text-secondary flex items-center gap-1 hover:text-primary transition-colors"
+              data-path="boutique" href="boutique/shop.html">
+              Voir toute la boutique <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+          <!-- 4 Product Items Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md" id="product-grid">
+            <!-- Product 1 -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
+              <div
+                class="relative bg-surface-container-lowest rounded-lg p-4 mb-space-sm flex items-center justify-center overflow-hidden aspect-square">
+                <span
+                  class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-[10px] uppercase font-bold">Top
+                  Vente</span>
+                <img alt="NIZAL Pro Boxing Gloves"
+                  class="max-h-48 object-contain group-hover:scale-105 transition-transform duration-300"
+                  src="../assest/studio_product_photography_of_professional_mma_compression_rashguard_fight_wear.png">
+
+              </div>
+              <div>
+                <div class="flex items-center gap-1 text-amber-500 font-label-sm text-xs mb-1">
+                  <span class="material-symbols-outlined text-[16px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <strong class="text-on-surface font-semibold">4.9</strong>
+                  <span class="text-on-surface-variant">(142 avis)</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface line-clamp-1">NIZAL Pro Boxing
+                  Gloves</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Cuir véritable, 12 oz, rembourrage triple
+                  mousse.</p>
+              </div>
+              <div class="pt-space-md flex items-center justify-between mt-auto">
+                <span class="font-display text-headline-sm text-primary">7 500 DA</span>
+                <button
+                  class="h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-secondary-container hover:text-on-secondary transition-all font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:translate-y-px"
+                  type="button">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span class="">Ajouter</span>
+                </button>
+              </div>
+            </div>
+            <!-- Product 2 -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
+              <div
+                class="relative bg-surface-container-lowest rounded-lg p-4 mb-space-sm flex items-center justify-center overflow-hidden aspect-square">
+                <img alt="Short Combat NIZAL Pro Fight"
+                  class="max-h-48 object-contain group-hover:scale-105 transition-transform duration-300"
+                  src="../assest/article.png">
+              </div>
+              <div>
+                <div class="flex items-center gap-1 text-amber-500 font-label-sm text-xs mb-1">
+                  <span class="material-symbols-outlined text-[16px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <strong class="text-on-surface font-semibold">4.8</strong>
+                  <span class="text-on-surface-variant">(89 avis)</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface line-clamp-1">Short Combat NIZAL
+                  Pro Fight</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Tissu extensible microfibre, fentes
+                  d'aisance latérales.</p>
+              </div>
+              <div class="pt-space-md flex items-center justify-between mt-auto">
+                <span class="font-display text-headline-sm text-primary">3 800 DA</span>
+                <button
+                  class="h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-secondary-container hover:text-on-secondary transition-all font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:translate-y-px"
+                  type="button">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span class="">Ajouter</span>
+                </button>
+              </div>
+            </div>
+            <!-- Product 3 -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
+              <div
+                class="relative bg-surface-container-lowest rounded-lg p-4 mb-space-sm flex items-center justify-center overflow-hidden aspect-square">
+                <span
+                  class="absolute top-2 left-2 px-2 py-0.5 rounded bg-secondary-container text-on-secondary font-label-sm text-[10px] uppercase font-bold">Nouveau</span>
+                <img alt="Rashguard Compression NIZAL"
+                  class="max-h-48 object-contain group-hover:scale-105 transition-transform duration-300"
+                  src="../assest/article2.png">
+
+              </div>
+              <div>
+                <div class="flex items-center gap-1 text-amber-500 font-label-sm text-xs mb-1">
+                  <span class="material-symbols-outlined text-[16px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <strong class="text-on-surface font-semibold">5.0</strong>
+                  <span class="text-on-surface-variant">(64 avis)</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface line-clamp-1">Rashguard
+                  Compression NIZAL</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Protection thermique antibactérienne,
+                  coutures plates.</p>
+              </div>
+              <div class="pt-space-md flex items-center justify-between mt-auto">
+                <span class="font-display text-headline-sm text-primary">4 200 DA</span>
+                <button
+                  class="h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-secondary-container hover:text-on-secondary transition-all font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:translate-y-px"
+                  type="button">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span class="">Ajouter</span>
+                </button>
+              </div>
+            </div>
+            <!-- Product 4 -->
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
+              <div
+                class="relative bg-surface-container-lowest rounded-lg p-4 mb-space-sm flex items-center justify-center overflow-hidden aspect-square">
+                <img alt="Pack Bandes &amp; Corde Pro"
+                  class="max-h-48 object-contain group-hover:scale-105 transition-transform duration-300"
+                  src="../assest/article3.png">
+              </div>
+              <div>
+                <div class="flex items-center gap-1 text-amber-500 font-label-sm text-xs mb-1">
+                  <span class="material-symbols-outlined text-[16px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <strong class="text-on-surface font-semibold">4.7</strong>
+                  <span class="text-on-surface-variant">(110 avis)</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface line-clamp-1">Bandes 4.5m &amp;
+                  Corde Pro Pack</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Coton semi-élastique et corde à sauter à
+                  roulement à billes.</p>
+              </div>
+              <div class="pt-space-md flex items-center justify-between mt-auto">
+                <span class="font-display text-headline-sm text-primary">1 800 DA</span>
+                <button
+                  class="h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-secondary-container hover:text-on-secondary transition-all font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:translate-y-px"
+                  type="button">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                  <span class="">Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 8. CALL TO ACTION ARÈNE NIZAL -->
+      <section class="w-full py-space-xl bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-gutter">
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <!-- Photo cinématique d'entraînement -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('../assest/hero-bg.png');">
+            </div>
+            <!-- Light Scrim for crisp text contrast -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/95 via-surface-container-lowest/80 to-surface-container-lowest/40">
+            </div>
+            <div class="relative p-space-xl lg:p-16 max-w-xl flex flex-col gap-space-md">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 bg-primary-container rounded-sm"></span>
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container font-bold">Adhésion
+                  &amp; Tournois</span>
+              </div>
+              <h2 class="font-display text-display uppercase text-on-surface leading-none">
+                Prêt à entrer <br>dans l'arène ?
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Participez aux prochains événements officiels NIZAL, réservez vos billets pour les combats de
+                championnat et rejoignez la plus grande communauté sportive.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md pt-2">
+                <a class="h-12 px-space-xl rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider flex items-center justify-center hover:bg-primary transition-colors shadow-md active:translate-y-px"
+                  data-path="evenements" href="event/events.html">
+                  Voir les événements
+                </a>
+
+              </div>
+              <!-- Micro Stats Inside CTA -->
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 9. NEWSLETTER MINIMALISTE -->
+      <section class="w-full bg-surface-container-lowest py-space-xl border-t">
+        <div class="max-w-4xl mx-auto px-gutter text-center flex flex-col items-center gap-space-md">
+          <div
+            class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined text-[24px]">mail</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Restez dans le combat.</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+              Recevez les dernières actualités, calendriers des tournois et exclusivités de la boutique NIZAL
+              directement dans votre boîte mail.
+            </p>
+          </div>
+          <form class="w-full max-w-md flex flex-col sm:flex-row gap-space-xs pt-space-xs"
+            onsubmit="event.preventDefault(); alert('Merci pour votre inscription à la newsletter NIZAL !');">
+            <input
+              class="h-12 px-4 rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary flex-1"
+              placeholder="Votre adresse e-mail" required="" type="email">
+            <button
+              class="h-12 px-space-lg rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-primary transition-colors shadow-sm active:translate-y-px whitespace-nowrap shrink-0"
+              type="submit">
+              S'inscrire
+            </button>
+          </form>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Pas de spam. Désinscription possible en un
+            clic.</span>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+            même endroit. Tournois, classements et billetterie officielle.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="actualites" href="articles/actualites.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="athletes" href="boutique/shop.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="evenements" href="event/events.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="boutique" href="boutique/shop.html">Boutique</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="a-propos" href="boutique/shop.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="boutique/shop.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="faq" href="boutique/shop.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="conditions-generales" href="boutique/shop.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="politique-de-confidentialite" href="boutique/shop.html">Politique de confidentialité</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="boutique/shop.html">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="boutique/shop.html">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="boutique/shop.html">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="boutique/shop.html">TikTok</a></div>
+        </div>
+      </div>
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+        <p class="">© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider font-label-sm text-label-sm text-on-surface-variant">Plateforme Combat Sports
+          Haute Performance</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./nav.js"></script>
+  <script src="./home.js" defer></script>
+
+</body>
+
+</html>

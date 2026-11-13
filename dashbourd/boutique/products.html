@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produits & Boutique — NIZAL</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="products.css">
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+    
+        <div class="logo">
+            <img src="../../assest/logo.png" alt="logo" class="logoimg">
+        </div>
+    
+        <nav class="sidebar-nav">
+    
+            <a href="../index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+    
+            <a href="../articles/articles.html" class="nav-item active">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+    
+            <a href="./products.html" class="nav-item">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Produits & Boutique</span>
+            </a>
+    
+            <a href="../competitions/competitions.html" class="nav-item">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+    
+            <a href="../registrations/registrations.html" class="nav-item">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Inscriptions</span>
+            </a>
+    
+            <a href="../orders/orders.html" class="nav-item">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+    
+        </nav>
+    
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+
+        <!-- PAGE CONTENT -->
+        <section class="page-content">
+
+            <!-- HEADER -->
+            <div class="page-header">
+
+                <div>
+
+                <button class="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h1>Produits & Boutique</h1>
+                    
+                    <p>
+                        Gérez les produits disponibles dans la boutique NIZAL.
+                    </p>
+                </div>
+                </div>
+
+                <a href="add-product.html" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    Ajouter un produit
+                </a>
+
+            </div>
+
+
+            <!-- SEARCH / FILTERS -->
+            <div class="toolbar">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+
+                </div>
+
+
+                <select id="categoryFilter">
+
+                    <option value="">Toutes les catégories</option>
+
+                    <option value="femme">
+                        femme
+                    </option>
+
+                    <option value="homme">
+                        homme
+                    </option>
+
+                    <option value="enfant">
+                        enfant
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PRODUCTS TABLE -->
+            <div class="table-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Produit</th>
+
+                                <th>Catégorie</th>
+
+                                <th>Prix</th>
+
+                                <th>Stock</th>
+
+                                <th>Statut</th>
+
+                                <th></th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="productsTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div class="empty-state" id="emptyState">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <h3>Aucun produit trouvé</h3>
+
+                    <p>
+                        Aucun produit ne correspond à votre recherche.
+                    </p>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div class="pagination">
+
+            
+
+                    <div>
+
+                        <button disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="current">
+                            1
+                        </button>
+
+                        <button>
+                            2
+                        </button>
+
+                        <button>
+                            3
+                        </button>
+
+                        <button>
+                            ...
+                        </button>
+
+                        <button>
+                            12
+                        </button>
+
+                        <button>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="products.js"></script>
+
+</body>
+
+</html>

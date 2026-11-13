@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Détails inscription — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="registration-details.css">
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <div class="logo-mark">N</div>
+
+                <div>
+                    <strong>NIZAL</strong>
+                    <span>Administration</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="index.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+
+                <a href="products.html">
+                    <i class="fa-solid fa-store"></i>
+                    <span>Produits & Boutique</span>
+                </a>
+
+                <a href="competitions.html">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Compétitions</span>
+                </a>
+
+                <a href="registrations.html" class="active">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Inscriptions</span>
+                </a>
+
+                <a href="orders.html">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Commandes</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-title">
+                    Inscriptions
+                </div>
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Administrateur</strong>
+                        <span>Admin</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENT -->
+            <section class="page-content">
+
+
+                <!-- BREADCRUMB -->
+                <div class="breadcrumb">
+
+                    <a href="registrations.html">
+                        Inscriptions
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span id="registrationBreadcrumb">Chargement...</span>
+
+                </div>
+
+
+                <!-- HEADER -->
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="title-row">
+
+                            <h1 id="registrationTitle">
+                                Inscription #INS-00128
+                            </h1>
+
+                            <span class="status reviewing" id="statusBadge">
+                                En cours d’examen
+                            </span>
+
+                        </div>
+
+                        <p id="registrationDate">
+                            Envoyée le 24 septembre 2026
+                        </p>
+
+                    </div>
+
+
+                    <div class="header-actions">
+
+                        <button class="btn btn-success" id="acceptBtn">
+                            <i class="fa-solid fa-check"></i>
+                            Accepter
+                        </button>
+
+                        <button class="btn btn-danger-outline" id="rejectBtn">
+                            <i class="fa-solid fa-xmark"></i>
+                            Refuser
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- REVIEW NOTICE -->
+                <div class="review-notice">
+
+                    <div class="notice-icon">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Inscription à examiner
+                        </strong>
+
+                        <p>
+                            Vérifiez les informations du participant et tous les documents
+                            requis avant de prendre une décision.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MAIN GRID -->
+                <div class="details-layout">
+
+
+                    <!-- LEFT COLUMN -->
+                    <div class="main-column">
+
+
+                        <!-- PARTICIPANT -->
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <div>
+                                    <h2>
+                                        Informations du participant
+                                    </h2>
+
+                                    <p>
+                                        Informations fournies lors de l'inscription.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="participant-profile">
+
+                                <div class="large-avatar" id="participantInitials">
+                                    MB
+                                </div>
+
+                                <div>
+
+                                    <h3 id="participantName">
+                                        Mohamed Benali
+                                    </h3>
+
+                                    <span>
+                                        Participant
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-grid">
+
+                                <div class="info-item">
+
+                                    <span>Nom complet</span>
+
+                                    <strong id="participantFullName">
+                                        Mohamed Benali
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>Date de naissance</span>
+
+                                    <strong id="participantBirthDate">
+                                        12 mars 2002
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>Genre</span>
+
+                                    <strong id="participantGender">
+                                        Homme
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>Pays</span>
+
+                                    <strong id="participantCountry">
+                                        Algérie
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>Email</span>
+
+                                    <strong id="participantEmail">
+                                        mohamed@example.com
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>Téléphone</span>
+
+                                    <strong id="participantPhone">
+                                        +213 555 12 34 56
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- COMPETITION -->
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <div>
+                                    <h2>
+                                        Compétition
+                                    </h2>
+
+                                    <p>
+                                        Compétition et catégorie sélectionnées.
+                                    </p>
+                                </div>
+
+                                <a href="#" class="text-link" id="competitionLink">
+                                    Voir la compétition
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+
+                            <div class="competition-box">
+
+                                <div class="competition-icon">
+                                    <i class="fa-solid fa-trophy"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong id="competitionName">
+                                        NIZAL Fight Championship
+                                    </strong>
+
+                                    <span id="competitionMeta">
+                                        MMA · Alger · 18 octobre 2026
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="category-grid">
+
+                                <div class="category-item">
+
+                                    <span>Sport</span>
+
+                                    <strong id="categorySport">MMA</strong>
+
+                                </div>
+
+
+                                <div class="category-item">
+
+                                    <span>Discipline</span>
+
+                                    <strong id="categoryDiscipline">MMA Amateur</strong>
+
+                                </div>
+
+
+                                <div class="category-item">
+
+                                    <span>Genre</span>
+
+                                    <strong id="categoryGender">Homme</strong>
+
+                                </div>
+
+
+                                <div class="category-item">
+
+                                    <span>Âge</span>
+
+                                    <strong id="categoryAge">Senior</strong>
+
+                                </div>
+
+
+                                <div class="category-item">
+
+                                    <span>Poids</span>
+
+                                    <strong id="categoryWeight">-70 kg</strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- DOCUMENTS -->
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <h2>
+                                        Documents requis
+                                    </h2>
+
+                                    <p>
+                                        Documents définis pour cette compétition.
+                                    </p>
+
+                                </div>
+
+                                <span class="document-count" id="documentCount">
+                                    3 documents
+                                </span>
+
+                            </div>
+
+
+                            <div class="documents-list" id="documentsList">
+
+
+                                <!-- DOCUMENT 1 -->
+                                <div class="document-item">
+
+                                    <div class="document-icon pdf">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                    </div>
+
+                                    <div class="document-info">
+
+                                        <strong>
+                                            Carte d'identité
+                                        </strong>
+
+                                        <span>
+                                            Document obligatoire · PDF
+                                        </span>
+
+                                    </div>
+
+                                    <span class="document-status valid">
+                                        <i class="fa-solid fa-check"></i>
+                                        Reçu
+                                    </span>
+
+                                    <button class="document-action" data-document="Carte d'identité">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Voir
+                                    </button>
+
+                                </div>
+
+
+                                <!-- DOCUMENT 2 -->
+                                <div class="document-item">
+
+                                    <div class="document-icon pdf">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                    </div>
+
+                                    <div class="document-info">
+
+                                        <strong>
+                                            Certificat médical
+                                        </strong>
+
+                                        <span>
+                                            Document obligatoire · PDF
+                                        </span>
+
+                                    </div>
+
+                                    <span class="document-status valid">
+                                        <i class="fa-solid fa-check"></i>
+                                        Reçu
+                                    </span>
+
+                                    <button class="document-action" data-document="Certificat médical">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Voir
+                                    </button>
+
+                                </div>
+
+
+                                <!-- DOCUMENT 3 -->
+                                <div class="document-item">
+
+                                    <div class="document-icon image">
+                                        <i class="fa-solid fa-image"></i>
+                                    </div>
+
+                                    <div class="document-info">
+
+                                        <strong>
+                                            Photo personnelle
+                                        </strong>
+
+                                        <span>
+                                            Document obligatoire · JPG / PNG
+                                        </span>
+
+                                    </div>
+
+                                    <span class="document-status valid">
+                                        <i class="fa-solid fa-check"></i>
+                                        Reçu
+                                    </span>
+
+                                    <button class="document-action" data-document="Photo personnelle">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Voir
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- REGISTRATION INFORMATION -->
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <h2>
+                                    Informations de l'inscription
+                                </h2>
+
+                            </div>
+
+
+                            <div class="info-grid">
+
+                                <div class="info-item">
+
+                                    <span>
+                                        Numéro
+                                    </span>
+
+                                    <strong id="registrationNumber">
+                                        #INS-00128
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>
+                                        Date d'inscription
+                                    </span>
+
+                                    <strong id="registrationCreatedAt">
+                                        24 septembre 2026
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>
+                                        Frais d'inscription
+                                    </span>
+
+                                    <strong id="registrationFee">
+                                        2 000 DZD
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="info-item">
+
+                                    <span>
+                                        Paiement
+                                    </span>
+
+                                    <strong class="payment-pending">
+                                        À vérifier
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- HISTORY -->
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <h2>
+                                        Historique
+                                    </h2>
+
+                                    <p>
+                                        Historique de cette inscription.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="history" id="registrationHistory">
+
+                                <div class="history-item">
+
+                                    <div class="history-icon blue">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Inscription envoyée
+                                        </strong>
+
+                                        <span>
+                                            24 septembre 2026 à 14:32
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="history-line"></div>
+
+
+                                <div class="history-item">
+
+                                    <div class="history-icon orange">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            En cours d’examen
+                                        </strong>
+
+                                        <span>
+                                            24 septembre 2026 à 15:10
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+
+                    <!-- RIGHT COLUMN -->
+                    <aside class="side-column">
+
+
+                        <!-- STATUS -->
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <h2>
+                                    État de l'inscription
+                                </h2>
+
+                            </div>
+
+
+                            <div class="current-status">
+
+                                <span class="status reviewing" id="sideStatus">
+                                    En cours d’examen
+                                </span>
+
+                                <p id="statusDescription">
+                                    Cette inscription doit être examinée avant
+                                    d'être officiellement acceptée.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- QUICK INFO -->
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <h2>
+                                    Résumé
+                                </h2>
+
+                            </div>
+
+
+                            <div class="summary-list">
+
+                                <div>
+
+                                    <span>Participant</span>
+
+                                    <strong id="summaryParticipant">
+                                        Mohamed Benali
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>Sport</span>
+
+                                    <strong id="summarySport">
+                                        MMA
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>Catégorie</span>
+
+                                    <strong id="summaryCategory">
+                                        Senior · -70 kg
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>Documents</span>
+
+                                    <strong id="summaryDocuments">
+                                        3 / 3 reçus
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>Frais</span>
+
+                                    <strong id="summaryFee">
+                                        2 000 DZD
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- DANGER -->
+                        <section class="card danger-card">
+
+                            <div class="danger-icon">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Annuler l'inscription
+                                </strong>
+
+                                <p>
+                                    Cette action marque l'inscription comme annulée.
+                                </p>
+
+                                <button class="danger-link" id="cancelRegistrationBtn">
+                                    Annuler l'inscription
+                                </button>
+
+                            </div>
+
+                        </section>
+
+                    </aside>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- DOCUMENT MODAL -->
+    <div class="modal-overlay" id="documentModal">
+
+        <div class="modal document-modal">
+
+            <button class="modal-close" id="closeDocumentModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon blue">
+                <i class="fa-solid fa-file"></i>
+            </div>
+
+            <h3 id="documentTitle">
+                Document
+            </h3>
+
+            <p>
+                Aperçu du document envoyé par le participant.
+            </p>
+
+            <div class="document-preview" id="documentPreview">
+                <p>Sélectionnez « Voir » sur un document pour l’afficher ici.</p>
+            </div>
+
+            <div class="modal-actions">
+
+                <button class="btn btn-secondary" id="closeDocumentBtn">
+                    Fermer
+                </button>
+
+                <a class="btn btn-primary" id="downloadDocumentBtn" href="#" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-download"></i>
+                    Télécharger
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACCEPT MODAL -->
+    <div class="modal-overlay" id="acceptModal">
+
+        <div class="modal">
+
+            <button class="modal-close" id="closeAcceptModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon green">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h3>
+                Accepter l'inscription ?
+            </h3>
+
+            <p>
+                Le participant sera officiellement accepté dans cette compétition.
+            </p>
+
+            <div class="modal-actions">
+
+                <button class="btn btn-secondary" id="cancelAcceptBtn">
+                    Annuler
+                </button>
+
+                <button class="btn btn-success" id="confirmAcceptBtn">
+                    <i class="fa-solid fa-check"></i>
+                    Confirmer
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REJECT MODAL -->
+    <div class="modal-overlay" id="rejectModal">
+
+        <div class="modal">
+
+            <button class="modal-close" id="closeRejectModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon red">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <h3>
+                Refuser l'inscription ?
+            </h3>
+
+            <p>
+                Un motif de refus est obligatoire.
+            </p>
+
+
+            <label for="rejectionReason">
+                Motif du refus <span>*</span>
+            </label>
+
+            <textarea id="rejectionReason" rows="4" placeholder="Saisissez le motif du refus..."></textarea>
+
+            <div class="validation-message" id="rejectionError">
+                Veuillez saisir un motif de refus.
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button class="btn btn-secondary" id="cancelRejectBtn">
+                    Annuler
+                </button>
+
+                <button class="btn btn-danger" id="confirmRejectBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                    Refuser l'inscription
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REQUEST INFO MODAL -->
+    <div class="modal-overlay" id="requestInfoModal">
+
+        <div class="modal">
+
+            <button class="modal-close" id="closeRequestModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon orange">
+                <i class="fa-solid fa-file-circle-question"></i>
+            </div>
+
+            <h3>
+                Demander des informations
+            </h3>
+
+            <p>
+                Indiquez les informations ou documents supplémentaires nécessaires.
+            </p>
+
+            <label for="additionalRequest">
+                Demande
+            </label>
+
+            <textarea id="additionalRequest" rows="4"
+                placeholder="Ex. Merci de fournir une nouvelle copie du certificat médical..."></textarea>
+
+            <div class="modal-actions">
+
+                <button class="btn btn-secondary" id="cancelRequestBtn">
+                    Annuler
+                </button>
+
+                <button class="btn btn-primary" id="confirmRequestBtn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Envoyer la demande
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CANCEL REGISTRATION MODAL -->
+    <div class="modal-overlay" id="cancelRegistrationModal">
+
+        <div class="modal">
+
+            <button class="modal-close" id="closeCancelRegistrationModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon red">
+                <i class="fa-solid fa-ban"></i>
+            </div>
+
+            <h3>
+                Annuler l'inscription ?
+            </h3>
+
+            <p>
+                L'inscription sera marquée comme « Annulée ».
+            </p>
+
+            <div class="modal-actions">
+
+                <button class="btn btn-secondary" id="keepRegistrationBtn">
+                    Garder l'inscription
+                </button>
+
+                <button class="btn btn-danger" id="confirmCancelRegistrationBtn">
+                    Annuler l'inscription
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div>
+
+            <strong id="toastTitle">
+                Modification enregistrée
+            </strong>
+
+            <span id="toastMessage">
+                L'inscription a été mise à jour.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <script src="registration-details.js"></script>
+
+</body>
+
+</html>

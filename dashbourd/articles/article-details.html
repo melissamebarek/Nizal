@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Détails article — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="article-details.css">
+
+    <link rel="stylesheet" href="../sidabar.css">
+
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <img src="../../assest/logo.png" alt="logo" class="logoimg">
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+
+            <a href="./articles.html" class="nav-item active">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+
+            <a href="../boutique/products.html" class="nav-item">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Produits & Boutique</span>
+            </a>
+
+            <a href="../competitions/competitions.html" class="nav-item">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+
+            <a href="../registrations/registrations.html" class="nav-item">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Inscriptions</span>
+            </a>
+
+            <a href="../orders/orders.html" class="nav-item">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+
+
+
+        <!-- PAGE -->
+        <section class="page-content">
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+
+                <a href="articles.html">
+                    Articles
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>article details</span>
+
+            </div>
+
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div class="header-content">
+
+                    <div class="title-row">
+
+                        <h1>
+                        </h1>
+
+                        <span class="status published">
+                        </span>
+
+                    </div>
+
+                    <div class="article-meta">
+
+                        <span>
+                            <i class="fa-solid fa-layer-group"></i>
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <a href="edit-article.html?id=1" class="secondary-btn">
+                        <i class="fa-solid fa-pen"></i>
+                        Modifier
+                    </a>
+
+                    <button class="danger-btn" id="deleteArticleBtn">
+                        <i class="fa-solid fa-trash"></i>
+                        Supprimer
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT GRID -->
+            <div class="content-grid">
+
+                <!-- ARTICLE -->
+                <article class="article-card">
+
+                    <!-- COVER IMAGE FIRST -->
+                    <div class="cover-image">
+                        <img id="articleCover" src="" alt="Couverture de l'article">
+                    </div>
+
+                    <!-- ARTICLE CONTENT -->
+                    <div class="article-content">
+
+                        <!-- Category, title, introduction and body
+                             are inserted here by article-details.js -->
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- DELETE MODAL -->
+    <div class="modal-overlay" id="deleteModal">
+
+        <div class="modal">
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+
+            <h2>
+                Supprimer l'article ?
+            </h2>
+
+            <p>
+                Cette action est irréversible.
+                L'article sera définitivement supprimé.
+            </p>
+
+            <div class="modal-actions">
+
+                <button class="cancel-btn" id="cancelDelete">
+                    Annuler
+                </button>
+
+                <button class="confirm-delete" id="confirmDelete">
+                    Supprimer
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span>
+            Article supprimé avec succès.
+        </span>
+
+    </div>
+
+
+    <script src="article-details.js"></script>
+
+</body>
+
+</html>

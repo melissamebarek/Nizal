@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIZAL — Administration</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+    <script defer src="sidebar.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>NIZ</span><strong>AL</strong>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="index.html" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+
+            <a href="articles/articles.html" class="nav-item">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+
+            <a href="boutique/products.html" class="nav-item">
+                <i class="fa-solid fa-store"></i>
+                <span>Produits & Boutique</span>
+            </a>
+
+            <a href="competitions/competitions.html" class="nav-item">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+
+            <a href="registrations/registrations.html" class="nav-item">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Inscriptions</span>
+            </a>
+
+            <a href="orders/orders.html" class="nav-item">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="admin-mini">
+                <div class="admin-avatar">A</div>
+
+                <div>
+                    <strong>Administrateur</strong>
+                    <small>Admin</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="page-title">
+                <h1>Accueil</h1>
+                <p>Bienvenue dans votre espace d'administration NIZAL.</p>
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Articles</span>
+                        <strong id="articlesCount">—</strong>
+                    </div>
+
+                    <a href="articles/articles.html">Voir →</a>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Produits</span>
+                        <strong id="productsCount">—</strong>
+                    </div>
+
+                    <a href="boutique/products.html">Voir →</a>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Inscriptions</span>
+                        <strong id="registrationsCount">—</strong>
+                    </div>
+
+                    <a href="registrations/registrations.html">Voir →</a>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div class="stat-info">
+                        <span>Commandes</span>
+                        <strong id="ordersCount">—</strong>
+                    </div>
+
+                    <a href="orders/orders.html">Voir →</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT GRID -->
+            <div class="content-grid">
+
+
+                <!-- COMPETITIONS -->
+                <div class="dashboard-card competitions-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Compétitions</h2>
+                            <p>État actuel des compétitions</p>
+                        </div>
+
+                        <a href="competitions/competitions.html" class="view-link">
+                            Voir tout
+                        </a>
+
+                    </div>
+
+
+                    <div class="competition-summary">
+
+                        <div class="competition-number">
+                            <strong id="upcomingCompetitionsCount">—</strong>
+                            <span>compétitions à venir</span>
+                        </div>
+
+                        <div class="competition-open">
+                            <span class="status-dot"></span>
+                            <div>
+                                <strong id="openCompetitionsCount">—</strong>
+                                <span>inscription ouverte</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="competition-list" id="competitionList" aria-live="polite">
+                        <p class="dashboard-empty">Chargement des compétitions...</p>
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT ACTIVITY -->
+                <div class="dashboard-card activity-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Activité récente</h2>
+                            <p>Dernières actions</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-list" id="activityList" aria-live="polite">
+                        <p class="dashboard-empty">Chargement de l’activité...</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

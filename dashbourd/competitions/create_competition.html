@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIZAL — Nouvelle compétition</title>
+
+    <link rel="stylesheet" href="create-competition.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script defer src="../sidebar.js"></script>
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>NIZ</span><strong>AL</strong>
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-store"></i>
+                <span>Produits & Boutique</span>
+            </a>
+
+            <a href="competitions.html" class="nav-item active">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Inscriptions</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="admin-mini">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Administrateur</strong>
+                    <small>Admin</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+
+
+        <!-- FORM -->
+
+        <section class="page-content">
+
+
+            <form id="competitionForm">
+
+
+                <!-- BASIC INFORMATION -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+
+                        <h2>Informations générales</h2>
+
+                        <p>
+                            Les informations principales de la compétition.
+                        </p>
+
+                    </div>                    
+                    
+                    
+
+
+                    <div class="form-grid">
+
+                        <!-- COVER IMAGE -->
+                        
+                        <div class="form-group full">
+                        
+                            <label>
+                                Image de couverture
+                            </label>
+                        
+                            <div class="cover-image-editor">
+                        
+                                <div class="cover-image-preview">
+                        
+                                    <img id="coverImagePreview" src="" alt="Image de couverture">
+                        
+                                    <div class="cover-image-placeholder" id="coverImagePlaceholder">
+                        
+                                        <i class="fa-regular fa-image"></i>
+                        
+                                        <span>
+                                            Aucune image
+                                        </span>
+                        
+                                    </div>
+                        
+                                </div>
+                        
+                        
+                                <div class="cover-image-actions">
+                        
+                                    <label for="coverImage" class="cover-image-btn">
+                        
+                                        <i class="fa-solid fa-upload"></i>
+                        
+                                        Choisir une image
+                        
+                                    </label>
+                        
+                        
+                                    <input type="file" id="coverImage" accept="image/*" hidden>
+                        
+                        
+                                    <button type="button" id="removeCoverImage" class="remove-cover-btn">
+                        
+                                        <i class="fa-solid fa-trash"></i>
+                        
+                                        Supprimer
+                        
+                                    </button>
+                        
+                        
+                                    <small>
+                                        JPG, PNG ou WEBP — image recommandée 16:9
+                                    </small>
+                        
+                                </div>
+                        
+                            </div>
+                        
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Nom de la compétition *
+                            </label>
+
+                            <input type="text" id="competitionName" placeholder="Ex : NIZAL Fight Championship"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Sport *
+                            </label>
+
+                            <select id="sport" required>
+
+                                <option value="">
+                                    Sélectionner un sport
+                                </option>
+
+                                <option value="Boxing">Boxing</option>
+                                <option value="Karaté">Karaté</option>
+                                <option value="Judo">Judo</option>
+                                <option value="Wrestling">Wrestling</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Discipline *
+                            </label>
+
+                            <input type="text" id="discipline" placeholder="Ex : MMA Amateur" required>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Description
+                            </label>
+
+                            <textarea rows="5" placeholder="Décrivez la compétition..."></textarea>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DATE & LOCATION -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+
+                        <h2>Date et lieu</h2>
+
+                        <p>
+                            Définissez quand et où aura lieu la compétition.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Date *
+                            </label>
+
+                            <input type="date" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Heure de début *
+                            </label>
+
+                            <input type="time" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Heure de fin
+                            </label>
+
+                            <input type="time">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Lieu *
+                            </label>
+
+                            <input type="text" placeholder="Ex : Palais des Sports d'Alger" required>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Organisateur
+                            </label>
+
+                            <input type="text" placeholder="Nom de l'organisateur">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REGISTRATION -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+
+                        <h2>Inscriptions</h2>
+
+                        <p>
+                            Configurez les conditions de participation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Ouverture des inscriptions *
+                            </label>
+
+                            <input type="date" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Fermeture des inscriptions *
+                            </label>
+
+                            <input type="date" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Frais d'inscription
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input type="number" min="0" placeholder="0">
+
+                                <span>DZD</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Nombre maximum de participants
+                            </label>
+
+                            <input type="number" min="1" placeholder="Ex : 50">
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Conditions de participation
+                            </label>
+
+                            <textarea rows="4" placeholder="Conditions et critères d'éligibilité..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CATEGORIES -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+
+                        <h2>Catégories</h2>
+
+                        <p>
+                            Définissez les catégories disponibles
+                            pour cette compétition.
+                        </p>
+
+                    </div>
+
+
+                    <div class="category-structure">
+
+
+                        <div class="category-field">
+
+                            <label>Genre</label>
+
+                            <select>
+
+                                <option>
+                                    Hommes
+                                </option>
+
+                                <option>
+                                    Femmes
+                                </option>
+
+                                <option>
+                                    Hommes & Femmes
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="category-field">
+
+                            <label>Catégorie d'âge</label>
+
+                            <select>
+
+                                <option>
+                                    Toutes les catégories
+                                </option>
+
+                                <option>
+                                    Cadets
+                                </option>
+
+                                <option>
+                                    Juniors
+                                </option>
+
+                                <option>
+                                    Seniors
+                                </option>
+
+                                <option>
+                                    Vétérans
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="category-field">
+
+                            <label>Catégorie de poids</label>
+
+                            <select>
+
+                                <option>
+                                    Toutes les catégories
+                                </option>
+
+                                <option>
+                                    -60 kg
+                                </option>
+
+                                <option>
+                                    -65 kg
+                                </option>
+
+                                <option>
+                                    -70 kg
+                                </option>
+
+                                <option>
+                                    -75 kg
+                                </option>
+
+                                <option>
+                                    +75 kg
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DOCUMENTS -->
+
+                <div class="form-card">
+
+                    <div class="card-title">
+
+                        <div>
+
+                            <h2>
+                                Documents requis
+                            </h2>
+
+                            <p>
+                                Définissez les documents nécessaires
+                                pour cette compétition.
+                            </p>
+
+                        </div>
+
+
+                        <button type="button" class="secondary-btn" id="addDocumentBtn">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Ajouter un document
+
+                        </button>
+
+                    </div>
+
+
+                    <div id="documentsList" class="documents-list">
+
+                        <!-- Documents added with JS -->
+
+                    </div>
+
+
+                    <div class="documents-empty" id="documentsEmpty">
+
+                        <i class="fa-regular fa-file-lines"></i>
+
+                        <strong>
+                            Aucun document requis
+                        </strong>
+
+                        <span>
+                            Ajoutez les documents nécessaires
+                            pour cette compétition.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <a href="competitions.html" class="cancel-btn">
+                        Annuler
+                    </a>
+
+
+                    <button type="submit" class="primary-btn">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Créer la compétition
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="create-competition.js"></script>
+
+</body>
+
+</html>

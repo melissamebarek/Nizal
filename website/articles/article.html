@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="" lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@600;700&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="../nav.css">
+  <style>
+    .article-content h1,
+    .article-content h2,
+    .article-content h3 {
+      color: #111827;
+      font-family: Oswald, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.25;
+      margin-top: 1.4rem;
+      margin-bottom: .65rem;
+    }
+
+    .article-content h1 {
+      font-size: 2rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.65rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.25rem;
+    }
+
+    .article-content p {
+      margin: .65rem 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: .75rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .article-content ul {
+      list-style: disc;
+    }
+
+    .article-content ol {
+      list-style: decimal;
+    }
+
+    .article-content a {
+      color: #e10600;
+      text-decoration: underline;
+    }
+
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: .5rem;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #e10600;
+      padding: .5rem 1rem;
+      background: #f8f9fa;
+    }
+
+    .article-error {
+      color: #b91c1c;
+      background: #fef2f2;
+      padding: 1rem;
+      border-radius: .5rem;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#e10600",
+            "on-primary-container": "#ffffff",
+            "primary": "#e10600",
+            "secondary": "#0057ff",
+            "surface-container-high": "#f3f4f6",
+            "surface-container-low": "#f8f9fa",
+            "surface-container": "#f8f9fa",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "margin-sm": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "gutter-sm": "1rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "display-xl": [
+              "Oswald"
+            ],
+            "label-md": [
+              "Inter"
+            ],
+            "display-xl-mobile": [
+              "Oswald"
+            ],
+            "label-lg": [
+              "Inter"
+            ],
+            "title-md": [
+              "Inter"
+            ],
+            "display-lg-mobile": [
+              "Oswald"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "headline-md": [
+              "Oswald"
+            ],
+            "display-lg": [
+              "Oswald"
+            ],
+            "headline-lg": [
+              "Oswald"
+            ],
+            "data-metric": [
+              "Oswald"
+            ],
+            "headline-sm": [
+              "Oswald"
+            ],
+            "body-md": [
+              "Inter"
+            ]
+          },
+          "fontSize": {
+            "display-xl": [
+              "64px",
+              {
+                "lineHeight": "68px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-md": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.1em",
+                "fontWeight": "700"
+              }
+            ],
+            "display-xl-mobile": [
+              "40px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "0.03em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "18px",
+                "letterSpacing": "0.08em",
+                "fontWeight": "700"
+              }
+            ],
+            "title-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "display-lg-mobile": [
+              "32px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "24px",
+              {
+                "lineHeight": "30px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "display-lg": [
+              "48px",
+              {
+                "lineHeight": "52px",
+                "letterSpacing": "0.03em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-lg": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "data-metric": [
+              "28px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "15px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    };</script>
+</head>
+
+<body
+  class="bg-white font-body-md text-body-md text-slate-800 antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-white">
+  <header class="" id="header">
+
+    <!-- LOGO -->
+    <a href="../index.html" class="logo-link">
+      <img src="../../assest/logo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+      <ul>
+        <li>
+          <a href="../index.html">HOME</a>
+        </li>
+
+        <li>
+          <a href="actualites.html" class="active">ACTUALITES</a>
+        </li>
+
+        <li>
+          <a href="../event/events.html">EVENEMENTS</a>
+        </li>
+
+        <li>
+          <a href="../boutique/shop.html">BOUTIQUE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+
+      <a href="../search.html" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </a>
+
+      <a href="../boutique/cart.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </header>
+  <main class="w-full  bg-white flex-1">
+    <div class="flex flex-col w-full">
+      <!-- Reading Progress Bar -->
+
+      <!-- Breadcrumb & Top Bar -->
+      <section class="w-full max-w-[1440px] mx-auto px-margin-sm lg:px-margin pt-space-lg pb-space-sm">
+        <div aria-label="Fil d'Ariane"
+          class="flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider text-slate-500">
+          <a class="hover:text-slate-900 transition-colors" href="../index.html">Accueil</a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <a class="hover:text-slate-900 transition-colors" href="./actualites.html">Actualités</a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="text-slate-900 font-semibold">Article</span>
+        </div>
+      </section>
+      <!-- Editorial Hero Section -->
+      <section class="w-full max-w-[1440px] mx-auto px-margin-sm lg:px-margin pb-space-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-center">
+          <!-- Left Column: Editorial Meta & Title -->
+          <div class="lg:col-span-6 flex flex-col justify-center gap-space-md">
+
+            <h1 id="article-title"
+              class="font-display-xl text-display-xl-mobile lg:text-display-xl uppercase text-slate-900 font-bold tracking-tight leading-none text-balance">
+              Chargement de l’article…
+            </h1>
+            <p id="article-excerpt" class="font-body-lg text-body-lg text-slate-600 leading-relaxed font-normal">
+              Chargement du contenu…
+            </p>
+            <!-- Meta Bar -->
+            <div
+              class="flex items-center gap-space-md pt-space-xs text-slate-500 font-label-lg text-label-lg flex-wrap">
+              <div class="flex items-center gap-space-xs text-slate-900 font-semibold">
+                <span class="material-symbols-outlined text-[#e10600] text-[18px]">verified</span>
+                <span id="article-author">NIZAL Rédaction</span>
+              </div>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#e10600]"></span>
+              <span id="article-date" class="text-slate-600">—</span>
+              <div class="flex items-center gap-1 text-slate-500">
+
+
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Hero Fighter Visual -->
+          <div class="lg:col-span-6 relative group">
+            <div
+              class="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] rounded-lg overflow-hidden bg-slate-900 shadow-xl border border-gray-200">
+              <img id="article-cover"
+                class="w-full h-full object-cover object-top filter brightness-95 group-hover:scale-105 transition-transform duration-700 ease-out"
+                alt="Illustration de l’article" src="https://placehold.co/1200x800/111827/ffffff?text=NIZAL">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white pointer-events-none">
+                <span
+                  class="font-label-md text-label-md uppercase tracking-wider bg-black/70 backdrop-blur-md px-space-sm py-1 rounded">Octogone
+                  National • Alger</span>
+                <span class="font-headline-sm text-headline-sm tracking-wider text-red-500 font-bold">NIZAL
+                  BROADCAST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Editorial Main Area: Split Content + Sticky Utility Sidebar -->
+      <section class="w-full max-w-[1440px] mx-auto px-margin-sm lg:px-margin pb-space-xl">
+        <div class=" gap-space-lg lg:gap-space-xl relative">
+          <!-- Article Column (Desktop ~8 cols) -->
+          <article class="lg:col-span-8 flex flex-col gap-space-lg">
+            <div id="article-content" class="article-content flex flex-col gap-space-md text-slate-700 leading-relaxed">
+              <p>Chargement du contenu de l’article…</p>
+            </div>
+            <div class="flex items-center gap-space-sm flex-wrap pt-space-md border-t border-gray-200">
+              <span class="font-label-md text-label-md uppercase tracking-widest text-slate-500 font-bold">Catégorie
+                :</span>
+              <span id="article-category"
+                class="px-space-sm py-1 bg-gray-100 text-slate-800 font-label-md text-label-md uppercase tracking-wider rounded border border-gray-200">—</span>
+            </div>
+            <a href="./actualites.html"
+              class="inline-flex items-center gap-2 text-[#e10600] font-semibold hover:underline">
+              <span class="material-symbols-outlined">arrow_back</span> Retour aux actualités
+            </a>
+          </article>
+
+        </div>
+      </section>
+
+
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+            même endroit. Tournois, classements et billetterie officielle.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="actualites" href="../boutique/shop.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="athletes" href="../boutique/shop.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="evenements" href="../boutique/shop.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="boutique" href="../boutique/shop.html">Boutique</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="a-propos" href="../boutique/shop.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="../boutique/shop.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="faq" href="../boutique/shop.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="conditions-generales" href="../boutique/shop.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="politique-de-confidentialite" href="../boutique/shop.html">Politique de confidentialité</a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">TikTok</a></div>
+        </div>
+      </div>
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+        <p class="">© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider font-label-sm text-label-sm text-on-surface-variant">Plateforme Combat Sports
+          Haute Performance</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../nav.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+  <script src="./article.js" defer></script>
+
+
+
+
+
+</body>
+
+</html>

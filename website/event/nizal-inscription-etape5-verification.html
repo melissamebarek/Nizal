@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vérification du dossier | NIZAL</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#b30400",
+            "primary-container": "#e10600",
+            secondary: "#0042c7",
+            "secondary-container": "#0056fd",
+            tertiary: "#004dcb",
+            "tertiary-fixed": "#dbe1ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f3f9",
+            "surface-container": "#ededf3",
+            "surface-container-high": "#e8e8ed",
+            "surface-container-highest": "#e2e2e8",
+            background: "#f9f9ff",
+            "on-surface": "#1a1c20",
+            "on-surface-variant": "#5e3f3a",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#dce1ff"
+          },
+          fontFamily: {
+            headline: ["Oswald", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: #f9f9ff;
+      color: #1a1c20;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-headline {
+      font-family: Oswald, sans-serif;
+    }
+
+    .review-section {
+      padding: 20px;
+      border-radius: 12px;
+      background: #f3f3f9;
+      border: 1px solid #e8e8ed;
+      transition: border-color .2s;
+    }
+
+    .review-section:hover {
+      border-color: #0042c7;
+    }
+
+    .review-label {
+      display: block;
+      margin-bottom: 4px;
+      color: #5e3f3a;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .review-value {
+      overflow-wrap: anywhere;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .document-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      background: #ededf3;
+      border: 1px solid #e2e2e8;
+      font-size: 12px;
+    }
+
+    .message-error {
+      background: #ffdad6;
+      color: #93000a;
+    }
+
+    .message-success {
+      background: #dce1ff;
+      color: #003ab2;
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo-link">
+      <img src="../../assest/logo.png" alt="NIZAL Logo" class="logo">
+    </a>
+
+    <nav id="mainNav">
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../articles/actualites.html">ACTUALITÉS</a></li>
+        <li><a href="events.html" class="active">ÉVÉNEMENTS</a></li>
+        <li><a href="../boutique/shop.html">BOUTIQUE</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a href="../search.html" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </a>
+      <a href="../boutique/cart.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="min-h-screen bg-background">
+    <div class="max-w-[920px] mx-auto px-4 py-10">
+
+      <!-- Competition header -->
+      <section class="mb-8">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">
+            COMPÉTITION OFFICIELLE · NIZAL
+          </span>
+        </div>
+
+        <h1 class="text-3xl md:text-4xl uppercase tracking-tight">
+          Inscription à la compétition
+        </h1>
+
+        <div class="mt-3 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-surface-container-high">
+          <span class="material-symbols-outlined text-secondary">sports_mma</span>
+          <span id="competition-summary" class="text-sm font-semibold">
+            Chargement de la compétition...
+          </span>
+        </div>
+      </section>
+
+      <!-- Progress -->
+      <nav aria-label="Progression de l'inscription" class="bg-white rounded-xl p-4 mb-8 shadow-sm">
+        <ol class="grid grid-cols-2 md:grid-cols-6 gap-3">
+          <li class="flex items-center gap-2">
+            <span
+              class="w-7 h-7 rounded-full bg-tertiary-fixed text-secondary flex items-center justify-center">✓</span>
+            <span class="text-xs font-semibold">01 Informations</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span
+              class="w-7 h-7 rounded-full bg-tertiary-fixed text-secondary flex items-center justify-center">✓</span>
+            <span class="text-xs font-semibold">02 Profil</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span
+              class="w-7 h-7 rounded-full bg-tertiary-fixed text-secondary flex items-center justify-center">✓</span>
+            <span class="text-xs font-semibold">03 Catégorie</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span
+              class="w-7 h-7 rounded-full bg-tertiary-fixed text-secondary flex items-center justify-center">✓</span>
+            <span class="text-xs font-semibold">04 Documents</span>
+          </li>
+          <li aria-current="step" class="flex items-center gap-2">
+            <span
+              class="w-7 h-7 rounded-full bg-secondary text-white flex items-center justify-center font-bold">05</span>
+            <span class="text-xs font-bold text-secondary">Vérification</span>
+          </li>
+          <li class="flex items-center gap-2 opacity-50">
+            <span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center">06</span>
+            <span class="text-xs font-semibold">Confirmation</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Review card -->
+      <div class="bg-white rounded-2xl p-5 sm:p-10 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-secondary to-primary"></div>
+
+        <section class="mb-8 mt-2">
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-secondary text-xs font-bold mb-3">
+            ÉTAPE 05 / 06
+          </span>
+          <h2 class="text-2xl md:text-3xl uppercase mb-2">Vérification du dossier</h2>
+          <p class="text-sm text-on-surface-variant">
+            Vérifiez les informations enregistrées avant de confirmer votre inscription.
+          </p>
+        </section>
+
+        <!-- Personal information -->
+        <section class="review-section mb-4">
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <h3 class="text-lg uppercase">1. Informations personnelles</h3>
+            <a href="./nizal-inscription-informations(1).html"
+              class="text-sm text-secondary font-semibold hover:underline shrink-0">
+              <span class="material-symbols-outlined text-sm align-middle">edit</span>
+              Modifier
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div>
+              <span class="review-label">Nom complet</span>
+              <span id="review-full-name" class="review-value font-semibold">—</span>
+            </div>
+            <div>
+              <span class="review-label">Date de naissance</span>
+              <span id="review-birth-date" class="review-value">—</span>
+            </div>
+            <div>
+              <span class="review-label">Genre & téléphone</span>
+              <span id="review-gender-phone" class="review-value">—</span>
+            </div>
+            <div>
+              <span class="review-label">Courriel</span>
+              <span id="review-email" class="review-value">—</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sports profile -->
+        <section class="review-section mb-4">
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <h3 class="text-lg uppercase">2. Profil sportif</h3>
+            <a href="./etap2.html" class="text-sm text-secondary font-semibold hover:underline shrink-0">
+              <span class="material-symbols-outlined text-sm align-middle">edit</span>
+              Modifier
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div>
+              <span class="review-label">Discipline</span>
+              <span id="review-discipline" class="review-value font-semibold">—</span>
+            </div>
+            <div>
+              <span class="review-label">Rang / statut</span>
+              <span id="review-level" class="review-value">—</span>
+            </div>
+            <div>
+              <span class="review-label">Club affilié</span>
+              <span id="review-club" class="review-value">—</span>
+            </div>
+            <div>
+              <span class="review-label">Poids & expérience</span>
+              <span id="review-weight-experience" class="review-value">—</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Category -->
+        <section class="review-section mb-4">
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <h3 class="text-lg uppercase">3. Catégorie & division</h3>
+            <a href="./nizal-inscription-etape3-categorie.html"
+              class="text-sm text-secondary font-semibold hover:underline shrink-0">
+              <span class="material-symbols-outlined text-sm align-middle">edit</span>
+              Modifier
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <span class="review-label">Division de poids</span>
+              <span id="review-weight-category" class="review-value font-semibold text-primary">—</span>
+            </div>
+            <div>
+              <span class="review-label">Tranche d'âge</span>
+              <span id="review-age-category" class="review-value">—</span>
+            </div>
+            <div>
+              <span class="review-label">Frais d'engagement</span>
+              <span id="review-registration-fee" class="review-value font-semibold">—</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Documents -->
+        <section class="review-section mb-4">
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <h3 class="text-lg uppercase">4. Documents téléversés</h3>
+            <a href="./nizal-inscription-etape4-documents.html"
+              class="text-sm text-secondary font-semibold hover:underline shrink-0">
+              <span class="material-symbols-outlined text-sm align-middle">edit</span>
+              Modifier
+            </a>
+          </div>
+
+          <div id="review-documents" class="flex flex-wrap gap-2">
+            <span class="text-sm text-on-surface-variant">Chargement des documents...</span>
+          </div>
+          <p class="mt-3 text-xs text-on-surface-variant">
+            Les fichiers seront envoyés au serveur lors de la confirmation.
+          </p>
+        </section>
+
+        <!-- Total -->
+        <section
+          class="mt-6 p-5 sm:p-6 rounded-xl bg-surface-container border border-secondary/20 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-center md:text-left">
+            <div
+              class="flex items-center justify-center md:justify-start gap-2 text-secondary text-sm font-bold uppercase tracking-wider">
+              <span class="material-symbols-outlined">payments</span>
+              Total des frais d'inscription
+            </div>
+            <p class="text-xs text-on-surface-variant mt-2">
+              Le montant affiché provient de la catégorie sélectionnée.
+            </p>
+          </div>
+
+          <div class="text-center md:text-right">
+            <div id="review-total-fee" class="font-headline text-4xl font-bold">—</div>
+            <span class="text-xs uppercase tracking-wide text-on-surface-variant">
+              Frais d'inscription
+            </span>
+          </div>
+        </section>
+
+        <!-- Submit -->
+        <form id="review-form" class="mt-6 pt-5 border-t border-surface-container-high">
+          <label class="flex items-start gap-3 text-sm">
+            <input type="checkbox" id="accept-terms" required class="mt-1">
+            <span>J'accepte les conditions d'inscription.</span>
+          </label>
+
+          <p id="review-message" class="hidden mt-4 rounded-lg p-3 text-sm" role="status" aria-live="polite"></p>
+
+          <div
+            class="pt-6 mt-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-4 border-t border-surface-container-high">
+            <a href="./nizal-inscription-etape4-documents.html"
+              class="w-full sm:w-auto px-6 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container font-semibold text-sm uppercase text-center">
+              <span class="material-symbols-outlined text-sm align-middle">arrow_back</span>
+              Retour
+            </a>
+
+            <button type="submit"
+              class="w-full sm:w-auto px-8 py-3 rounded-lg bg-primary-container hover:bg-primary text-white font-bold text-sm uppercase flex items-center justify-center gap-2">
+              <span id="review-submit-label">Confirmer mon inscription</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-5 text-xs text-on-surface-variant uppercase">
+        <span><span class="material-symbols-outlined text-sm align-middle text-secondary">gavel</span> Règlementation
+          MMA</span>
+        <span><span class="material-symbols-outlined text-sm align-middle text-secondary">lock</span> Données
+          protégées</span>
+        <span><span class="material-symbols-outlined text-sm align-middle text-secondary">verified_user</span>
+          Inscription sécurisée</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-surface-container-low mt-10">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <div class="font-headline text-2xl uppercase">NIZAL</div>
+          <p class="text-sm text-on-surface-variant mt-3 max-w-xs">
+            Le monde des sports de combat, réuni au même endroit.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-headline uppercase mb-3">Navigation</h3>
+          <nav class="flex flex-col gap-2 text-sm text-on-surface-variant">
+            <a href="../articles/actualites.html">Actualités</a>
+            <a href="events.html">Événements</a>
+            <a href="../boutique/shop.html">Boutique</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class="font-headline uppercase mb-3">Informations</h3>
+          <nav class="flex flex-col gap-2 text-sm text-on-surface-variant">
+            <a href="../boutique/shop.html">À propos</a>
+            <a href="../boutique/shop.html">Contact</a>
+            <a href="../boutique/shop.html">Conditions générales</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class="font-headline uppercase mb-3">Suivez-nous</h3>
+          <nav class="flex flex-col gap-2 text-sm text-on-surface-variant">
+            <a href="../boutique/shop.html">Instagram</a>
+            <a href="../boutique/shop.html">Facebook</a>
+            <a href="../boutique/shop.html">YouTube</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-5 border-t border-surface-container-high text-xs text-on-surface-variant">
+        © 2026 NIZAL. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Keep the existing API endpoint unchanged.
+    const API_BASE = "http://localhost:5000/api";
+    const SUBMIT_URL = `${API_BASE}/registrations`;
+
+    const STORAGE_KEY = "nizalRegistrationDraft";
+    const CONFIRMATION_KEY = "nizalRegistrationConfirmation";
+    const DB_NAME = "nizalRegistrationFiles";
+    const DB_STORE = "documents";
+
+    const reviewForm = document.getElementById("review-form");
+    const termsCheckbox = document.getElementById("accept-terms");
+    const reviewMessage = document.getElementById("review-message");
+
+    function getDraft() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      } catch (error) {
+        console.error("Impossible de lire le brouillon :", error);
+        return {};
+      }
+    }
+
+    function readValue(object, ...keys) {
+      for (const key of keys) {
+        const value = object?.[key];
+
+        if (value !== undefined && value !== null && value !== "") {
+          return value;
+        }
+      }
+
+      return "";
+    }
+
+    function setReviewText(id, value, fallback = "Non renseigné") {
+      const element = document.getElementById(id);
+      if (!element) return;
+
+      element.textContent =
+        value !== undefined && value !== null && value !== ""
+          ? String(value)
+          : fallback;
+    }
+
+    function formatDate(value) {
+      if (!value) return "";
+
+      const dateOnly = String(value).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+
+      if (dateOnly) {
+        return `${dateOnly[3]}/${dateOnly[2]}/${dateOnly[1]}`;
+      }
+
+      const date = new Date(value);
+
+      return Number.isNaN(date.getTime())
+        ? String(value)
+        : new Intl.DateTimeFormat("fr-DZ").format(date);
+    }
+
+    function calculateAge(value) {
+      if (!value) return null;
+
+      const date = new Date(value);
+
+      if (Number.isNaN(date.getTime())) return null;
+
+      const today = new Date();
+      let age = today.getFullYear() - date.getFullYear();
+
+      if (
+        today.getMonth() < date.getMonth() ||
+        (
+          today.getMonth() === date.getMonth() &&
+          today.getDate() < date.getDate()
+        )
+      ) {
+        age--;
+      }
+
+      return age >= 0 ? age : null;
+    }
+
+    function formatMoney(value) {
+      if (value === "" || value === null || value === undefined) {
+        return "Non renseigné";
+      }
+
+      const amount = Number(value);
+
+      if (!Number.isFinite(amount)) {
+        return `${value} DA`;
+      }
+
+      return `${new Intl.NumberFormat("fr-DZ", {
+        maximumFractionDigits: 2
+      }).format(amount)} DA`;
+    }
+
+    function getCompetitionId(draft) {
+      const params = new URLSearchParams(window.location.search);
+
+      const value =
+        params.get("id") ??
+        draft.competitionId ??
+        draft.competition_id ??
+        draft.step1?.competitionId ??
+        draft.step2?.competitionId ??
+        draft.step3?.competitionId;
+
+      const id = Number(value);
+
+      return Number.isSafeInteger(id) && id > 0 ? id : null;
+    }
+
+    function showMessage(message, type = "error") {
+      if (!reviewMessage) {
+        alert(message);
+        return;
+      }
+
+      reviewMessage.textContent = message;
+      reviewMessage.classList.remove(
+        "hidden", "message-error", "message-success"
+      );
+
+      reviewMessage.classList.add(
+        type === "success" ? "message-success" : "message-error"
+      );
+    }
+
+    function getDocumentEntries(draft) {
+      const step4 = draft.step4 || {};
+      const source = step4.documents || step4.uploadedDocuments || [];
+
+      if (!Array.isArray(source)) {
+        throw new Error("La liste des documents de l'étape 4 est invalide.");
+      }
+
+      return source.map(item => ({
+        documentId: Number(
+          item.documentId ??
+          item.document_id ??
+          item.competitionDocumentId
+        ),
+        name: item.name || item.documentName || "Document",
+        required: item.required !== false,
+        fileName: item.fileName || item.file_name || null,
+        fileSaved: Boolean(item.fileSaved)
+      }));
+    }
+
+    function renderReviewDocuments(draft) {
+      const container = document.getElementById("review-documents");
+      if (!container) return;
+
+      container.replaceChildren();
+
+      const entries = getDocumentEntries(draft);
+
+      if (!entries.length) {
+        const empty = document.createElement("span");
+        empty.className = "text-sm text-on-surface-variant";
+        empty.textContent = "Aucun document enregistré à l'étape 4.";
+        container.appendChild(empty);
+        return;
+      }
+
+      entries.forEach(item => {
+        const badge = document.createElement("span");
+        badge.className = "document-badge";
+
+        const icon = document.createElement("span");
+        icon.className = "material-symbols-outlined text-secondary";
+        icon.textContent = "description";
+
+        const name = document.createElement("span");
+        name.textContent = item.name;
+
+        const status = document.createElement("strong");
+        status.className = "text-secondary";
+        status.textContent = item.fileName
+          ? item.fileName
+          : item.required
+            ? "Fichier à vérifier"
+            : "Optionnel";
+
+        badge.append(icon, name, status);
+        container.appendChild(badge);
+      });
+    }
+
+    function renderRegistrationReview() {
+      const draft = getDraft();
+
+      const step1 = draft.step1 || {};
+      const step2 = draft.step2 || {};
+      const step3 = draft.step3 || {};
+
+      // Step 1: Personal details
+      const firstName = readValue(step1, "firstName", "first_name");
+      const lastName = readValue(step1, "lastName", "last_name");
+
+      const birthDate = readValue(
+        step1,
+        "dateOfBirth",
+        "date_of_birth",
+        "birthDate",
+        "birth_date",
+        "dob"
+      );
+
+      const gender = readValue(step1, "gender", "sexe");
+      const phone = readValue(step1, "phone", "telephone", "mobile");
+      const email = readValue(step1, "email", "courriel");
+
+      setReviewText(
+        "review-full-name",
+        [firstName, lastName].filter(Boolean).join(" ")
+      );
+
+      const age = calculateAge(birthDate);
+
+      setReviewText(
+        "review-birth-date",
+        birthDate
+          ? `${formatDate(birthDate)}${age !== null ? ` (${age} ans)` : ""}`
+          : ""
+      );
+
+      setReviewText(
+        "review-gender-phone",
+        [gender, phone].filter(Boolean).join(" · ")
+      );
+
+      setReviewText("review-email", email);
+
+      // Step 2: Sport profile
+      const sport = readValue(step2, "sport") ||
+        readValue(step3, "sport");
+
+      const discipline = readValue(
+        step2, "discipline", "sportDiscipline", "sport_discipline"
+      ) || readValue(step3, "discipline");
+
+      const level = readValue(
+        step2,
+        "experienceLevel",
+        "experience_level",
+        "level",
+        "niveau",
+        "status",
+        "statut"
+      );
+
+      const club = readValue(
+        step2, "clubName", "club_name", "club", "affiliatedClub"
+      );
+
+      const declaredWeight = readValue(
+        step2, "weight", "weightKg", "weight_kg", "poids"
+      );
+
+      const experience = readValue(
+        step2,
+        "experienceYears",
+        "experience_years",
+        "yearsOfExperience",
+        "years_of_experience",
+        "experience",
+        "anciennete"
+      );
+
+      setReviewText(
+        "review-discipline",
+        [sport, discipline].filter(Boolean).join(" — ")
+      );
+
+      setReviewText("review-level", level);
+      setReviewText("review-club", club);
+
+      const weightExperience = [
+        declaredWeight !== "" ? `${declaredWeight} kg` : "",
+        experience !== ""
+          ? (
+            /^\d+(\.\d+)?$/.test(String(experience))
+              ? `${experience} an(s) de pratique`
+              : String(experience)
+          )
+          : ""
+      ].filter(Boolean).join(" · ");
+
+      setReviewText("review-weight-experience", weightExperience);
+
+      // Step 3: Category
+      const weightCategory = readValue(
+        step3,
+        "weightCategory",
+        "weight_category",
+        "weightClass",
+        "weight_class",
+        "categoryName",
+        "category_name",
+        "division"
+      );
+
+      const ageCategory = readValue(
+        step3,
+        "ageCategory",
+        "age_category",
+        "ageGroup",
+        "age_group"
+      );
+
+      const fee = readValue(
+        step3,
+        "registrationFee",
+        "registration_fee",
+        "fee",
+        "price",
+        "amount"
+      );
+
+      setReviewText("review-weight-category", weightCategory);
+      setReviewText("review-age-category", ageCategory);
+      setReviewText("review-registration-fee", formatMoney(fee));
+      setReviewText("review-total-fee", formatMoney(fee));
+
+      const submitLabel = document.getElementById("review-submit-label");
+
+      if (submitLabel) {
+        submitLabel.textContent = `Confirmer mon inscription (${formatMoney(fee)})`;
+      }
+
+      // Competition summary
+      const competitionSummary = document.getElementById("competition-summary");
+      if (competitionSummary) {
+        const competitionName = readValue(
+          draft,
+          "competitionName",
+          "competition_name"
+        ) || readValue(
+          step1,
+          "competitionName",
+          "competition_name"
+        ) || readValue(
+          step3,
+          "competitionName",
+          "competition_name"
+        );
+
+        competitionSummary.textContent = competitionName ||
+          (getCompetitionId(draft)
+            ? `Compétition #${getCompetitionId(draft)}`
+            : "Compétition sélectionnée");
+      }
+
+      try {
+        renderReviewDocuments(draft);
+      } catch (error) {
+        console.error("Erreur documents :", error);
+
+        const container = document.getElementById("review-documents");
+        if (container) {
+          container.textContent = "Impossible de lire les documents enregistrés.";
+        }
+      }
+    }
+
+    function openDatabase() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, 1);
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+
+    function readStoredFile(db, key) {
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction(DB_STORE, "readonly");
+        const request = transaction.objectStore(DB_STORE).get(key);
+
+        request.onsuccess = () => resolve(request.result || null);
+        request.onerror = () => reject(request.error);
+      });
+    }
+
+    function validateRegistration(draft, competitionId) {
+      if (!competitionId) {
+        throw new Error("Identifiant de compétition invalide.");
+      }
+
+      if (!draft.step1 || !draft.step2 || !draft.step3 || !draft.step4) {
+        throw new Error(
+          "Certaines étapes sont incomplètes. Revenez aux étapes précédentes."
+        );
+      }
+
+      if (!termsCheckbox.checked) {
+        throw new Error("Vous devez accepter les conditions d'inscription.");
+      }
+
+      const step1 = draft.step1;
+      const step3 = draft.step3;
+
+      const firstName = readValue(step1, "firstName", "first_name");
+      const lastName = readValue(step1, "lastName", "last_name");
+      const email = readValue(step1, "email", "courriel");
+
+      if (!firstName || !lastName || !email) {
+        throw new Error(
+          "Les informations personnelles sont incomplètes. Vérifiez l'étape 1."
+        );
+      }
+
+      const categoryId = Number(
+        step3.competitionCategoryId ??
+        step3.competition_category_id ??
+        step3.categoryId ??
+        step3.category_id ??
+        draft.categoryId
+      );
+
+      if (!Number.isSafeInteger(categoryId) || categoryId <= 0) {
+        throw new Error(
+          "Identifiant de catégorie manquant. Revenez à l'étape 3."
+        );
+      }
+
+      return categoryId;
+    }
+
+    async function appendDocuments(payload, competitionId, entries) {
+      if (!window.indexedDB) {
+        throw new Error("Le stockage local des fichiers est indisponible.");
+      }
+
+      const db = await openDatabase();
+
+      try {
+        let uploadedCount = 0;
+        const seenIds = new Set();
+
+        for (const item of entries) {
+          if (!Number.isSafeInteger(item.documentId) || item.documentId <= 0) {
+            throw new Error(
+              `Identifiant invalide pour le document « ${item.name} ».`
+            );
+          }
+
+          if (seenIds.has(item.documentId)) {
+            throw new Error(
+              `Identifiant dupliqué pour le document « ${item.name} ».`
+            );
+          }
+
+          seenIds.add(item.documentId);
+
+          const key = `${competitionId}:${item.documentId}`;
+          const stored = await readStoredFile(db, key);
+
+          if (!stored?.blob || !(stored.blob instanceof Blob)) {
+            if (item.required) {
+              throw new Error(
+                `Le document obligatoire « ${item.name} » est introuvable. ` +
+                "Retournez à l'étape 4 et sélectionnez-le à nouveau."
+              );
+            }
+
+            continue;
+          }
+
+          const filename =
+            stored.name || item.fileName || `document-${item.documentId}`;
+
+          payload.append("documentKeys", String(item.documentId));
+          payload.append("documents", stored.blob, filename);
+
+          uploadedCount++;
+        }
+
+        const requiredCount = entries.filter(item => item.required).length;
+
+        if (uploadedCount < requiredCount) {
+          throw new Error("Tous les documents obligatoires doivent être joints.");
+        }
+
+        return uploadedCount;
+      } finally {
+        db.close();
+      }
+    }
+
+    async function submitRegistration(event) {
+      event.preventDefault();
+
+      const submitButton = reviewForm.querySelector('button[type="submit"]');
+
+      if (submitButton.disabled) return;
+
+      submitButton.disabled = true;
+
+      try {
+        const draft = getDraft();
+        const competitionId = getCompetitionId(draft);
+        const categoryId = validateRegistration(draft, competitionId);
+        const documentEntries = getDocumentEntries(draft);
+
+        const registration = {
+          competitionId,
+          step1: draft.step1,
+          step2: draft.step2,
+          step3: {
+            ...draft.step3,
+            categoryId,
+            competitionCategoryId: categoryId
+          },
+          step4: draft.step4,
+          termsAccepted: Boolean(termsCheckbox.checked)
+        };
+
+        const payload = new FormData();
+        payload.append("registration", JSON.stringify(registration));
+
+        await appendDocuments(payload, competitionId, documentEntries);
+
+        showMessage("Envoi de votre inscription...", "success");
+
+        // API endpoint and request method remain unchanged.
+        const response = await fetch(SUBMIT_URL, {
+          method: "POST",
+          body: payload
+        });
+
+        let result;
+
+        try {
+          result = await response.json();
+        } catch {
+          throw new Error("Le serveur a retourné une réponse invalide.");
+        }
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message || "L'envoi de l'inscription a échoué."
+          );
+        }
+
+        sessionStorage.setItem(
+          CONFIRMATION_KEY,
+          JSON.stringify(result.data || result)
+        );
+
+        // Remove the draft only after server confirmation.
+        localStorage.removeItem(STORAGE_KEY);
+
+        window.location.href =
+          "./nizal-inscription-etape6-confirmation.html?id=" +
+          encodeURIComponent(competitionId);
+
+      } catch (error) {
+        console.error("Erreur d'inscription :", error);
+        showMessage(error.message || "Une erreur est survenue.", "error");
+        submitButton.disabled = false;
+      }
+    }
+
+    renderRegistrationReview();
+    reviewForm.addEventListener("submit", submitRegistration);
+  </script>
+
+  <script src="../nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Détails compétition — NIZAL</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="competition-details.css">
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>N</span>
+            <strong>NIZAL</strong>
+        </div>
+
+        <nav>
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+
+            <a href="articles.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+
+            <a href="products.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Produits & Boutique</span>
+            </a>
+
+            <a href="competitions.html" class="active">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+
+            <a href="registrations.html">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Inscriptions</span>
+            </a>
+
+            <a href="orders.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="page-content">
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="competitions.html">Compétitions</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>NIZAL Fight Championship</span>
+            </div>
+
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <div class="title-row">
+                        <h1>NIZAL Fight Championship</h1>
+
+                        <span class="status-badge open">
+                            Inscription ouverte
+                        </span>
+                    </div>
+
+                    <p>
+                        Détails et informations de la compétition
+                    </p>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="edit-competition.html" class="btn btn-primary" id="editCompetition">
+                        <i class="fa-solid fa-pen"></i>
+                        Modifier
+                    </a>
+
+                    <button class="btn btn-danger" id="deleteCompetition">
+                        <i class="fa-solid fa-trash"></i>
+                        Supprimer
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- COVER -->
+            <div class="competition-cover">
+
+                <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1400&q=80"
+                    alt="NIZAL Fight Championship">
+
+                <div class="cover-overlay">
+
+                    <div>
+                        <span class="cover-sport">MMA</span>
+                        <h2>NIZAL Fight Championship</h2>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GENERAL INFO -->
+            <div class="section-card">
+
+                <div class="section-title">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h2>Informations générales</h2>
+                </div>
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+                        <span>Sport</span>
+                        <strong>MMA</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Discipline</span>
+                        <strong>MMA Amateur</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Organisateur</span>
+                        <strong>NIZAL</strong>
+                    </div>
+
+                    <div class="info-item full">
+                        <span>Description</span>
+
+                        <p>
+                            Le NIZAL Fight Championship est une compétition
+                            dédiée aux pratiquants de MMA. Elle rassemble
+                            différents participants dans plusieurs catégories
+                            d'âge, de genre et de poids.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATE & LOCATION -->
+            <div class="two-columns">
+
+                <div class="section-card">
+
+                    <div class="section-title">
+                        <i class="fa-regular fa-calendar"></i>
+                        <h2>Date & horaires</h2>
+                    </div>
+
+                    <div class="info-list">
+
+                        <div class="info-row">
+                            <span>Date</span>
+                            <strong>18 Octobre 2026</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Heure de début</span>
+                            <strong>09:00</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Heure de fin</span>
+                            <strong>18:00</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="section-card">
+
+                    <div class="section-title">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h2>Lieu</h2>
+                    </div>
+
+                    <div class="info-list">
+
+                        <div class="info-row">
+                            <span>Lieu</span>
+                            <strong>Palais des Sports</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Ville</span>
+                            <strong>Alger</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REGISTRATION -->
+            <div class="section-card">
+
+                <div class="section-title">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <h2>Inscriptions</h2>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="mini-stat">
+                        <span>Ouverture</span>
+                        <strong>01 Septembre 2026</strong>
+                    </div>
+
+                    <div class="mini-stat">
+                        <span>Fermeture</span>
+                        <strong>15 Octobre 2026</strong>
+                    </div>
+
+                    <div class="mini-stat">
+                        <span>Frais</span>
+                        <strong>2 000 DZD</strong>
+                    </div>
+
+                    <div class="mini-stat">
+                        <span>Participants</span>
+                        <strong>32 / 50</strong>
+                    </div>
+
+                </div>
+
+                <div class="requirements">
+
+                    <h3>Conditions de participation</h3>
+
+                    <p>
+                        Être âgé d'au moins 18 ans et respecter les conditions
+                        définies pour la catégorie choisie.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORIES -->
+            <div class="section-card">
+
+                <div class="section-title">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h2>Catégories</h2>
+                </div>
+
+                <div class="category-table">
+
+                    <div class="category-header">
+                        <span>Genre</span>
+                        <span>Âge</span>
+                        <span>Poids</span>
+                    </div>
+
+                    <div class="category-row">
+                        <span>Hommes</span>
+                        <span>18 – 24 ans</span>
+                        <span>-66 kg</span>
+                    </div>
+
+                    <div class="category-row">
+                        <span>Hommes</span>
+                        <span>18 – 24 ans</span>
+                        <span>-77 kg</span>
+                    </div>
+
+                    <div class="category-row">
+                        <span>Hommes</span>
+                        <span>25 – 34 ans</span>
+                        <span>-77 kg</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REQUIRED DOCUMENTS -->
+            <div class="section-card">
+
+                <div class="section-title">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <h2>Documents requis</h2>
+                </div>
+
+                <div class="documents-list">
+                    <p>Chargement des documents...</p>
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER ACTIONS -->
+            <div class="bottom-actions">
+
+                <a href="competitions.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Retour aux compétitions
+                </a>
+
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- DELETE MODAL -->
+    <div class="modal" id="deleteModal">
+
+        <div class="modal-content">
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+
+            <h2>Supprimer la compétition ?</h2>
+
+            <p>
+                Cette action est irréversible. Toutes les informations
+                associées à cette compétition seront supprimées.
+            </p>
+
+            <div class="modal-actions">
+
+                <button class="btn btn-secondary" id="cancelDelete">
+                    Annuler
+                </button>
+
+                <button class="btn btn-danger" id="confirmDelete">
+                    Supprimer
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="competition-details.js"></script>
+
+</body>
+
+</html>

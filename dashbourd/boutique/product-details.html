@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIZAL — Détails du produit</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="product-details.css">
+
+    <link rel="stylesheet" href="../sidabar.css">
+
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+        
+            <div class="logo">
+                <img src="../../assest/logo.png" alt="logo" class="logoimg">
+            </div>
+        
+            <nav class="sidebar-nav">
+        
+                <a href="../index.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Accueil</span>
+                </a>
+        
+                <a href="../articles/articles.html" class="nav-item active">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+        
+                <a href="./products.html" class="nav-item">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Produits & Boutique</span>
+                </a>
+        
+                <a href="../competitions/competitions.html" class="nav-item">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Compétitions</span>
+                </a>
+        
+                <a href="../registrations/registrations.html" class="nav-item">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <span>Inscriptions</span>
+                </a>
+        
+                <a href="../orders/orders.html" class="nav-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Commandes</span>
+                </a>
+        
+            </nav>
+        
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-title">
+                    Produits & Boutique
+                </div>
+
+
+            </header>
+
+            <!-- CONTENT -->
+            <section class="content">
+
+                <!-- BREADCRUMB -->
+                <div class="breadcrumb">
+                    <a href="products.html">Produits & Boutique</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>NIZAL Fight T-Shirt</span>
+                </div>
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+
+                    <div>
+                        <div class="title-row">
+                            <h1>NIZAL Fight T-Shirt</h1>
+                            <span class="status available">
+                                <span></span>
+                                Disponible
+                            </span>
+                        </div>
+
+                        <p>
+                            Détails et informations du produit
+                        </p>
+                    </div>
+
+                    <div class="header-actions">
+
+                        <a href="edit-product.html" class="btn btn-primary">
+                            <i class="fa-solid fa-pen"></i>
+                            Modifier
+                        </a>
+
+                        <button class="btn btn-danger-outline" id="deleteBtn">
+                            <i class="fa-solid fa-trash"></i>
+                            Supprimer
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT TOP -->
+                <div class="product-layout">
+
+                    <!-- PHOTOS -->
+                    <div class="card photos-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h2>Photos du produit</h2>
+                                <p>Galerie du produit</p>
+                            </div>
+                        </div>
+
+                        <div class="main-image-wrapper">
+                            <img id="mainImage"
+                                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=80"
+                                alt="NIZAL Fight T-Shirt">
+                        </div>
+
+                        <div class="thumbnails">
+
+                            <button class="thumbnail active"
+                                data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=80">
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=300&q=80"
+                                    alt="">
+                            </button>
+
+                            <button class="thumbnail"
+                                data-image="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1000&q=80">
+                                <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=300&q=80"
+                                    alt="">
+                            </button>
+
+                            <button class="thumbnail"
+                                data-image="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80">
+                                <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=300&q=80"
+                                    alt="">
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BASIC INFO -->
+                    <div class="card info-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h2>Informations du produit</h2>
+                                <p>Informations générales</p>
+                            </div>
+                        </div>
+
+                        <div class="info-list">
+
+                            <div class="info-item">
+                                <span>Nom</span>
+                                <strong>NIZAL Fight T-Shirt</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <span>Catégorie</span>
+                                <strong>Vêtements</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <span>Prix</span>
+                                <strong>3 500 DZD</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <span>Réduction</span>
+                                <strong class="discount">10%</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <span>Prix après réduction</span>
+                                <strong class="final-price">3 150 DZD</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="description">
+
+                            <h3>Description</h3>
+
+                            <p>
+                                T-shirt officiel NIZAL conçu pour les passionnés
+                                de sports de combat. Coupe confortable et tissu
+                                adapté à une utilisation quotidienne ou sportive.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- STOCK -->
+                <div class="card stock-card">
+
+                    <div class="card-header stock-header">
+
+                        <div>
+                            <h2>Variantes & Stock</h2>
+                            <p>Disponibilité des différentes variantes</p>
+                        </div>
+
+                        <div class="stock-total">
+                            <span>Stock total</span>
+                            <strong>15 unités</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Couleur</th>
+                                    <th>Taille</th>
+                                    <th>Stock</th>
+                                    <th>Statut</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <span class="color-name">
+                                            <span class="color-dot red"></span>
+                                            Rouge
+                                        </span>
+                                    </td>
+
+                                    <td>S</td>
+
+                                    <td class="stock-number">5</td>
+
+                                    <td>
+                                        <span class="stock-status available">
+                                            <span></span>
+                                            Disponible
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="color-name">
+                                            <span class="color-dot red"></span>
+                                            Rouge
+                                        </span>
+                                    </td>
+
+                                    <td>M</td>
+
+                                    <td class="stock-number zero">0</td>
+
+                                    <td>
+                                        <span class="stock-status unavailable">
+                                            <span></span>
+                                            Indisponible
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="color-name">
+                                            <span class="color-dot black"></span>
+                                            Noir
+                                        </span>
+                                    </td>
+
+                                    <td>M</td>
+
+                                    <td class="stock-number">8</td>
+
+                                    <td>
+                                        <span class="stock-status available">
+                                            <span></span>
+                                            Disponible
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="color-name">
+                                            <span class="color-dot black"></span>
+                                            Noir
+                                        </span>
+                                    </td>
+
+                                    <td>L</td>
+
+                                    <td class="stock-number low">2</td>
+
+                                    <td>
+                                        <span class="stock-status low">
+                                            <span></span>
+                                            Stock faible
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <!-- STOCK SUMMARY -->
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <div>
+                            <span>Stock total</span>
+                            <strong>15</strong>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <span>Variantes</span>
+                            <strong>4</strong>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <span>Disponibles</span>
+                            <strong>3</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DANGER ZONE -->
+                <div class="danger-zone">
+
+                    <div>
+                        <h2>Supprimer ce produit</h2>
+
+                        <p>
+                            La suppression du produit est définitive.
+                            Toutes les informations associées seront supprimées.
+                        </p>
+                    </div>
+
+                    <button class="btn btn-danger" id="dangerDeleteBtn">
+                        <i class="fa-solid fa-trash"></i>
+                        Supprimer le produit
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- DELETE MODAL -->
+    <div class="modal" id="deleteModal">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-trash"></i>
+        </div>
+
+        <h2>Supprimer le produit ?</h2>
+
+        <p>
+            Cette action est irréversible.
+            Le produit et toutes ses informations seront supprimés.
+        </p>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-secondary" id="cancelDelete">
+                Annuler
+            </button>
+
+            <button class="btn btn-danger" id="confirmDelete">
+                Supprimer
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="product-details.js"></script>
+
+</body>
+
+</html>

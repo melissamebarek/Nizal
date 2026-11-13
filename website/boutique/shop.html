@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIZAL — Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../nav.css">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overscroll-behavior: none;
+    }
+
+    main>:first-child {
+      margin-top: 0 !important;
+    }
+
+    main>:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-status {
+      grid-column: 1 / -1;
+      padding: 2rem;
+      text-align: center;
+      color: #525263;
+      background: #fff;
+      border-radius: .5rem;
+    }
+
+    .product-old-price {
+      text-decoration: line-through;
+      color: #8E8E9F;
+      font-size: .8rem;
+      margin-right: .4rem;
+    }
+
+    .product-discount {
+      display: inline-block;
+      margin-left: .45rem;
+      padding: .2rem .4rem;
+      border-radius: .25rem;
+      background: #e10600;
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+
+    .product-image-fallback {
+      font-size: 3rem;
+      color: #b8b8c2;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-surface": "#e5e1e6", "on-error": "#690005", "on-tertiary-fixed": "#1a1c1c",
+            "on-error-container": "#ffdad6", "on-background": "#e5e1e6", "primary": "#ffb4a8",
+            "tertiary-fixed": "#e2e2e2", "primary-fixed": "#ffdad4", "on-primary-container": "#fff2f0",
+            "tertiary": "#c6c6c7", "inverse-on-surface": "#303033", "surface-variant": "#353438",
+            "background": "#131316", "surface-container": "#201f22", "secondary-fixed": "#dce1ff",
+            "secondary": "#b6c4ff", "on-surface": "#e5e1e6", "on-primary-fixed": "#410100",
+            "secondary-container": "#0056fd", "on-tertiary": "#2f3131", "outline-variant": "#5e3f3a",
+            "surface": "#131316", "on-secondary": "#00277f", "on-tertiary-fixed-variant": "#454747",
+            "on-secondary-fixed": "#001550", "primary-container": "#e10600", "on-primary": "#680200",
+            "on-secondary-container": "#e4e7ff", "on-surface-variant": "#e9bcb5", "outline": "#af8781",
+            "surface-dim": "#131316", "on-primary-fixed-variant": "#930300", "tertiary-container": "#6f7070",
+            "surface-container-low": "#1b1b1e"
+          },
+          borderRadius: { "DEFAULT": ".25rem", "lg": ".5rem", "xl": ".75rem", "full": "9999px" },
+          spacing: { "margin": "2rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-sm": "1rem", "space-xs": ".25rem", "gutter-sm": "1rem", "space-sm": ".5rem", "space-xl": "2.5rem", "space-md": "1rem" },
+          fontFamily: {
+            "headline-md": ["Oswald"], "headline-sm": ["Oswald"], "label-md": ["Inter"],
+            "headline-lg": ["Oswald"], "body-lg": ["Inter"], "body-md": ["Inter"],
+            "body-sm": ["Inter"], "title-md": ["Inter"], "display-lg": ["Oswald"],
+            "display-xl": ["Oswald"], "label-lg": ["Inter"], "data-metric": ["Oswald"]
+          },
+          fontSize: {
+            "headline-md": ["24px", { lineHeight: "30px", letterSpacing: ".02em", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: ".02em", fontWeight: "600" }],
+            "label-md": ["11px", { lineHeight: "14px", letterSpacing: ".1em", fontWeight: "700" }],
+            "display-lg": ["48px", { lineHeight: "52px", letterSpacing: ".03em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "38px", letterSpacing: ".02em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-.01em", fontWeight: "400" }],
+            "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "18px", letterSpacing: ".08em", fontWeight: "700" }],
+            "data-metric": ["28px", { lineHeight: "28px", letterSpacing: ".01em", fontWeight: "700" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "title-md": ["16px", { lineHeight: "24px", letterSpacing: "-.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <header id="header">
+    <a href="../index.html" class="logo-link"><img src="../../assest/logo.png" alt="Logo NIZAL" class="logo"></a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../articles/actualites.html">ACTUALITÉS</a></li>
+        <li><a href="../event/events.html">ÉVÉNEMENTS</a></li>
+        <li><a href="shop.html" class="active">BOUTIQUE</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <a href="../search.html" aria-label="Search"><i class="fas fa-search"></i></a>
+      <a href="cart.html" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main class="w-full bg-surface">
+    <div
+      class="flex flex-col w-full bg-white text-inverse-on-surface antialiased selection:bg-primary-container selection:text-on-primary">
+      <!-- HERO: preserved -->
+      <section class="relative w-full overflow-hidden bg-white">
+        <div class="relative w-full h-[540px] lg:h-[620px]">
+          <img alt="Athlète d'élite NIZAL en préparation intense au bord du ring"
+            class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out hover:scale-100"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNg_07yl-mOq4P3KeH4BMLZVzNIaqetxRSKJSLP0znH5NnCQtL6-7nL3u-kxa3tp-ihnAku-tEBFNnX70k5LRa9MAYDaUVPaZghtyhbyQtTj55tdqPbyNtnIpGd73yIZk2Az6dNgGVQnsKH9ypdjESc3x2BnA7Y5ismFEtx4zmI9ZGwtVYAX9UYIERgljQ2reFWeKtj37x5GVeXgFhqWoOqxXrOmiRPili-ijlSvzNNDxbETsdRl2i">
+          <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:w-3/5 w-full"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-90 lg:opacity-40">
+          </div>
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full max-w-[1440px] mx-auto px-margin">
+              <div class="max-w-2xl space-y-space-md">
+                <h1 class="uppercase tracking-tight text-[#131316] leading-none"
+                  style="font-size: 48px; font-weight: 800;">
+                  Équipez-vous pour <span class="text-primary-container">le combat.</span></h1>
+                <p class="font-body-lg text-body-lg text-[#454747] max-w-xl">Conçus pour la haute performance, testés
+                  par nos athlètes d'élite sur le ring et dans la cage. Résistance certifiée aux chocs de niveau
+                  international.</p>
+                <div class="pt-space-sm flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md">
+                  <a class="inline-flex items-center justify-center gap-space-sm px-8 py-4 bg-primary-container text-white font-headline-sm text-headline-sm uppercase tracking-wider rounded shadow-lg shadow-primary-container/20 hover:bg-[#c00500] hover:tracking-widest transition-all duration-300"
+                    href="#produits"><span>Découvrir les produits</span><span
+                      class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
+                  <a class="inline-flex items-center justify-center gap-space-xs px-6 py-4 bg-white/90 backdrop-blur-sm text-[#131316] font-title-md text-title-md rounded shadow-sm hover:bg-[#f5f5f5] transition-colors"
+                    href="#categories"><span
+                      class="material-symbols-outlined text-[20px] text-secondary-container">tune</span><span>Explorer
+                      les gammes</span></a>
+                </div>
+                <div
+                  class="pt-space-md flex flex-wrap items-center gap-y-2 gap-x-6 font-label-md text-label-md text-[#6f7070] uppercase tracking-wider">
+                  <div class="flex items-center gap-1.5"><span
+                      class="material-symbols-outlined text-primary-container text-[18px]">local_shipping</span><span>Livraison
+                      Express Arène</span></div>
+                  <span class="text-tertiary-fixed-dim">/</span>
+                  <div class="flex items-center gap-1.5"><span
+                      class="material-symbols-outlined text-secondary-container text-[18px]">verified_user</span><span>Matériaux
+                      Certifiés</span></div>
+                  <span class="text-tertiary-fixed-dim">/</span>
+                  <div class="flex items-center gap-1.5"><span
+                      class="material-symbols-outlined text-primary-container text-[18px]">shield</span><span>Garantie 2
+                      Ans</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories: same visual style; categories match API values -->
+      <section class="w-full py-space-xl bg-white" id="categories">
+        <div class="w-full max-w-[1440px] mx-auto px-margin">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
+            <div>
+              <div class="flex items-center gap-2 mb-1"><span
+                  class="w-6 h-[3px] bg-primary-container inline-block"></span><span
+                  class="font-label-md text-label-md uppercase tracking-widest text-primary-container">Sélection par
+                  discipline</span></div>
+              <h2 class="font-display-lg text-display-lg uppercase text-[#131316]">Catégories d'Équipement</h2>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            <a class="group relative p-space-lg bg-white rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden bg-gradient-to-b from-white to-[#F9FAFB]"
+              href="./shop.html?category=homme#produits">
+              <div
+                class="absolute top-0 left-0 right-0 h-[3px] bg-transparent group-hover:bg-primary-container transition-colors duration-300">
+              </div>
+              <div class="space-y-space-md">
+                <div
+                  class="w-14 h-14 rounded bg-primary-container/10 text-primary-container flex items-center justify-center transition-colors group-hover:bg-primary-container group-hover:text-white">
+                  <span class="material-symbols-outlined text-[32px]">sports_mma</span>
+                </div>
+                <div><span class="font-label-md text-label-md uppercase tracking-widest text-[#6f7070]">01 ·</span>
+                  <h3
+                    class="font-headline-lg text-headline-lg uppercase text-[#131316] group-hover:text-primary-container transition-colors mt-0.5">
+                    Homme</h3>
+                </div>
+                <p class="font-body-sm text-body-sm text-[#525263]">Découvrez les produits disponibles pour homme.</p>
+              </div>
+              <div
+                class="mt-space-lg pt-space-sm flex items-center justify-between text-secondary-container font-label-lg text-label-lg uppercase">
+                <span>Parcourir</span><span
+                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+              </div>
+            </a>
+            <a class="group relative p-space-lg bg-white rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden bg-gradient-to-b from-white to-[#F9FAFB]"
+              href="./shop.html?category=femme#produits">
+              <div
+                class="absolute top-0 left-0 right-0 h-[3px] bg-transparent group-hover:bg-secondary-container transition-colors duration-300">
+              </div>
+              <div class="space-y-space-md">
+                <div
+                  class="w-14 h-14 rounded bg-secondary-container/10 text-secondary-container flex items-center justify-center transition-colors group-hover:bg-secondary-container group-hover:text-white">
+                  <span class="material-symbols-outlined text-[32px]">apparel</span>
+                </div>
+                <div><span class="font-label-md text-label-md uppercase tracking-widest text-[#6f7070]">02 ·</span>
+                  <h3
+                    class="font-headline-lg text-headline-lg uppercase text-[#131316] group-hover:text-secondary-container transition-colors mt-0.5">
+                    Femme</h3>
+                </div>
+                <p class="font-body-sm text-body-sm text-[#525263]">Découvrez les produits disponibles pour femme.</p>
+              </div>
+              <div
+                class="mt-space-lg pt-space-sm flex items-center justify-between text-secondary-container font-label-lg text-label-lg uppercase">
+                <span>Parcourir</span><span
+                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+              </div>
+            </a>
+            <a class="group relative p-space-lg bg-white rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden bg-gradient-to-b from-white to-[#F9FAFB]"
+              href="./shop.html?category=enfant#produits">
+              <div
+                class="absolute top-0 left-0 right-0 h-[3px] bg-transparent group-hover:bg-primary-container transition-colors duration-300">
+              </div>
+              <div class="space-y-space-md">
+                <div
+                  class="w-14 h-14 rounded bg-primary-container/10 text-primary-container flex items-center justify-center transition-colors group-hover:bg-primary-container group-hover:text-white">
+                  <span class="material-symbols-outlined text-[32px]">security</span>
+                </div>
+                <div><span class="font-label-md text-label-md uppercase tracking-widest text-[#6f7070]">03 ·</span>
+                  <h3
+                    class="font-headline-lg text-headline-lg uppercase text-[#131316] group-hover:text-primary-container transition-colors mt-0.5">
+                    Enfant</h3>
+                </div>
+                <p class="font-body-sm text-body-sm text-[#525263]">Découvrez les produits disponibles pour enfant.</p>
+              </div>
+              <div
+                class="mt-space-lg pt-space-sm flex items-center justify-between text-secondary-container font-label-lg text-label-lg uppercase">
+                <span>Parcourir</span><span
+                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products: cards are generated from the API -->
+      <section class="w-full py-space-xl bg-[#FBFBFB]" id="produits">
+        <div class="w-full max-w-[1440px] mx-auto px-margin">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
+            <div>
+              <div class="flex items-center gap-2 mb-1"><span
+                  class="w-6 h-[3px] bg-primary-container inline-block"></span><span
+                  class="font-label-md text-label-md uppercase tracking-widest text-primary-container">Catalogue
+                  Homologué</span></div>
+              <h2 class="font-display-lg text-display-lg uppercase text-[#131316]">Produits Populaires</h2>
+              <p class="font-body-md text-body-md text-[#525263] mt-1">L'équipement officiel des champions NIZAL.</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 bg-white p-1 rounded-lg shadow-sm" id="product-filters">
+              <button class="px-4 py-2 bg-primary-container text-white font-label-lg text-label-lg uppercase rounded"
+                type="button" data-filter="all" aria-pressed="true">Tous</button>
+              <button
+                class="px-4 py-2 text-[#525263] hover:text-[#131316] font-label-lg text-label-lg uppercase rounded transition-colors"
+                type="button" data-filter="femme" aria-pressed="false">Femme</button>
+              <button
+                class="px-4 py-2 text-[#525263] hover:text-[#131316] font-label-lg text-label-lg uppercase rounded transition-colors"
+                type="button" data-filter="homme" aria-pressed="false">Homme</button>
+              <button
+                class="px-4 py-2 text-[#525263] hover:text-[#131316] font-label-lg text-label-lg uppercase rounded transition-colors"
+                type="button" data-filter="enfant" aria-pressed="false">Enfant</button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="product-grid" aria-live="polite">
+            <div class="product-status">Chargement des produits…</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+            même endroit. Tournois, classements et billetterie officielle.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+          <nav class="flex flex-col gap-space-xs"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../articles/actualites.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../athletes/athletes.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../event/events.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="shop.html">Boutique</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+          <nav class="flex flex-col gap-space-xs"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../about.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../contact.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../faq.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../conditions-generales.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              href="../politique-de-confidentialite.html">Politique de confidentialité</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="#" aria-label="Instagram">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="#" aria-label="Facebook">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="#" aria-label="YouTube">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="#" aria-label="TikTok">TikTok</a></div>
+        </div>
+      </div>
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+        <p>© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider font-label-md text-on-surface-variant">Plateforme Combat Sports Haute
+          Performance</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../nav.js"></script>
+  <script>
+    (() => {
+      const API_URL = 'http://localhost:5000/api/products';
+      const CART_KEY = 'nizal_cart';
+
+      const productGrid = document.getElementById('product-grid');
+      const productFilters = document.getElementById('product-filters');
+      const filters = Array.from(
+        productFilters.querySelectorAll('[data-filter]')
+      );
+
+      const params = new URLSearchParams(window.location.search);
+      const requestedCategory = (params.get('category') || '').toLowerCase();
+
+      const validCategories = filters.map(button => button.dataset.filter);
+
+      let activeCategory = validCategories.includes(requestedCategory)
+        ? requestedCategory
+        : 'all';
+
+      let products = [];
+
+      // حماية النصوص قبل وضعها داخل HTML.
+      function escapeHTML(value) {
+        return String(value ?? '').replace(/[&<>"']/g, char => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        })[char]);
+      }
+
+      // تنسيق الأسعار بالدينار الجزائري.
+      function formatPrice(value) {
+        return new Intl.NumberFormat('fr-DZ', {
+          maximumFractionDigits: 2
+        }).format(Number(value) || 0) + ' DA';
+      }
+
+      // تحويل صورة المنتج إلى مصدر صالح لعنصر img.
+      function getProductImage(product) {
+        const image =
+          product.cover_image ||
+          product.image_url ||
+          product.image ||
+          product.imageUrl ||
+          '';
+
+        if (typeof image !== 'string' || !image.trim()) {
+          return '';
+        }
+
+        const value = image.trim();
+
+        // الصورة مخزّنة كرابط أو Data URL كامل.
+        if (
+          /^data:image\//i.test(value) ||
+          /^https?:\/\//i.test(value) ||
+          value.startsWith('/') ||
+          value.startsWith('./') ||
+          value.startsWith('../') ||
+          value.startsWith('blob:')
+        ) {
+          return value;
+        }
+
+        // إذا كانت الصورة Base64 خاماً، نحدد نوعها من بدايتها.
+        const base64 = value.replace(/\s/g, '');
+
+        if (!/^[A-Za-z0-9+/]+={0,2}$/.test(base64)) {
+          return '';
+        }
+
+        let mimeType = 'image/jpeg';
+
+        if (base64.startsWith('iVBORw0KGgo')) {
+          mimeType = 'image/png';
+        } else if (base64.startsWith('/9j/')) {
+          mimeType = 'image/jpeg';
+        } else if (base64.startsWith('R0lGOD')) {
+          mimeType = 'image/gif';
+        } else if (base64.startsWith('UklGR')) {
+          mimeType = 'image/webp';
+        }
+
+        return `data:${mimeType};base64,${base64}`;
+      }
+
+      // رسالة التحميل أو الخطأ أو عدم وجود منتجات.
+      function renderStatus(message) {
+        productGrid.innerHTML = `
+      <div class="product-status">
+        ${escapeHTML(message)}
+      </div>
+    `;
+      }
+
+      // تحديث مظهر أزرار الفلترة.
+      function updateFilters() {
+        filters.forEach(button => {
+          const selected = button.dataset.filter === activeCategory;
+
+          button.classList.toggle('bg-primary-container', selected);
+          button.classList.toggle('text-white', selected);
+          button.classList.toggle('text-[#525263]', !selected);
+          button.classList.toggle('hover:text-[#131316]', !selected);
+
+          button.setAttribute('aria-pressed', String(selected));
+        });
+      }
+
+      // عرض المنتجات القادمة من API.
+      function renderProducts() {
+        updateFilters();
+
+        const visibleProducts = products.filter(product => {
+          const category = String(product.category || '')
+            .trim()
+            .toLowerCase();
+
+          return activeCategory === 'all' ||
+            category === activeCategory;
+        });
+
+        if (!visibleProducts.length) {
+          renderStatus(
+            products.length
+              ? 'Aucun produit dans cette catégorie.'
+              : 'Aucun produit disponible pour le moment.'
+          );
+          return;
+        }
+
+        productGrid.innerHTML = visibleProducts.map(product => {
+          const id = escapeHTML(product.id);
+          const name = escapeHTML(product.name || 'Produit NIZAL');
+          const description = escapeHTML(
+            product.description || 'Aucune description disponible.'
+          );
+          const category = escapeHTML(product.category || 'Autre');
+
+          const price = Math.max(0, Number(product.price) || 0);
+
+          const discount = Math.min(
+            100,
+            Math.max(0, Number(product.discount) || 0)
+          );
+
+          const finalPrice = price * (1 - discount / 100);
+          const imageSrc = getProductImage(product);
+
+          const imageHTML = imageSrc
+            ? `
+          <img
+            src="${escapeHTML(imageSrc)}"
+            alt="${name}"
+            class="product-main-image h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          >
+          <span
+            class="product-image-fallback hidden material-symbols-outlined"
+            aria-hidden="true"
+          >sports_mma</span>
+        `
+            : `
+          <span
+            class="product-image-fallback material-symbols-outlined"
+            aria-hidden="true"
+          >sports_mma</span>
+        `;
+
+          return `
+        <article
+          class="group bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+          data-product-id="${id}"
+          data-category="${category.toLowerCase()}"
+        >
+          <div class="relative bg-[#F4F4F6] aspect-[4/3] flex items-center justify-center overflow-hidden">
+
+            ${discount > 0
+              ? `
+                  <span class="absolute top-3 left-3 px-2.5 py-1 bg-primary-container text-white font-label-md text-label-md uppercase tracking-wider rounded z-10">
+                    -${discount}%
+                  </span>
+                `
+              : ''
+            }
+
+            ${imageHTML}
+
+          </div>
+
+          <div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+            <div class="space-y-space-xs">
+
+              <div class="flex items-center justify-between text-[#6f7070] font-label-md text-label-md uppercase">
+                <span>${category}</span>
+              </div>
+
+              <h3 class="font-headline-sm text-headline-sm uppercase text-[#131316] group-hover:text-primary-container transition-colors">
+                ${name}
+              </h3>
+
+              <p class="font-body-sm text-body-sm text-[#525263]">
+                ${description}
+              </p>
+
+            </div>
+
+            <div class="pt-space-sm flex items-center justify-between gap-space-sm">
+              <div>
+                <span class="block font-label-md text-label-md uppercase text-[#6f7070]">
+                  Prix ${discount > 0 ? 'après réduction' : 'officiel'}
+                </span>
+
+                ${discount > 0
+              ? `
+                      <span class="product-old-price">
+                        ${formatPrice(price)}
+                      </span>
+                    `
+              : ''
+            }
+
+                <span class="font-data-metric text-data-metric text-[#131316]">
+                  ${formatPrice(finalPrice)}
+                </span>
+
+                ${discount > 0
+              ? `<span class="product-discount">-${discount}%</span>`
+              : ''
+            }
+              </div>
+
+              <a
+  href="./proudct.html?id=${encodeURIComponent(product.id)}"
+  class="inline-flex items-center gap-2 px-5 py-3 bg-[#131316] text-white hover:bg-primary-container font-label-lg text-label-lg uppercase tracking-wider rounded transition-colors duration-200 shadow-md"
+>
+  <span class="material-symbols-outlined text-[18px]">
+    visibility
+  </span>
+  <span>Voir+</span>
+</a>
+            </div>
+          </div>
+        </article>
+      `;
+        }).join('');
+
+        // إخفاء الصورة الفاشلة وإظهار الأيقونة الاحتياطية.
+        productGrid.querySelectorAll('.product-main-image').forEach(img => {
+          img.addEventListener('error', () => {
+            img.classList.add('hidden');
+
+            const fallback = img.nextElementSibling;
+            if (fallback) {
+              fallback.classList.remove('hidden');
+            }
+          }, { once: true });
+        });
+      }
+
+      // جلب المنتجات من Backend.
+      async function loadProducts() {
+        renderStatus('Chargement des produits…');
+
+        try {
+          const response = await fetch(API_URL, {
+            headers: {
+              Accept: 'application/json'
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`Erreur HTTP ${response.status}`);
+          }
+
+          const result = await response.json();
+
+          if (result.success === false) {
+            throw new Error(
+              result.message || 'La récupération des produits a échoué.'
+            );
+          }
+
+          products = Array.isArray(result)
+            ? result
+            : Array.isArray(result.data)
+              ? result.data
+              : [];
+
+          renderProducts();
+        } catch (error) {
+          console.error('Erreur chargement produits NIZAL:', error);
+
+          renderStatus(
+            'Impossible de charger les produits. Vérifiez que le serveur API est démarré et accessible.'
+          );
+        }
+      }
+
+      // الفلترة حسب الفئة.
+      filters.forEach(button => {
+        button.addEventListener('click', () => {
+          activeCategory = button.dataset.filter;
+          renderProducts();
+        });
+      });
+
+
+      productGrid.addEventListener('click', event => {
+
+        const card = event.target.closest('[data-product-id]');
+
+        if (!card) return;
+
+        const productId = card.dataset.productId;
+        // Ouvrir la page de détails du produit.
+        window.location.href =
+          `./proudct.html?id=${encodeURIComponent(productId)} `;
+      });
+      loadProducts();
+    })();
+  </script>
+
+</body>
+
+</html>

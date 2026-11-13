@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed-dim": "#b4c5ff", "primary-fixed-dim": "#ffb4a8", "inverse-surface": "#2f3035", "surface-container-lowest": "#ffffff", "on-surface": "#1a1c20", "surface-tint": "#c00500", "on-secondary": "#ffffff", "secondary-fixed-dim": "#b6c4ff", "surface": "#f9f9ff", "outline-variant": "#e9bcb5", "primary-container": "#e10600", "on-primary-fixed-variant": "#930300", "surface-container-low": "#f3f3f9", "tertiary-container": "#0163ff", "surface-container-high": "#e8e8ed", "surface-dim": "#d9d9df", "inverse-on-surface": "#f0f0f6", "tertiary": "#004dcb", "surface-variant": "#e2e2e8", "on-tertiary-container": "#f4f4ff", "on-primary-container": "#fff2f0", "background": "#f9f9ff", "on-primary": "#ffffff", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed": "#001550", "primary": "#b30400", "primary-fixed": "#ffdad4", "on-surface-variant": "#5e3f3a", "surface-container": "#ededf3", "surface-container-highest": "#e2e2e8", "on-primary-fixed": "#410100", "outline": "#936e68", "inverse-primary": "#ffb4a8", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-error-container": "#93000a", "on-background": "#1a1c20", "on-tertiary-fixed": "#00174a", "secondary": "#0042c7", "surface-bright": "#f9f9ff", "secondary-container": "#0056fd", "on-tertiary-fixed-variant": "#003ea7", "on-secondary-fixed-variant": "#003ab2", "secondary-fixed": "#dce1ff", "on-secondary-container": "#e4e7ff", "error-container": "#ffdad6", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": ["Oswald"], "body-md": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "display-mobile": ["Oswald"], "label-lg": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Oswald"], "label-sm": ["Inter"], "display": ["Oswald"], "headline-md": ["Oswald"], "headline-lg": ["Oswald"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }], "display": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } };</script>
+  <title>Choix de la catégorie | NIZAL</title>
+</head>
+
+<body class="bg-background font-body-md text-on-surface antialiased">
+  <header class="" id="header">
+
+    <!-- LOGO -->
+    <a href="../index.html" class="logo-link">
+      <img src="../../assest/logo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+      <ul>
+        <li>
+          <a href="../index.html">HOME</a>
+        </li>
+
+        <li>
+          <a href="../articles/actualites.html">ACTUALIT?S</a>
+        </li>
+
+        <li>
+          <a href="events.html" class="active">?V?NEMENTS</a>
+        </li>
+
+        <li>
+          <a href="../boutique/shop.html">BOUTIQUE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+
+      <a href="../search.html" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </a>
+
+      <a href="../boutique/cart.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </header>
+  <main class="w-full bg-background min-h-screen">
+    <div class="max-w-[900px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+      <div class="flex flex-col w-full">
+        <div class="w-full max-w-[920px] mx-auto py-10 px-4">
+          <div class="mb-8">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
+                COMPÉTITION OFFICIELLE · NIZAL FIGHT NIGHT 01
+              </span>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <h1 class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-surface">
+                  Inscription à la compétition
+                </h1>
+                <div
+                  class="mt-2.5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface">
+                  <span class="material-symbols-outlined text-[16px] text-tertiary">sports_mma</span>
+                  <span class="font-label-md text-label-md font-semibold">Alger, 25 Octobre 2026 · MMA Amateur &amp;
+                    Pro</span>
+                </div>
+              </div>
+              <!-- Weigh-in Notice Indicator -->
+              <div
+                class="flex items-center gap-3 bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-surface-container-highest">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[20px]">scale</span>
+                </div>
+                <div>
+                  <p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Pesée Officielle</p>
+                  <p class="font-headline-sm text-headline-sm text-on-surface">24 OCT · 08:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav aria-label="Progression de l'inscription"
+            class="w-full bg-surface-container-lowest rounded-xl p-4 mb-8 shadow-sm">
+            <ol class="grid grid-cols-2 md:grid-cols-6 gap-3">
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">01
+                    Info</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Informations</span>
+                </div>
+              </li>
+              <!-- Step 2: Completed -->
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">02
+                    Fiche</span>
+                  <span class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Profil</span>
+                </div>
+              </li>
+              <!-- Step 3: Completed -->
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">03
+                    Poids</span>
+                  <span class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Catégorie</span>
+                </div>
+              </li>
+              <!-- Step 4: Active -->
+              <li aria-current="step" class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md font-bold shadow-sm">04</span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold truncate">04
+                    Pièces</span>
+                  <span class="block font-body-sm text-body-sm font-bold text-secondary truncate">Documents</span>
+                </div>
+              </li>
+              <!-- Step 5: Inactive -->
+              <li class="flex items-center gap-2.5 opacity-55">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-semibold">
+                  05
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">05
+                    Revue</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-medium text-on-surface-variant truncate">Vérification</span>
+                </div>
+              </li>
+              <!-- Step 6: Inactive -->
+              <li class="flex items-center gap-2.5 opacity-55">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-semibold">
+                  06
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">06
+                    Final</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-medium text-on-surface-variant truncate">Confirmation</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+          <!-- Main Registration Card -->
+          <div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
+            <div
+              class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-secondary via-secondary-container to-primary">
+            </div>
+            <section class="mb-8">
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-sm uppercase tracking-wider font-bold mb-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> ÉTAPE 04 / 06
+              </span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight mb-2">Documents
+                obligatoires</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Téléversez les pièces
+                justificatives requises pour compléter votre inscription. Les fichiers doivent être lisibles et à jour.
+              </p>
+            </section>
+            <form id="documents-form" class="space-y-4" novalidate>
+              <div
+                class="document-row p-4 sm:p-5 rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-4 min-w-0 flex-1">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+                    <span class="material-symbols-outlined text-[26px]">badge</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase mb-1">Pièce d'identité <span
+                        class="font-label-sm text-label-sm normal-case text-on-surface-variant">(CNI ou passeport
+                        valide)</span></h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Carte nationale d'identité ou
+                      passeport en cours de validité.</p>
+                    <label
+                      class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-dashed border-surface-container-highest hover:border-secondary bg-surface-container-lowest cursor-pointer text-label-md font-label-md text-on-surface transition-colors">
+                      <span class="material-symbols-outlined text-[18px]">upload_file</span><span
+                        class="identity-label">Choisir un fichier</span>
+                      <input class="document-input sr-only" type="file" name="identity" accept=".pdf,.jpg,.jpeg,.png"
+                        required />
+                    </label>
+                    <p class="identity-meta mt-2 font-body-sm text-body-sm text-on-surface-variant">PDF, JPG ou PNG · 10
+                      Mo maximum</p>
+                  </div>
+                </div>
+                <span
+                  class="document-status inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0"><span
+                    class="material-symbols-outlined text-[15px]">upload</span> En attente</span>
+              </div>
+              <div
+                class="document-row p-4 sm:p-5 rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-4 min-w-0 flex-1">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+                    <span class="material-symbols-outlined text-[26px]">medical_services</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase mb-1">Certificat médical
+                      <span class="font-label-sm text-label-sm normal-case text-primary font-semibold">(moins de 3
+                        mois)</span>
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Certificat de
+                      non-contre-indication à la pratique des sports de combat.</p>
+                    <label
+                      class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-dashed border-surface-container-highest hover:border-secondary bg-surface-container-lowest cursor-pointer text-label-md font-label-md text-on-surface transition-colors">
+                      <span class="material-symbols-outlined text-[18px]">upload_file</span><span
+                        class="medical-label">Choisir un fichier</span>
+                      <input class="document-input sr-only" type="file" name="medical" accept=".pdf,.jpg,.jpeg,.png"
+                        required />
+                    </label>
+                    <p class="medical-meta mt-2 font-body-sm text-body-sm text-on-surface-variant">PDF, JPG ou PNG · 10
+                      Mo maximum</p>
+                  </div>
+                </div>
+                <span
+                  class="document-status inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0"><span
+                    class="material-symbols-outlined text-[15px]">upload</span> En attente</span>
+              </div>
+              <div
+                class="document-row p-4 sm:p-5 rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-start gap-4 min-w-0 flex-1">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+                    <span class="material-symbols-outlined text-[26px]">verified_user</span>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase mb-1">Licence sportive ou
+                      assurance</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Licence valide ou assurance
+                      individuelle accident en cours.</p>
+                    <label
+                      class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-dashed border-surface-container-highest hover:border-secondary bg-surface-container-lowest cursor-pointer text-label-md font-label-md text-on-surface transition-colors">
+                      <span class="material-symbols-outlined text-[18px]">upload_file</span><span
+                        class="insurance-label">Choisir un fichier</span>
+                      <input class="document-input sr-only" type="file" name="insurance" accept=".pdf,.jpg,.jpeg,.png"
+                        required />
+                    </label>
+                    <p class="insurance-meta mt-2 font-body-sm text-body-sm text-on-surface-variant">PDF, JPG ou PNG ·
+                      10 Mo maximum</p>
+                  </div>
+                </div>
+                <span
+                  class="document-status inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0"><span
+                    class="material-symbols-outlined text-[15px]">upload</span> En attente</span>
+              </div>
+              <aside class="p-4 rounded-xl bg-surface-container flex items-start gap-3 mt-6">
+                <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">info</span>
+                <div>
+                  <p class="font-body-md text-body-md text-on-surface font-semibold">Formats acceptés : PDF, JPG, PNG
+                    (10 Mo maximum par fichier).</p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Les documents originaux devront être
+                    présentés lors de l'émargement et de la pesée le jour de la compétition.</p>
+                </div>
+              </aside>
+              <p id="documents-message" class="hidden font-body-sm text-body-sm font-semibold" role="status"></p>
+              <div
+                class="pt-6 mt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4 border-t border-surface-container-high">
+                <a href="./nizal-inscription-etape3-categorie.html"
+                  class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-2"><span
+                    class="material-symbols-outlined text-[18px]">arrow_back</span><span>Retour</span></a>
+                <button id="continue-documents" type="submit"
+                  class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm uppercase tracking-wider font-bold transition-all shadow-sm active:translate-y-px flex items-center justify-center gap-2"><span>Continuer
+                    vers la vérification</span><span
+                    class="material-symbols-outlined text-[20px]">arrow_forward</span></button>
+              </div>
+            </form>
+          </div>
+          <!-- Security & Trust Badges -->
+          <div
+            class="mt-8 flex flex-wrap items-center justify-center gap-6 text-on-surface-variant font-label-sm uppercase tracking-wider">
+            <div class="flex items-center gap-1.5"><span
+                class="material-symbols-outlined text-[18px] text-secondary">gavel</span> Règlementation Unifiée MMA
+            </div>
+            <div class="flex items-center gap-1.5"><span
+                class="material-symbols-outlined text-[18px] text-secondary">lock</span> Données Médicales Protégées
+            </div>
+            <div class="flex items-center gap-1.5"><span
+                class="material-symbols-outlined text-[18px] text-secondary">verified_user</span> Inscription Sécurisée
+            </div>
+          </div>
+          <script>
+
+            (function () {
+              "use strict";
+
+              const API_BASE_URL = "http://localhost:5000/api/competitions";
+              const STORAGE_KEY = "nizalRegistrationDraft";
+              const DB_NAME = "nizalRegistrationFiles";
+              const DB_STORE = "documents";
+              const MAX_DEFAULT_SIZE_MB = 10;
+
+              const form = document.getElementById("documents-form");
+              const message = document.getElementById("documents-message");
+              const continueButton = document.getElementById("continue-documents");
+
+              if (!form || !message || !continueButton) {
+                console.error("Formulaire de documents introuvable.");
+                return;
+              }
+
+              function getDraft() {
+                try {
+                  const draft = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+                  return draft && typeof draft === "object" ? draft : {};
+                } catch {
+                  return {};
+                }
+              }
+
+              function getCompetitionId() {
+                const params = new URLSearchParams(window.location.search);
+
+                for (const key of ["id", "competitionId", "competition_id"]) {
+                  const value = params.get(key);
+                  if (value && /^\d+$/.test(value) && Number(value) > 0) {
+                    return String(Number(value));
+                  }
+                }
+
+                const draft = getDraft();
+                const value =
+                  draft.competitionId ??
+                  draft.competition_id ??
+                  draft.step1?.competitionId ??
+                  draft.step2?.competitionId ??
+                  draft.step3?.competitionId ??
+                  draft.step4?.competitionId;
+
+                return value != null &&
+                  /^\d+$/.test(String(value)) &&
+                  Number(value) > 0
+                  ? String(Number(value))
+                  : null;
+              }
+
+              const competitionId = getCompetitionId();
+
+              const originalRows = Array.from(
+                form.querySelectorAll(".document-row")
+              );
+
+              const infoAside = form.querySelector("aside");
+              const formActions = form.querySelector(".border-t");
+
+              const documentsContainer = document.createElement("div");
+              documentsContainer.id = "documents-container";
+              documentsContainer.className = "space-y-4";
+
+              originalRows.forEach(row => row.remove());
+
+              if (infoAside) {
+                form.insertBefore(documentsContainer, infoAside);
+              } else if (formActions) {
+                form.insertBefore(documentsContainer, formActions);
+              } else {
+                form.appendChild(documentsContainer);
+              }
+
+              let documents = [];
+              let isSubmitting = false;
+
+              function showMessage(text, type = "error") {
+                message.textContent = text;
+                message.classList.remove(
+                  "hidden",
+                  "text-primary",
+                  "text-secondary"
+                );
+                message.classList.add(
+                  type === "success" ? "text-secondary" : "text-primary"
+                );
+              }
+
+              function hideMessage() {
+                message.textContent = "";
+                message.classList.add("hidden");
+                message.classList.remove("text-primary", "text-secondary");
+              }
+
+              function fileKey(documentId) {
+                return `${competitionId}:${Number(documentId)}`;
+              }
+
+              function openDatabase() {
+                return new Promise((resolve, reject) => {
+                  if (!window.indexedDB) {
+                    reject(new Error("IndexedDB n'est pas disponible."));
+                    return;
+                  }
+
+                  const request = indexedDB.open(DB_NAME, 1);
+
+                  request.onupgradeneeded = () => {
+                    const db = request.result;
+
+                    if (!db.objectStoreNames.contains(DB_STORE)) {
+                      db.createObjectStore(DB_STORE, { keyPath: "key" });
+                    }
+                  };
+
+                  request.onsuccess = () => resolve(request.result);
+                  request.onerror = () => reject(request.error);
+                });
+              }
+
+              async function saveFile(key, file) {
+                const db = await openDatabase();
+
+                return new Promise((resolve, reject) => {
+                  const transaction = db.transaction(DB_STORE, "readwrite");
+
+                  transaction.objectStore(DB_STORE).put({
+                    key,
+                    name: file.name,
+                    type: file.type,
+                    size: file.size,
+                    lastModified: file.lastModified,
+                    blob: file
+                  });
+
+                  transaction.oncomplete = () => {
+                    db.close();
+                    resolve();
+                  };
+
+                  transaction.onerror = () => {
+                    const error = transaction.error;
+                    db.close();
+                    reject(error);
+                  };
+
+                  transaction.onabort = () => {
+                    const error = transaction.error;
+                    db.close();
+                    reject(error || new Error("Enregistrement interrompu."));
+                  };
+                });
+              }
+
+              async function getFile(key) {
+                const db = await openDatabase();
+
+                return new Promise((resolve, reject) => {
+                  const transaction = db.transaction(DB_STORE, "readonly");
+                  const request = transaction.objectStore(DB_STORE).get(key);
+
+                  request.onsuccess = () => {
+                    resolve(request.result || null);
+                  };
+
+                  request.onerror = () => {
+                    reject(request.error);
+                  };
+
+                  transaction.oncomplete = () => db.close();
+                  transaction.onerror = () => db.close();
+                });
+              }
+
+              async function deleteFile(key) {
+                const db = await openDatabase();
+
+                return new Promise((resolve, reject) => {
+                  const transaction = db.transaction(DB_STORE, "readwrite");
+                  transaction.objectStore(DB_STORE).delete(key);
+
+                  transaction.oncomplete = () => {
+                    db.close();
+                    resolve();
+                  };
+
+                  transaction.onerror = () => {
+                    const error = transaction.error;
+                    db.close();
+                    reject(error);
+                  };
+                });
+              }
+
+              function isRequired(value) {
+                return value === true ||
+                  value === 1 ||
+                  String(value).toLowerCase() === "true" ||
+                  String(value) === "1";
+              }
+
+              function normalizeFormats(value) {
+                return String(value || "PDF,JPG,JPEG,PNG")
+                  .split(",")
+                  .map(value => value.trim().toLowerCase().replace(/^\./, ""))
+                  .filter(Boolean)
+                  .map(value => value === "jpeg" ? "jpg" : value);
+              }
+
+              function getAcceptAttribute(formats) {
+                return [...new Set(formats)]
+                  .map(format => format === "jpg" ? ".jpg,.jpeg" : "." + format)
+                  .join(",");
+              }
+
+              function getFormatLabel(formats) {
+                return [...new Set(formats)]
+                  .map(format => format.toUpperCase())
+                  .join(", ");
+              }
+
+              function getIcon(name) {
+                const value = String(name || "").toLowerCase();
+
+                if (/identité|identite|passeport|cni/.test(value)) {
+                  return "badge";
+                }
+
+                if (/médical|medical|santé|sante/.test(value)) {
+                  return "medical_services";
+                }
+
+                if (/licence|assurance/.test(value)) {
+                  return "verified_user";
+                }
+
+                return "description";
+              }
+
+              function updateStatus(item, state, label) {
+                const status = item.row.querySelector(".document-status");
+                if (!status) return;
+
+                const styles = {
+                  success: "bg-secondary-fixed text-on-secondary-fixed",
+                  error: "bg-primary/10 text-primary",
+                  waiting: "bg-surface-container text-on-surface-variant"
+                };
+
+                const icons = {
+                  success: "check_circle",
+                  error: "error",
+                  waiting: "upload"
+                };
+
+                status.className =
+                  "document-status inline-flex items-center gap-1 px-2.5 py-1 " +
+                  "rounded-md font-label-md text-label-md shrink-0 " +
+                  (styles[state] || styles.waiting);
+
+                const icon = document.createElement("span");
+                icon.className = "material-symbols-outlined text-[15px]";
+                icon.textContent = icons[state] || icons.waiting;
+
+                status.replaceChildren(icon, document.createTextNode(" " + label));
+              }
+
+              function saveDraft() {
+                const draft = getDraft();
+
+                draft.competitionId = Number(competitionId);
+
+                draft.step4 = {
+                  ...(draft.step4 || {}),
+                  competitionId: Number(competitionId),
+                  documents: documents.map(item => {
+                    const file = item.row.querySelector(".document-input")?.files?.[0];
+
+                    return {
+                      documentId: Number(item.id),
+                      name: item.name,
+                      required: item.required,
+                      acceptedFormats: item.acceptedFormats,
+                      maxFileSizeMB: item.maxFileSizeMB,
+                      fileName: file?.name || item.saved?.fileName || null,
+                      fileSize: file?.size ?? item.saved?.fileSize ?? null,
+                      fileType: file?.type || item.saved?.fileType || null,
+                      fileSaved: Boolean(file || item.saved?.fileSaved)
+                    };
+                  })
+                };
+
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+              }
+
+              function createDocumentRow(config) {
+                const row = document.createElement("div");
+
+                row.className =
+                  "document-row p-4 sm:p-5 rounded-xl bg-surface-container-low " +
+                  "flex flex-col sm:flex-row sm:items-center justify-between gap-4";
+
+                const left = document.createElement("div");
+                left.className = "flex items-start gap-4 min-w-0 flex-1";
+
+                const iconBox = document.createElement("div");
+                iconBox.className =
+                  "w-12 h-12 rounded-lg bg-surface-container-highest " +
+                  "flex items-center justify-center text-secondary shrink-0";
+
+                const icon = document.createElement("span");
+                icon.className = "material-symbols-outlined text-[26px]";
+                icon.textContent = getIcon(config.name);
+                iconBox.appendChild(icon);
+
+                const details = document.createElement("div");
+                details.className = "min-w-0 flex-1";
+
+                const heading = document.createElement("h3");
+                heading.className =
+                  "font-headline-sm text-headline-sm text-on-surface uppercase mb-1";
+                heading.textContent = config.name;
+
+                const requirement = document.createElement("span");
+                requirement.className =
+                  "font-label-sm text-label-sm normal-case font-semibold " +
+                  (config.required ? "text-primary" : "text-on-surface-variant");
+                requirement.textContent = config.required
+                  ? " (Obligatoire)"
+                  : " (Facultatif)";
+                heading.appendChild(requirement);
+
+                const description = document.createElement("p");
+                description.className =
+                  "font-body-sm text-body-sm text-on-surface-variant mb-2";
+                description.textContent = config.description || config.name;
+
+                const label = document.createElement("label");
+                label.className =
+                  "inline-flex items-center gap-2 px-3 py-2 rounded-lg border-2 " +
+                  "border-dashed border-surface-container-highest hover:border-secondary " +
+                  "bg-surface-container-lowest cursor-pointer text-label-md font-label-md " +
+                  "text-on-surface transition-colors";
+
+                const uploadIcon = document.createElement("span");
+                uploadIcon.className = "material-symbols-outlined text-[18px]";
+                uploadIcon.textContent = "upload_file";
+
+                const labelText = document.createElement("span");
+                labelText.className = "document-label";
+                labelText.textContent = "Choisir un fichier";
+
+                const input = document.createElement("input");
+                input.className = "document-input sr-only";
+                input.type = "file";
+                input.name = "document_" + config.id;
+                input.accept = getAcceptAttribute(config.formats);
+                input.dataset.documentId = String(config.id);
+                input.required = config.required;
+
+                label.append(uploadIcon, labelText, input);
+
+                const meta = document.createElement("p");
+                meta.className =
+                  "document-meta mt-2 font-body-sm text-body-sm text-on-surface-variant";
+                meta.textContent =
+                  getFormatLabel(config.formats) + " · " +
+                  config.maxFileSizeMB + " Mo maximum";
+
+                details.append(heading, description, label, meta);
+                left.append(iconBox, details);
+
+                const status = document.createElement("span");
+                status.className =
+                  "document-status inline-flex items-center gap-1 px-2.5 py-1 " +
+                  "rounded-md bg-surface-container text-on-surface-variant " +
+                  "font-label-md text-label-md shrink-0";
+
+                const statusIcon = document.createElement("span");
+                statusIcon.className = "material-symbols-outlined text-[15px]";
+                statusIcon.textContent = "upload";
+                status.append(statusIcon, document.createTextNode(" En attente"));
+
+                row.append(left, status);
+
+                const item = {
+                  id: Number(config.id),
+                  name: config.name,
+                  description: config.description || "",
+                  required: config.required,
+                  acceptedFormats: config.formats.join(","),
+                  formats: config.formats,
+                  maxFileSizeMB: config.maxFileSizeMB,
+                  row,
+                  saved: null
+                };
+
+                input.addEventListener("change", async () => {
+                  hideMessage();
+
+                  const file = input.files?.[0];
+                  if (!file) return;
+
+                  const metaElement = row.querySelector(".document-meta");
+                  const extension = file.name.includes(".")
+                    ? file.name.split(".").pop().toLowerCase()
+                    : "";
+
+                  const normalizedExtension = extension === "jpeg" ? "jpg" : extension;
+
+                  if (file.size > item.maxFileSizeMB * 1024 * 1024) {
+                    input.value = "";
+                    item.saved = null;
+
+                    await deleteFile(fileKey(item.id)).catch(() => { });
+
+                    updateStatus(item, "error", "Trop volumineux");
+                    metaElement.textContent =
+                      "Taille maximale : " + item.maxFileSizeMB + " Mo.";
+                    metaElement.classList.add("text-primary");
+                    saveDraft();
+                    return;
+                  }
+
+                  if (!item.formats.includes(normalizedExtension)) {
+                    input.value = "";
+                    item.saved = null;
+
+                    await deleteFile(fileKey(item.id)).catch(() => { });
+
+                    updateStatus(item, "error", "Format invalide");
+                    metaElement.textContent =
+                      "Formats acceptés : " + getFormatLabel(item.formats) + ".";
+                    metaElement.classList.add("text-primary");
+                    saveDraft();
+                    return;
+                  }
+
+                  try {
+                    await saveFile(fileKey(item.id), file);
+
+                    item.saved = {
+                      fileName: file.name,
+                      fileSize: file.size,
+                      fileType: file.type,
+                      fileSaved: true
+                    };
+
+                    labelText.textContent = file.name;
+                    metaElement.textContent =
+                      (file.size / (1024 * 1024)).toFixed(2) + " Mo";
+                    metaElement.classList.remove("text-primary");
+
+                    updateStatus(item, "success", "Enregistré");
+                    saveDraft();
+                  } catch (error) {
+                    console.error("Erreur IndexedDB :", error);
+                    input.value = "";
+                    item.saved = null;
+
+                    updateStatus(item, "error", "Non enregistré");
+                    showMessage(
+                      "Impossible de sauvegarder le fichier. Réessayez.",
+                      "error"
+                    );
+                  }
+                });
+
+                return item;
+              }
+
+              async function restoreFile(item, metadata) {
+                if (!metadata?.fileSaved) return;
+
+                const stored = await getFile(fileKey(item.id)).catch(() => null);
+
+                if (!stored?.blob) {
+                  item.saved = null;
+                  updateStatus(item, "waiting", "À recharger");
+
+                  item.row.querySelector(".document-meta").textContent =
+                    "Veuillez sélectionner à nouveau " +
+                    (metadata.fileName || "votre fichier") + ".";
+
+                  return;
+                }
+
+                item.saved = {
+                  fileName: stored.name,
+                  fileSize: stored.size,
+                  fileType: stored.type,
+                  fileSaved: true
+                };
+
+                item.row.querySelector(".document-label").textContent = stored.name;
+                item.row.querySelector(".document-meta").textContent =
+                  (stored.size / (1024 * 1024)).toFixed(2) + " Mo";
+
+                updateStatus(item, "success", "Restauré");
+              }
+
+              function updateCompetitionHeader(competition) {
+                const heading = document.querySelector(
+                  "main .mb-8 .font-label-sm"
+                );
+
+                if (heading && competition.name) {
+                  heading.textContent = "COMPÉTITION OFFICIELLE · " + competition.name;
+                }
+              }
+
+              async function loadDocuments() {
+                if (!competitionId) {
+                  showMessage(
+                    "Identifiant de compétition manquant. Revenez à la compétition.",
+                    "error"
+                  );
+                  continueButton.disabled = true;
+                  documentsContainer.textContent = "Compétition non identifiée.";
+                  return;
+                }
+
+                continueButton.disabled = true;
+                documentsContainer.textContent = "Chargement des documents requis...";
+
+                try {
+                  const response = await fetch(
+                    API_BASE_URL + "/" + encodeURIComponent(competitionId)
+                  );
+
+                  if (!response.ok) {
+                    throw new Error("Erreur HTTP " + response.status);
+                  }
+
+                  const result = await response.json();
+
+                  if (!result.success || !result.data) {
+                    throw new Error("Réponse API invalide.");
+                  }
+
+                  const competition = result.data;
+                  updateCompetitionHeader(competition);
+
+                  const apiDocuments = Array.isArray(competition.documents)
+                    ? competition.documents
+                    : [];
+
+                  documentsContainer.replaceChildren();
+
+                  if (!apiDocuments.length) {
+                    documentsContainer.textContent =
+                      "Aucun document n'est configuré pour cette compétition.";
+                    continueButton.disabled = true;
+                    return;
+                  }
+
+                  const draft = getDraft();
+
+                  const savedStep =
+                    String(draft.step4?.competitionId) === String(competitionId)
+                      ? draft.step4
+                      : null;
+
+                  const savedDocuments = Array.isArray(savedStep?.documents)
+                    ? savedStep.documents
+                    : [];
+
+                  documents = apiDocuments.map((apiDocument, index) => {
+                    const id = Number(apiDocument.id ?? apiDocument.document_id);
+
+                    if (!Number.isSafeInteger(id) || id <= 0) {
+                      throw new Error(
+                        "Un document API ne possède pas d'identifiant valide."
+                      );
+                    }
+
+                    const config = {
+                      id,
+                      name: apiDocument.name || "Document " + (index + 1),
+                      description: apiDocument.description || "",
+                      required: isRequired(
+                        apiDocument.is_required ?? apiDocument.required
+                      ),
+                      formats: normalizeFormats(apiDocument.accepted_formats),
+                      maxFileSizeMB:
+                        Number(apiDocument.max_file_size) > 0
+                          ? Number(apiDocument.max_file_size)
+                          : MAX_DEFAULT_SIZE_MB
+                    };
+
+                    const item = createDocumentRow(config);
+
+                    item.saved = savedDocuments.find(
+                      entry => Number(entry.documentId) === id
+                    ) || null;
+
+                    documentsContainer.appendChild(item.row);
+                    return item;
+                  });
+
+                  await Promise.all(documents.map(async item => {
+                    const metadata = savedDocuments.find(
+                      entry => Number(entry.documentId) === item.id
+                    );
+
+                    if (metadata) {
+                      await restoreFile(item, metadata);
+                    }
+                  }));
+
+                  saveDraft();
+                  continueButton.disabled = false;
+                } catch (error) {
+                  console.error("Erreur de chargement :", error);
+
+                  documentsContainer.textContent =
+                    "Impossible de charger les documents. Vérifiez le backend.";
+
+                  showMessage(
+                    "Le chargement des documents a échoué. Vérifiez le serveur.",
+                    "error"
+                  );
+
+                  continueButton.disabled = true;
+                }
+              }
+
+              form.addEventListener("submit", async event => {
+                event.preventDefault();
+
+                if (isSubmitting) return;
+
+                hideMessage();
+
+                const missing = documents.filter(item => {
+                  if (!item.required) return false;
+
+                  return !item.saved?.fileSaved;
+                });
+
+                if (missing.length) {
+                  showMessage(
+                    "Veuillez ajouter les documents obligatoires : " +
+                    missing.map(item => item.name).join(", ") + ".",
+                    "error"
+                  );
+                  return;
+                }
+
+                isSubmitting = true;
+                continueButton.disabled = true;
+
+                try {
+                  saveDraft();
+
+                  showMessage(
+                    "Documents conservés. Passage à la vérification...",
+                    "success"
+                  );
+
+                  window.location.href =
+                    "./nizal-inscription-etape5-verification.html?id=" +
+                    encodeURIComponent(competitionId);
+                } catch (error) {
+                  console.error(error);
+                  isSubmitting = false;
+                  continueButton.disabled = false;
+                  showMessage("Impossible de continuer.", "error");
+                }
+              });
+
+              const backLink = form.querySelector(
+                'a[href*="etape3-categorie"]'
+              );
+
+              if (backLink && competitionId) {
+                backLink.href =
+                  "./nizal-inscription-etape3-categorie.html?id=" +
+                  encodeURIComponent(competitionId);
+              }
+
+              loadDocuments();
+            })();
+
+          </script>
+
+        </div>
+  </main>
+  <footer class="w-full bg-surface-container-low  shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+            même endroit. Tournois, classements et billetterie officielle.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="actualites" href="../boutique/shop.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="athletes" href="../boutique/shop.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="evenements" href="../boutique/shop.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="boutique" href="../boutique/shop.html">Boutique</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="a-propos" href="../boutique/shop.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="../boutique/shop.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="faq" href="../boutique/shop.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="conditions-generales" href="../boutique/shop.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="politique-de-confidentialite" href="../boutique/shop.html">Politique de confidentialité</a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">TikTok</a></div>
+        </div>
+      </div>
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+        <p class="">© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider font-label-sm text-label-sm text-on-surface-variant">Plateforme Combat Sports
+          Haute Performance</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./nav.js"></script>
+</body>
+
+</html>

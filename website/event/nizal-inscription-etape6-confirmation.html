@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="../nav.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed-dim": "#b4c5ff", "primary-fixed-dim": "#ffb4a8", "inverse-surface": "#2f3035", "surface-container-lowest": "#ffffff", "on-surface": "#1a1c20", "surface-tint": "#c00500", "on-secondary": "#ffffff", "secondary-fixed-dim": "#b6c4ff", "surface": "#f9f9ff", "outline-variant": "#e9bcb5", "primary-container": "#e10600", "on-primary-fixed-variant": "#930300", "surface-container-low": "#f3f3f9", "tertiary-container": "#0163ff", "surface-container-high": "#e8e8ed", "surface-dim": "#d9d9df", "inverse-on-surface": "#f0f0f6", "tertiary": "#004dcb", "surface-variant": "#e2e2e8", "on-tertiary-container": "#f4f4ff", "on-primary-container": "#fff2f0", "background": "#f9f9ff", "on-primary": "#ffffff", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed": "#001550", "primary": "#b30400", "primary-fixed": "#ffdad4", "on-surface-variant": "#5e3f3a", "surface-container": "#ededf3", "surface-container-highest": "#e2e2e8", "on-primary-fixed": "#410100", "outline": "#936e68", "inverse-primary": "#ffb4a8", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-error-container": "#93000a", "on-background": "#1a1c20", "on-tertiary-fixed": "#00174a", "secondary": "#0042c7", "surface-bright": "#f9f9ff", "secondary-container": "#0056fd", "on-tertiary-fixed-variant": "#003ea7", "on-secondary-fixed-variant": "#003ab2", "secondary-fixed": "#dce1ff", "on-secondary-container": "#e4e7ff", "error-container": "#ffdad6", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": ["Oswald"], "body-md": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "display-mobile": ["Oswald"], "label-lg": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Oswald"], "label-sm": ["Inter"], "display": ["Oswald"], "headline-md": ["Oswald"], "headline-lg": ["Oswald"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }], "display": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } };</script>
+  <title>Confirmation d’inscription | NIZAL</title>
+  <style>
+    @media print {
+
+      header,
+      footer,
+      nav,
+      .no-print,
+      #download-pass,
+      #add-calendar,
+      main .mt-6.flex {
+        display: none !important;
+      }
+
+      main {
+        padding-top: 0 !important;
+      }
+
+      body {
+        background: #fff !important;
+      }
+
+      main .max-w-\[920px\] {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      section {
+        box-shadow: none !important;
+        border: 0 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-background font-body-md text-on-surface antialiased">
+  <header class="" id="header">
+    <!-- LOGO -->
+    <a class="logo-link" href="../index.html">
+      <img alt="Logo" class="logo" src="../../assest/logo.png" />
+    </a>
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../articles/actualites.html">ACTUALITÉS</a></li>
+        <li><a href="./events.html" class="active">ÉVÉNEMENTS</a></li>
+        <li><a href="../boutique/shop.html">BOUTIQUE</a></li>
+      </ul>
+    </nav>
+    <!-- ACTIONS -->
+    <div class="actions">
+      <a aria-label="Search" href="../search.html">
+        <i class="fas fa-search"></i>
+      </a>
+      <a aria-label="Cart" href="../boutique/cart.html">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+      <button aria-label="Open menu" class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  <main class="w-full bg-background min-h-screen">
+    <div class="max-w-[900px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+      <div class="flex flex-col w-full">
+        <div class="w-full max-w-[920px] mx-auto py-10 px-4">
+          <div class="mb-8">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
+                COMPÉTITION OFFICIELLE · NIZAL FIGHT NIGHT 01
+              </span>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <h1 class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-surface">
+                  Inscription à la compétition
+                </h1>
+                <div
+                  class="mt-2.5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface">
+                  <span class="material-symbols-outlined text-[16px] text-tertiary">sports_mma</span>
+                  <span class="font-label-md text-label-md font-semibold">Alger, 25 Octobre 2026 · MMA Amateur &amp;
+                    Pro</span>
+                </div>
+              </div>
+              <!-- Weigh-in Notice Indicator -->
+              <div
+                class="flex items-center gap-3 bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-surface-container-highest">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[20px]">scale</span>
+                </div>
+                <div>
+                  <p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Pesée Officielle</p>
+                  <p class="font-headline-sm text-headline-sm text-on-surface">24 OCT · 08:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav aria-label="Progression de l'inscription"
+            class="w-full bg-surface-container-lowest rounded-xl p-4 mb-8 shadow-sm">
+            <ol class="grid grid-cols-2 md:grid-cols-6 gap-3">
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">01
+                    Info</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Informations</span>
+                </div>
+              </li>
+              <!-- Step 2: Completed -->
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">02
+                    Fiche</span>
+                  <span class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Profil</span>
+                </div>
+              </li>
+              <!-- Step 3: Completed -->
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">03
+                    Poids</span>
+                  <span class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Catégorie</span>
+                </div>
+              </li>
+              <!-- Step 4: Completed -->
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-label-md text-label-md font-bold"><span
+                    class="material-symbols-outlined text-[16px]">check</span></span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">04
+                    Pièces</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-medium text-on-surface-variant truncate">Documents</span>
+                </div>
+              </li>
+              <!-- Step 5: Active -->
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-label-md text-label-md font-medium"><span
+                    class="material-symbols-outlined text-[16px] font-medium">check</span></span>
+                <div class="min-w-0">
+                  <span class="block font-label-sm text-label-sm uppercase tracking-wider truncate font-medium">05
+                    Revue</span>
+                  <span class="block font-body-sm text-body-sm truncate font-medium">Vérification</span>
+                </div>
+              </li>
+              <!-- Step 6: Inactive -->
+              <li aria-current="step" class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center font-label-md text-label-md font-bold shadow-sm text-primary">06</span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm uppercase tracking-wider truncate text-primary font-bold">06
+                    Final</span>
+                  <span class="block font-body-sm text-body-sm truncate text-primary font-bold">Confirmation</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+          <!-- Main Review Card -->
+
+
+          <!-- Security & Trust Badges -->
+
+
+          <section aria-labelledby="confirmation-title"
+            class="bg-surface-container-lowest rounded-2xl border border-surface-container-highest p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden">
+            <div
+              class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-secondary via-secondary-container to-primary">
+            </div>
+            <div class="text-center pt-3">
+              <div
+                class="w-16 h-16 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center mx-auto">
+                <span class="material-symbols-outlined text-[36px]"
+                  style="font-variation-settings:'FILL' 1">verified</span>
+              </div>
+              <p
+                class="mt-5 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-sm text-label-sm uppercase tracking-wider font-bold">
+                <span class="material-symbols-outlined text-[16px]">check_circle</span> Étape finale
+              </p>
+              <h2 class="font-headline-lg text-headline-lg uppercase tracking-wide text-on-surface mt-3"
+                id="confirmation-title">Inscription confirmée !</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mt-3">Votre dossier de
+                participation à NIZAL Fight Night 01 est prêt. Conservez les informations ci-dessous et présentez-vous
+                au contrôle officiel le jour de la compétition.</p>
+            </div>
+            <div class="mt-8 rounded-xl bg-surface-container-low border border-surface-container-high p-5 sm:p-7">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-surface-container-high">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center"><span
+                      class="material-symbols-outlined text-[22px]">badge</span></div>
+                  <div><span
+                      class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Document
+                      de participation</span>
+                    <h3 class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Passeport de
+                      compétition</h3>
+                  </div>
+                </div>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-md text-label-md font-bold self-start"><span
+                    class="material-symbols-outlined text-[16px]">check_circle</span> CONFIRMÉE</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-5">
+                <div><span
+                    class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Numéro
+                    d'inscription</span><strong
+                    class="font-headline-sm text-headline-sm text-primary tracking-wider">NIZAL-2026-00482</strong>
+                </div>
+                <div><span
+                    class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Compétition</span><strong
+                    class="font-body-lg text-body-lg">NIZAL Fight Night 01</strong></div>
+                <div><span
+                    class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Athlète</span><strong
+                    class="font-body-lg text-body-lg">Jean Dupont</strong><span
+                    class="block font-body-sm text-body-sm text-on-surface-variant">Licence FRA-8831</span></div>
+                <div><span
+                    class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Catégorie
+                    &amp; poids</span><strong class="font-body-md text-body-md">MMA Amateur · Lightweight (-70
+                    kg)</strong></div>
+                <div><span
+                    class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Date
+                    &amp; lieu</span><strong class="font-body-md text-body-md">Dimanche 25 octobre 2026</strong><span
+                    class="block font-body-sm text-body-sm text-on-surface-variant">Palais des Sports Harcha Hacène,
+                    Alger</span></div>
+                <div><span
+                    class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1">Pesée
+                    &amp; check-in</span><strong class="font-body-md text-body-md">08h30</strong><span
+                    class="block font-body-sm text-body-sm text-on-surface-variant">Zone officielle des athlètes</span>
+                </div>
+              </div>
+              <div class="mt-6 p-4 rounded-lg bg-surface-container-lowest flex flex-col sm:flex-row items-center gap-4">
+                <div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[34px]">qr_code_2</span></div>
+                <div class="flex-1 text-center sm:text-left"><strong
+                    class="block font-label-md text-label-md uppercase">Code d'accès rapide</strong><span
+                    class="font-body-sm text-body-sm text-on-surface-variant">Le QR code réel sera fourni après
+                    validation du dossier par l'organisation.</span></div><span
+                  class="font-label-sm text-label-sm font-mono text-on-surface-variant bg-surface-container px-3 py-2 rounded">REF:
+                  00482</span>
+              </div>
+            </div>
+
+
+            <div
+              class="mt-8 pt-6 border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                class="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-colors"
+                id="download-pass" type="button"><span
+                  class="material-symbols-outlined text-[20px]">download</span>Télécharger / Imprimer le pass</button>
+              <a class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg uppercase tracking-wider flex items-center justify-center"
+                href="./events.html">Voir la compétition</a>
+            </div>
+            <div class="mt-4 text-center"><button
+                class="inline-flex items-center gap-2 font-label-md text-label-md text-secondary hover:underline"
+                id="add-calendar" type="button"><span
+                  class="material-symbols-outlined text-[18px]">calendar_add_on</span>Ajouter l'événement au calendrier
+                (.ics)</button></div>
+          </section>
+          <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 px-2 text-center sm:text-left">
+            <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2"><span
+                class="material-symbols-outlined text-[18px]">help_outline</span>Une question sur votre inscription ?
+            </p><a class="font-body-sm text-body-sm font-medium text-secondary hover:underline"
+              href="mailto:contact@nizal.dz">Contacter l'organisation</a>
+          </div>
+          <script>
+            (() => {
+              'use strict';
+
+              const API_BASE = 'http://localhost:5000/api';
+              const REGISTRATION_ENDPOINT = `${API_BASE}/registrations`;
+              const STORAGE_KEY = 'nizalRegistrationDraft';
+
+              const params = new URLSearchParams(window.location.search);
+              const competitionId =
+                params.get('id') ||
+                params.get('competitionId') ||
+                params.get('competition_id');
+
+              const $ = (selector) => document.querySelector(selector);
+
+              function readDraft() {
+                try {
+                  return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                } catch (error) {
+                  console.error('Impossible de lire le dossier local:', error);
+                  return {};
+                }
+              }
+
+              function saveDraft(draft) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+              }
+
+              function firstValue(objects, keys, fallback = '') {
+                for (const object of objects) {
+                  if (!object || typeof object !== 'object') continue;
+
+                  for (const key of keys) {
+                    const value = object[key];
+
+                    if (value !== undefined && value !== null && value !== '') {
+                      return value;
+                    }
+                  }
+                }
+
+                return fallback;
+              }
+
+              function formatDate(value) {
+                if (!value) return 'Non renseignée';
+
+                const date = new Date(value);
+
+                if (Number.isNaN(date.getTime())) return String(value);
+
+                return date.toLocaleDateString('fr-FR', {
+                  weekday: 'long',
+                  day: '2-digit',
+                  month: 'long',
+                  year: 'numeric'
+                });
+              }
+
+              function formatMoney(value) {
+                const amount = Number(value);
+
+                if (!Number.isFinite(amount)) return value || 'À confirmer';
+
+                return `${amount.toLocaleString('fr-FR')} DA`;
+              }
+
+              function setText(element, value) {
+                if (element && value !== undefined && value !== null && value !== '') {
+                  element.textContent = String(value);
+                }
+              }
+
+              function updateElementByLabel(labelText, value) {
+                const labels = Array.from(
+                  document.querySelectorAll('section span')
+                );
+
+                const label = labels.find(
+                  element => element.textContent.trim().replace(/\s+/g, ' ')
+                    .toLowerCase() === labelText.toLowerCase()
+                );
+
+                if (!label) return;
+
+                const container = label.parentElement;
+                const valueElement = container?.querySelector('strong');
+
+                setText(valueElement, value);
+              }
+
+              function getSections(draft) {
+                // Supports the step-specific format used by the registration wizard.
+                const personal = draft.step1 || draft.personal || draft.personalInfo || {};
+                const profile = draft.step2 || draft.profile || draft.sportProfile || {};
+                const category = draft.step3 || draft.category || draft.weightCategory || {};
+                const documents = draft.step4 || draft.documents || {};
+
+                return { personal, profile, category, documents };
+              }
+
+              function displayConfirmation(draft) {
+                const { personal, profile, category, documents } = getSections(draft);
+                const competition = draft.competition || draft.competitionDetails || {};
+
+                const fullName = firstValue(
+                  [personal, draft],
+                  ['fullName', 'full_name', 'name', 'athleteName'],
+                  [
+                    firstValue([personal], ['firstName', 'first_name', 'prenom']),
+                    firstValue([personal], ['lastName', 'last_name', 'nom'])
+                  ].filter(Boolean).join(' ')
+                );
+
+                const birthDate = firstValue(
+                  [personal],
+                  ['birthDate', 'birth_date', 'dateOfBirth', 'date_naissance']
+                );
+
+                let age = '';
+                if (birthDate) {
+                  const birth = new Date(birthDate);
+
+                  if (!Number.isNaN(birth.getTime())) {
+                    const now = new Date();
+                    age = now.getFullYear() - birth.getFullYear();
+
+                    if (
+                      now.getMonth() < birth.getMonth() ||
+                      (now.getMonth() === birth.getMonth() &&
+                        now.getDate() < birth.getDate())
+                    ) {
+                      age--;
+                    }
+                  }
+                }
+
+                const gender = firstValue(
+                  [personal],
+                  ['gender', 'genre', 'sex'],
+                  ''
+                );
+
+                const phone = firstValue(
+                  [personal],
+                  ['phone', 'telephone', 'tel', 'phoneNumber']
+                );
+
+                const email = firstValue(
+                  [personal],
+                  ['email', 'courriel', 'mail']
+                );
+
+                const discipline = firstValue(
+                  [profile, category, competition],
+                  ['discipline', 'sport', 'sport_name'],
+                  'Non renseignée'
+                );
+
+                const level = firstValue(
+                  [profile, category],
+                  ['level', 'niveau', 'status', 'statut'],
+                  'Non renseigné'
+                );
+
+                const club = firstValue(
+                  [profile],
+                  ['club', 'clubName', 'club_name', 'affiliatedClub'],
+                  'Non renseigné'
+                );
+
+                const weight = firstValue(
+                  [category, profile],
+                  ['weight', 'poids', 'weight_kg', 'selectedWeight'],
+                  ''
+                );
+
+                const experience = firstValue(
+                  [profile],
+                  ['experience', 'experienceYears', 'experience_years', 'yearsOfPractice'],
+                  ''
+                );
+
+                const categoryName = firstValue(
+                  [category],
+                  ['categoryName', 'category_name', 'division', 'weightCategory', 'name'],
+                  'Non renseignée'
+                );
+
+                const ageCategory = firstValue(
+                  [category],
+                  ['ageCategory', 'age_category', 'ageRange', 'trancheAge'],
+                  ''
+                );
+
+                const fee = firstValue(
+                  [category, competition, draft],
+                  ['fee', 'registrationFee', 'registration_fee', 'price', 'frais'],
+                  0
+                );
+
+                const competitionName = firstValue(
+                  [competition, draft],
+                  ['name', 'title', 'competitionName', 'competition_name'],
+                  'Compétition NIZAL'
+                );
+
+                const competitionDate = firstValue(
+                  [competition],
+                  ['start_date', 'startDate', 'date', 'competitionDate']
+                );
+
+                const competitionLocation = firstValue(
+                  [competition],
+                  ['location', 'city', 'lieu', 'venue'],
+                  'Lieu à confirmer'
+                );
+
+                const registrationNumber = firstValue(
+                  [draft],
+                  ['registrationNumber', 'registration_number', 'reference', 'registrationCode'],
+                  ''
+                );
+
+                // Header competition name.
+                setText(
+                  document.querySelector('main .mb-8 .font-label-sm'),
+                  `COMPÉTITION OFFICIELLE · ${competitionName}`
+                );
+
+                // The competition summary pill.
+                const summaryPill = document.querySelector(
+                  'main .mb-8 .inline-flex.items-center.gap-2'
+                );
+
+                if (summaryPill) {
+                  const pillText = summaryPill.querySelector('span:last-child');
+                  setText(
+                    pillText,
+                    [
+                      competitionLocation,
+                      competitionDate ? formatDate(competitionDate) : '',
+                      discipline
+                    ].filter(Boolean).join(' · ')
+                  );
+                }
+
+                // Update athlete details in the confirmation passport.
+                const passport = document.querySelector(
+                  'section[aria-labelledby="confirmation-title"]'
+                );
+
+                if (passport) {
+                  const values = Array.from(passport.querySelectorAll('.grid > div'));
+
+                  // Passport details are in the order shown by the existing design.
+                  if (values[0]) {
+                    setText(values[0].querySelector('strong'), registrationNumber || 'En attente');
+                  }
+
+                  if (values[1]) {
+                    setText(values[1].querySelector('strong'), competitionName);
+                  }
+
+                  if (values[2]) {
+                    setText(values[2].querySelector('strong'), fullName || 'Non renseigné');
+
+                    const licence = firstValue(
+                      [profile, personal],
+                      ['licence', 'license', 'licenseNumber', 'licenceNumber'],
+                      ''
+                    );
+
+                    setText(
+                      values[2].querySelector('strong')?.nextElementSibling,
+                      licence ? `Licence ${licence}` : ''
+                    );
+                  }
+
+                  if (values[3]) {
+                    setText(
+                      values[3].querySelector('strong'),
+                      [discipline, level, categoryName, weight ? `${weight} kg` : '']
+                        .filter(Boolean).join(' · ')
+                    );
+                  }
+
+                  if (values[4]) {
+                    setText(
+                      values[4].querySelector('strong'),
+                      competitionDate ? formatDate(competitionDate) : 'Date à confirmer'
+                    );
+
+                    setText(
+                      values[4].querySelector('strong')?.nextElementSibling,
+                      competitionLocation
+                    );
+                  }
+                }
+
+                // Update the registration number and its short reference.
+                if (passport && registrationNumber) {
+                  const ref = Array.from(passport.querySelectorAll('span'))
+                    .find(element => element.textContent.trim().startsWith('REF:'));
+
+                  if (ref) {
+                    ref.textContent = `REF: ${registrationNumber.split('-').pop()}`;
+                  }
+                }
+
+                // Replace the fee displayed in the passport.
+                if (passport) {
+                  const feeText = Array.from(passport.querySelectorAll('*'))
+                    .find(element =>
+                      element.children.length === 0 &&
+                      element.textContent.trim() === '2 000 DA'
+                    );
+
+                  setText(feeText, formatMoney(fee));
+                }
+
+                // Update the documents list on the review page if it is still available.
+                const documentContainer = Array.from(
+                  document.querySelectorAll('h3')
+                ).find(element => element.textContent.includes('Documents téléversés'))
+                  ?.parentElement?.parentElement?.querySelector('.flex.flex-wrap');
+
+                if (documentContainer) {
+                  documentContainer.replaceChildren();
+
+                  const documentList =
+                    documents.documents ||
+                    documents.files ||
+                    documents.uploadedDocuments ||
+                    documents.uploaded_documents ||
+                    {};
+
+                  const entries = Array.isArray(documentList)
+                    ? documentList.map((item, index) => [
+                      item.name || item.documentName || `Document ${index + 1}`,
+                      item.fileName || item.filename || item.name || 'Enregistré'
+                    ])
+                    : Object.entries(documentList).map(([key, value]) => [
+                      value?.label || value?.documentName || key,
+                      value?.name || value?.fileName || value?.filename || 'Enregistré'
+                    ]);
+
+                  entries.forEach(([name, filename]) => {
+                    const chip = document.createElement('span');
+                    chip.className =
+                      'inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container border border-surface-container-highest text-body-sm';
+
+                    const icon = document.createElement('span');
+                    icon.className = 'material-symbols-outlined text-secondary text-[18px]';
+                    icon.textContent = 'description';
+
+                    const title = document.createElement('span');
+                    title.textContent = name;
+
+                    const status = document.createElement('strong');
+                    status.className = 'text-secondary';
+                    status.textContent = `✓ ${filename}`;
+
+                    chip.append(icon, title, status);
+                    documentContainer.appendChild(chip);
+                  });
+
+                  if (!entries.length) {
+                    documentContainer.textContent = 'Aucun document enregistré dans le dossier local.';
+                  }
+                }
+
+                // Store commonly-used normalized values for the confirmation UI.
+                // Keep the original step objects intact.
+                draft.confirmationView = {
+                  competitionId,
+                  athleteName: fullName,
+                  email,
+                  phone,
+                  gender,
+                  birthDate,
+                  age,
+                  discipline,
+                  level,
+                  club,
+                  weight,
+                  experience,
+                  categoryName,
+                  ageCategory,
+                  fee,
+                  competitionName,
+                  competitionDate,
+                  competitionLocation,
+                  registrationNumber
+                };
+
+                saveDraft(draft);
+
+                // Preserve competition ID in all competition-related links.
+                document.querySelectorAll('a[href*="nizal-inscription-"], a[href="./events.html"]')
+                  .forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (!href || !competitionId) return;
+
+                    const url = new URL(href, window.location.href);
+                    url.searchParams.set('id', competitionId);
+                    link.href = url.pathname + url.search + url.hash;
+                  });
+              }
+
+              function showMessage(text, isError = false) {
+                let message = $('#confirmation-message');
+
+                if (!message) {
+                  message = document.createElement('p');
+                  message.id = 'confirmation-message';
+                  message.className = 'mt-4 rounded-lg p-3 text-body-md';
+                  message.setAttribute('role', 'status');
+                  message.setAttribute('aria-live', 'polite');
+
+                  const title = $('#confirmation-title');
+                  title?.parentElement?.appendChild(message);
+                }
+
+                message.textContent = text;
+                message.classList.toggle('text-primary', isError);
+                message.classList.toggle('text-secondary', !isError);
+              }
+
+              async function submitRegistration(draft) {
+                // Avoid duplicate registrations if the user reloads this page.
+                if (draft.submission?.success && draft.submission?.registrationId) {
+                  return draft.submission;
+                }
+
+                if (!competitionId) {
+                  showMessage(
+                    'Identifiant de compétition manquant dans l’URL. Ouvrez cette page avec ?id=ID.',
+                    true
+                  );
+                  throw new Error('Missing competition ID');
+                }
+
+                const { personal, profile, category, documents } = getSections(draft);
+
+                /*
+                  Files cannot be read from localStorage itself.
+                  If Step 4 stored file metadata only, the file contents must be retrieved
+                  from IndexedDB and uploaded as multipart/form-data instead.
+                  This JSON submission includes the saved document metadata.
+                */
+                const payload = {
+                  competition_id: Number(competitionId) || competitionId,
+                  personal,
+                  profile,
+                  category,
+                  documents,
+                  termsAccepted: true,
+                  registrationDraft: draft
+                };
+
+                const button = $('button[type="submit"]');
+                if (button) {
+                  button.disabled = true;
+                  button.classList.add('opacity-60', 'cursor-not-allowed');
+                }
+
+                showMessage('Envoi de votre dossier à l’organisation…');
+
+                try {
+                  const response = await fetch(REGISTRATION_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                  });
+
+                  const result = await response.json().catch(() => ({}));
+
+                  if (!response.ok) {
+                    throw new Error(
+                      result.message ||
+                      result.error ||
+                      `Erreur du serveur (${response.status})`
+                    );
+                  }
+
+                  const registrationId =
+                    result.registrationId ||
+                    result.registration_id ||
+                    result.id ||
+                    result.registration?.id ||
+                    result.data?.id;
+
+                  const registrationNumber =
+                    result.registrationNumber ||
+                    result.registration_number ||
+                    result.reference ||
+                    result.registration?.registration_number ||
+                    result.data?.registration_number ||
+                    (registrationId ? `NIZAL-${new Date().getFullYear()}-${String(registrationId).padStart(5, '0')}` : '');
+
+                  draft.submission = {
+                    success: true,
+                    registrationId: registrationId || null,
+                    registrationNumber,
+                    response: result,
+                    submittedAt: new Date().toISOString()
+                  };
+
+                  if (registrationNumber) {
+                    draft.registrationNumber = registrationNumber;
+                  }
+
+                  saveDraft(draft);
+                  displayConfirmation(draft);
+
+                  showMessage('Votre dossier a été transmis avec succès.');
+
+                  return draft.submission;
+                } catch (error) {
+                  console.error('Erreur lors de l’envoi de l’inscription:', error);
+
+                  showMessage(
+                    `Impossible de confirmer l’inscription : ${error.message}. Vérifiez que le backend est démarré et que la route ${REGISTRATION_ENDPOINT} existe.`,
+                    true
+                  );
+
+                  if (button) {
+                    button.disabled = false;
+                    button.classList.remove('opacity-60', 'cursor-not-allowed');
+                  }
+
+                  throw error;
+                }
+              }
+
+              function configurePrintAndCalendar(draft) {
+                $('#download-pass')?.addEventListener('click', () => window.print());
+
+                $('#add-calendar')?.addEventListener('click', () => {
+                  const competition = draft.competition || draft.competitionDetails || {};
+                  const view = draft.confirmationView || {};
+
+                  const name = view.competitionName || competition.name || competition.title || 'Compétition NIZAL';
+                  const location = view.competitionLocation || competition.location || competition.city || 'Algérie';
+                  const dateValue = view.competitionDate || competition.start_date || competition.startDate;
+
+                  const start = dateValue ? new Date(dateValue) : new Date('2026-10-25T08:30:00');
+                  const end = new Date(start.getTime() + 8 * 60 * 60 * 1000);
+
+                  function toICSDate(date) {
+                    return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+                  }
+
+                  function escapeICS(value) {
+                    return String(value || '')
+                      .replace(/\\/g, '\\\\')
+                      .replace(/\n/g, '\\n')
+                      .replace(/,/g, '\\,')
+                      .replace(/;/g, '\\;');
+                  }
+
+                  const uid = `nizal-${competitionId || 'competition'}-${Date.now()}@nizal.dz`;
+
+                  const ics = [
+                    'BEGIN:VCALENDAR',
+                    'VERSION:2.0',
+                    'PRODID:-//NIZAL//Competition//FR',
+                    'CALSCALE:GREGORIAN',
+                    'BEGIN:VEVENT',
+                    `UID:${uid}`,
+                    `DTSTAMP:${toICSDate(new Date())}`,
+                    `DTSTART:${toICSDate(start)}`,
+                    `DTEND:${toICSDate(end)}`,
+                    `SUMMARY:${escapeICS(name)}`,
+                    `LOCATION:${escapeICS(location)}`,
+                    `DESCRIPTION:${escapeICS('Inscription à une compétition NIZAL')}`,
+                    'END:VEVENT',
+                    'END:VCALENDAR'
+                  ].join('\r\n');
+
+                  const blob = new Blob([ics], {
+                    type: 'text/calendar;charset=utf-8'
+                  });
+
+                  const url = URL.createObjectURL(blob);
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = 'nizal-competition.ics';
+                  document.body.appendChild(link);
+                  link.click();
+                  link.remove();
+                  URL.revokeObjectURL(url);
+                });
+              }
+
+              async function init() {
+                const draft = readDraft();
+
+                if (!competitionId) {
+                  showMessage(
+                    'Identifiant de compétition manquant. Ajoutez ?id=ID à l’URL.',
+                    true
+                  );
+                }
+
+                // Display saved details immediately.
+                displayConfirmation(draft);
+                configurePrintAndCalendar(draft);
+
+                /*
+                  Step 5 should navigate to Step 6 with the competition ID.
+                  This page submits the registration once, on arrival.
+                */
+                if (draft.submission?.success) {
+                  displayConfirmation(draft);
+                  showMessage('Cette inscription a déjà été envoyée.');
+                  return;
+                }
+
+                // Submit the registration only if the user accepted the terms in Step 5.
+                if (draft.termsAccepted === true || draft.step5?.termsAccepted === true) {
+                  try {
+                    await submitRegistration(draft);
+                  } catch (_) {
+                    // Error is displayed on the page; do not redirect.
+                  }
+                } else {
+                  showMessage(
+                    'Les informations enregistrées sont affichées. Revenez à l’étape précédente pour accepter les conditions et envoyer votre dossier.',
+                    true
+                  );
+                }
+              }
+
+              document.addEventListener('DOMContentLoaded', init);
+            })();
+          </script>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+            même endroit. Tournois, classements et billetterie officielle.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="actualites" href="../boutique/shop.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="athletes" href="../boutique/shop.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="evenements" href="../boutique/shop.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="boutique" href="../boutique/shop.html">Boutique</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="a-propos" href="../boutique/shop.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="../boutique/shop.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="faq" href="../boutique/shop.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="conditions-generales" href="../boutique/shop.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="politique-de-confidentialite" href="../boutique/shop.html">Politique de confidentialité</a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">TikTok</a></div>
+        </div>
+      </div>
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+        <p class="">© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider font-label-sm text-label-sm text-on-surface-variant">Plateforme Combat Sports
+          Haute Performance</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./nav.js"></script>
+</body>
+
+</html>

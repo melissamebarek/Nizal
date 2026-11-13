@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modifier la compétition — NIZAL</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="edit-competition.css">
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>N</span>
+            <strong>NIZAL</strong>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+
+            <a href="articles.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+
+            <a href="products.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Produits & Boutique</span>
+            </a>
+
+            <a href="competitions.html" class="active">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+
+            <a href="registrations.html">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Inscriptions</span>
+            </a>
+
+            <a href="orders.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </header>
+
+
+        <!-- PAGE -->
+        <section class="page-content">
+
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+
+                <a href="competitions.html">
+                    Compétitions
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <a href="competition-details.html">
+                    NIZAL Fight Championship
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>Modifier</span>
+
+            </div>
+
+
+            <!-- HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <h1>Modifier la compétition</h1>
+
+                    <p>
+                        Modifiez les informations de cette compétition.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="competitionForm">
+
+                <!-- COVER IMAGE -->
+                
+                <div class="form-group full">
+                
+                    <label for="coverImage">
+                        Image de couverture
+                    </label>
+                
+                    <div class="cover-image-editor">
+                
+                        <div class="cover-image-preview">
+                
+                            <img id="coverImagePreview" src="" alt="Image de couverture">
+                
+                            <div class="cover-image-placeholder" id="coverImagePlaceholder">
+                                <i class="fa-regular fa-image"></i>
+                                <span>Aucune image</span>
+                            </div>
+                
+                        </div>
+                
+                        <div class="cover-image-actions">
+                
+                            <label for="coverImage" class="cover-image-btn">
+                                <i class="fa-solid fa-upload"></i>
+                                Changer l'image
+                            </label>
+                
+                            <input type="file" id="coverImage" accept="image/*" hidden>
+                
+                            <button type="button" id="removeCoverImage" class="remove-cover-btn">
+                                <i class="fa-solid fa-trash"></i>
+                                Supprimer
+                            </button>
+                
+                            <small>
+                                JPG, PNG ou WEBP — image recommandée 16:9
+                            </small>
+                
+                        </div>
+                
+                    </div>
+                
+                </div>
+
+
+                <!-- INFORMATIONS GÉNÉRALES -->
+                <div class="form-card">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+
+                        <div>
+                            <h2>Informations générales</h2>
+                            <p>Informations principales de la compétition</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+
+                            <label for="competitionName">
+                                Nom de la compétition
+                                <span>*</span>
+                            </label>
+
+                            <input type="text" id="competitionName" value="NIZAL Fight Championship" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="sport">
+                                Sport
+                                <span>*</span>
+                            </label>
+
+                            <select id="sport" required>
+
+                                <option value="Boxing" selected>Boxing</option>
+                                <option value="Karaté">Karaté</option>
+                                <option value="Judo">Judo</option>
+                                <option value="Wrestling">Wrestling</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="discipline">
+                                Discipline
+                                <span>*</span>
+                            </label>
+
+                            <input type="text" id="discipline" value="MMA Amateur" required>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <textarea id="description"
+                                rows="5">Le NIZAL Fight Championship est une compétition dédiée aux pratiquants de MMA. Elle rassemble différents participants dans plusieurs catégories d'âge, de genre et de poids.</textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATE & LIEU -->
+                <div class="form-card">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
+                        <div>
+                            <h2>Date & lieu</h2>
+                            <p>Planification et emplacement de la compétition</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="date">
+                                Date
+                                <span>*</span>
+                            </label>
+
+                            <input type="date" id="date" value="2026-10-18" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="startTime">
+                                Heure de début
+                                <span>*</span>
+                            </label>
+
+                            <input type="time" id="startTime" value="09:00" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="endTime">
+                                Heure de fin
+                            </label>
+
+                            <input type="time" id="endTime" value="18:00">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="location">
+                                Lieu
+                                <span>*</span>
+                            </label>
+
+                            <input type="text" id="location" value="Palais des Sports" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                Ville
+                            </label>
+
+                            <input type="text" id="city" value="Alger">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="organizer">
+                                Organisateur
+                            </label>
+
+                            <input type="text" id="organizer" value="NIZAL">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INSCRIPTIONS -->
+                <div class="form-card">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+
+                        <div>
+                            <h2>Inscriptions</h2>
+                            <p>Paramètres d'inscription</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="openingDate">
+                                Ouverture des inscriptions
+                                <span>*</span>
+                            </label>
+
+                            <input type="date" id="openingDate" value="2026-09-01" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="closingDate">
+                                Fermeture des inscriptions
+                                <span>*</span>
+                            </label>
+
+                            <input type="date" id="closingDate" value="2026-10-15" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registrationFee">
+                                Frais d'inscription
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input type="number" id="registrationFee" value="2000" min="0">
+
+                                <span>DZD</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="maxParticipants">
+                                Nombre maximum de participants
+                            </label>
+
+                            <input type="number" id="maxParticipants" value="50" min="1">
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="conditions">
+                                Conditions de participation
+                            </label>
+
+                            <textarea id="conditions"
+                                rows="4">Être âgé d'au moins 18 ans et respecter les conditions définies pour la catégorie choisie.</textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATÉGORIES -->
+                <div class="form-card">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+
+                        <div>
+                            <h2>Catégories</h2>
+                            <p>Catégories disponibles pour cette compétition</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-list" id="categoryList">
+
+
+                        <div class="category-item">
+
+                            <div class="category-grid">
+
+                                <div class="form-group">
+
+                                    <label>Genre</label>
+
+                                    <select>
+
+                                        <option selected>
+                                            Hommes
+                                        </option>
+
+                                        <option>
+                                            Femmes
+                                        </option>
+
+                                        <option>
+                                            Mixte
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>Catégorie d'âge</label>
+
+                                    <select>
+
+                                        <option selected>
+                                            18 – 24 ans
+                                        </option>
+
+                                        <option>
+                                            25 – 34 ans
+                                        </option>
+
+                                        <option>
+                                            35 – 44 ans
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>Catégorie de poids</label>
+
+                                    <select>
+
+                                        <option selected>
+                                            -66 kg
+                                        </option>
+
+                                        <option>
+                                            -70 kg
+                                        </option>
+
+                                        <option>
+                                            -77 kg
+                                        </option>
+
+                                        <option>
+                                            -84 kg
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <button type="button" class="remove-category" title="Supprimer">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-item">
+
+                            <div class="category-grid">
+
+                                <div class="form-group">
+
+                                    <label>Genre</label>
+
+                                    <select>
+
+                                        <option>
+                                            Hommes
+                                        </option>
+
+                                        <option selected>
+                                            Femmes
+                                        </option>
+
+                                        <option>
+                                            Mixte
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>Catégorie d'âge</label>
+
+                                    <select>
+
+                                        <option selected>
+                                            18 – 24 ans
+                                        </option>
+
+                                        <option>
+                                            25 – 34 ans
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>Catégorie de poids</label>
+
+                                    <select>
+
+                                        <option selected>
+                                            -57 kg
+                                        </option>
+
+                                        <option>
+                                            -61 kg
+                                        </option>
+
+                                        <option>
+                                            -66 kg
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <button type="button" class="remove-category" title="Supprimer">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button" class="add-category" id="addCategory">
+                        <i class="fa-solid fa-plus"></i>
+                        Ajouter une catégorie
+                    </button>
+
+                </div>
+
+
+                <!-- DOCUMENTS -->
+                <div class="form-card">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <div>
+                            <h2>Documents requis</h2>
+                            <p>
+                                Documents demandés pour cette compétition
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div id="documentsList">
+
+
+                        <div class="document-item">
+
+                            <div class="document-header">
+
+                                <strong>Document 1</strong>
+
+                                <button type="button" class="remove-document">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Nom du document
+                                    </label>
+
+                                    <input type="text" value="Carte d'identité">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Formats acceptés
+                                    </label>
+
+                                    <input type="text" value="PDF, JPG, PNG">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Taille maximale
+                                    </label>
+
+                                    <select>
+
+                                        <option>
+                                            2 MB
+                                        </option>
+
+                                        <option selected>
+                                            5 MB
+                                        </option>
+
+                                        <option>
+                                            10 MB
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label>
+                                        Description / instructions
+                                    </label>
+
+                                    <textarea rows="3">Une copie claire et lisible du document.</textarea>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="checkbox">
+
+                                <input type="checkbox" checked>
+
+                                <span>
+                                    Document obligatoire
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="document-item">
+
+                            <div class="document-header">
+
+                                <strong>Document 2</strong>
+
+                                <button type="button" class="remove-document">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Nom du document
+                                    </label>
+
+                                    <input type="text" value="Certificat médical">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Formats acceptés
+                                    </label>
+
+                                    <input type="text" value="PDF, JPG">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Taille maximale
+                                    </label>
+
+                                    <select>
+
+                                        <option>
+                                            2 MB
+                                        </option>
+
+                                        <option selected>
+                                            5 MB
+                                        </option>
+
+                                        <option>
+                                            10 MB
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label>
+                                        Description / instructions
+                                    </label>
+
+                                    <textarea
+                                        rows="3">Certificat médical valide pour la participation à la compétition.</textarea>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="checkbox">
+
+                                <input type="checkbox" checked>
+
+                                <span>
+                                    Document obligatoire
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="document-item">
+
+                            <div class="document-header">
+
+                                <strong>Document 3</strong>
+
+                                <button type="button" class="remove-document">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Nom du document
+                                    </label>
+
+                                    <input type="text" value="Photo personnelle">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Formats acceptés
+                                    </label>
+
+                                    <input type="text" value="JPG, PNG">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Taille maximale
+                                    </label>
+
+                                    <select>
+
+                                        <option selected>
+                                            2 MB
+                                        </option>
+
+                                        <option>
+                                            5 MB
+                                        </option>
+
+                                        <option>
+                                            10 MB
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label>
+                                        Description / instructions
+                                    </label>
+
+                                    <textarea rows="3">Photo récente du participant.</textarea>
+
+                                </div>
+
+                            </div>
+
+
+                            <label class="checkbox">
+
+                                <input type="checkbox">
+
+                                <span>
+                                    Document obligatoire
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button" class="add-document" id="addDocument">
+                        <i class="fa-solid fa-plus"></i>
+                        Ajouter un document
+                    </button>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <a href="competition-details.html" class="btn btn-secondary">
+                        Annuler
+                    </a>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-check"></i>
+                        Enregistrer les modifications
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="edit-competition.js"></script>
+
+</body>
+
+</html>

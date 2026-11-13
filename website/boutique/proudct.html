@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIZAL — Produit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            body: ["Inter", "sans-serif"],
+            headline: ["Oswald", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="../nav.css">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      overscroll-behavior: none;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+
+    .font-headline {
+      font-family: Oswald, sans-serif;
+    }
+
+    .thumb-btn.active {
+      border: 2px solid #e10600;
+      opacity: 1;
+      box-shadow: 0 0 0 2px rgb(225 6 0 / 12%);
+    }
+
+    .color-btn {
+      min-width: 42px;
+      min-height: 42px;
+      padding: 9px 13px;
+      border: 2px solid #d6d3d1;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: capitalize;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .color-btn.active {
+      border: 3px solid #171717;
+      box-shadow: 0 0 0 2px white, 0 0 0 4px #171717;
+      transform: scale(1.04);
+    }
+
+    .size-btn.active {
+      border: 2px solid #171717;
+      background: #171717;
+      color: white;
+    }
+
+    .size-btn:disabled,
+    .color-btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+
+    #cartToast {
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    #cartToast.hidden-toast {
+      opacity: 0;
+      transform: translateY(5rem);
+      pointer-events: none;
+    }
+
+    button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-stone-900 antialiased">
+
+  <!-- NAVIGATION -->
+  <header id="header">
+    <a href="../index.html" class="logo-link">
+      <img src="../../assest/logo.png" alt="NIZAL Logo" class="logo">
+    </a>
+
+    <nav id="mainNav">
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../articles/actualites.html">ACTUALITÉS</a></li>
+        <li><a href="../event/events.html">ÉVÉNEMENTS</a></li>
+        <li><a href="shop.html" class="active">BOUTIQUE</a></li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a href="../search.html" aria-label="Recherche">
+        <i class="fas fa-search"></i>
+      </a>
+      <a href="cart.html" aria-label="Panier">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="min-h-screen bg-white">
+    <div id="pageMessage" class="hidden max-w-7xl mx-auto px-6 pt-5 text-sm" role="status"></div>
+
+    <!-- PRODUCT -->
+    <section id="productSection" class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+
+        <!-- GALLERY -->
+        <div class="lg:col-span-7 flex flex-col gap-4">
+
+          <div
+            class="relative w-full aspect-square bg-[#FBFBFC] rounded-xl overflow-hidden border border-stone-200 flex items-center justify-center group">
+
+            <div class="absolute top-4 left-4 z-10">
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 bg-stone-900/90 text-white text-[11px] font-semibold tracking-wider uppercase rounded">
+                <span class="material-symbols-outlined text-[14px] text-red-500">verified</span>
+                Qualité
+              </span>
+            </div>
+
+            <img id="mainProductImage" src="" alt="Produit NIZAL"
+              class="w-full h-full object-contain p-6 md:p-10 transition-all duration-300 group-hover:scale-[1.02]">
+
+            <div id="imagePlaceholder" class="absolute text-sm text-stone-400">
+              Chargement de l'image...
+            </div>
+          </div>
+
+          <div id="thumbnailGallery" class="grid grid-cols-4 gap-3">
+            <button type="button"
+              class="thumb-btn active relative aspect-square rounded-lg bg-stone-50 border border-stone-200 overflow-hidden p-2"
+              data-image-index="0" aria-label="Image 1">
+              <img src="" alt="Vue 1" class="w-full h-full object-contain">
+            </button>
+
+            <button type="button"
+              class="thumb-btn relative aspect-square rounded-lg bg-stone-50 border border-stone-200 overflow-hidden p-2 opacity-75"
+              data-image-index="1" aria-label="Image 2">
+              <img src="" alt="Vue 2" class="w-full h-full object-contain">
+            </button>
+
+            <button type="button"
+              class="thumb-btn relative aspect-square rounded-lg bg-stone-50 border border-stone-200 overflow-hidden p-2 opacity-75"
+              data-image-index="2" aria-label="Image 3">
+              <img src="" alt="Vue 3" class="w-full h-full object-contain">
+            </button>
+
+            <button type="button"
+              class="thumb-btn relative aspect-square rounded-lg bg-stone-50 border border-stone-200 overflow-hidden p-2 opacity-75"
+              data-image-index="3" aria-label="Image 4">
+              <img src="" alt="Vue 4" class="w-full h-full object-contain">
+            </button>
+          </div>
+
+          <!-- SERVICES -->
+          <div class="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+            <div class="py-3 px-2 bg-stone-50 rounded border border-stone-200 flex flex-col items-center">
+              <span class="material-symbols-outlined text-stone-700 text-lg">shield</span>
+              <span class="text-[11px] font-semibold text-stone-800 uppercase">Garantie</span>
+              <span class="text-[10px] text-stone-500">Qualité vérifiée</span>
+            </div>
+
+            <div class="py-3 px-2 bg-stone-50 rounded border border-stone-200 flex flex-col items-center">
+              <span class="material-symbols-outlined text-blue-600 text-lg">verified_user</span>
+              <span class="text-[11px] font-semibold text-stone-800 uppercase">Qualité NIZAL</span>
+              <span class="text-[10px] text-stone-500">Matériel de combat</span>
+            </div>
+
+            <div class="py-3 px-2 bg-stone-50 rounded border border-stone-200 flex flex-col items-center">
+              <span class="material-symbols-outlined text-red-600 text-lg">local_shipping</span>
+              <span class="text-[11px] font-semibold text-stone-800 uppercase">Livraison</span>
+              <span class="text-[10px] text-stone-500">Colis suivi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT DETAILS -->
+        <div class="lg:col-span-5 flex flex-col">
+
+          <h1 id="productName"
+            class="font-headline text-3xl sm:text-4xl text-stone-900 tracking-tight uppercase leading-tight font-bold">
+            Chargement du produit...
+          </h1>
+
+          <!-- PRICE -->
+          <div class="py-5">
+            <div class="flex flex-wrap items-baseline gap-3">
+              <span id="productPrice" class="font-headline text-4xl text-stone-950 font-bold tracking-tight">
+                ...
+              </span>
+
+              <span id="productOldPrice" class="text-sm line-through text-stone-400 hidden"></span>
+
+              <span id="discountBadge"
+                class="px-2 py-1 rounded text-xs font-bold bg-red-100 text-red-700 uppercase hidden"></span>
+            </div>
+
+            <p id="stockStatus" class="text-xs mt-2 text-stone-500"></p>
+          </div>
+
+          <!-- SELECTORS -->
+          <form id="productForm" class="flex flex-col gap-6">
+
+            <!-- COLORS -->
+            <div id="colorSection">
+              <div class="flex items-center justify-between mb-2.5">
+                <label class="text-xs font-bold text-stone-900 uppercase tracking-wider">
+                  Coloris :
+                  <span id="selectedColorName" class="text-red-600 font-normal">—</span>
+                </label>
+              </div>
+              <div id="colorOptions" class="flex flex-wrap items-center gap-3"></div>
+            </div>
+
+            <!-- SIZES -->
+            <div id="sizeSection">
+              <div class="flex items-center justify-between mb-2">
+                <label class="text-xs font-bold text-stone-900 uppercase tracking-wider">
+                  Taille :
+                  <span id="selectedSize" class="text-stone-500 font-normal">—</span>
+                </label>
+
+                <button id="sizeGuideButton" type="button"
+                  class="text-xs font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1 underline underline-offset-2">
+                  <span class="material-symbols-outlined text-[15px]">straighten</span>
+                  Guide des tailles
+                </button>
+              </div>
+              <div id="sizeOptions" class="grid grid-cols-4 gap-2.5"></div>
+            </div>
+
+            <!-- QUANTITY / CART -->
+            <div class="pt-2 flex flex-col gap-3">
+              <div class="flex items-stretch gap-3">
+
+                <div class="flex items-center border border-stone-300 rounded-lg bg-white overflow-hidden shrink-0">
+                  <button id="decreaseQty" type="button"
+                    class="w-10 h-12 flex items-center justify-center text-stone-600 hover:bg-stone-100"
+                    aria-label="Diminuer la quantité">
+                    <span class="material-symbols-outlined text-[18px]">remove</span>
+                  </button>
+
+                  <input id="qtyInput" readonly type="text" value="1"
+                    class="w-10 text-center font-bold text-stone-900 text-sm focus:outline-none">
+
+                  <button id="increaseQty" type="button"
+                    class="w-10 h-12 flex items-center justify-center text-stone-600 hover:bg-stone-100"
+                    aria-label="Augmenter la quantité">
+                    <span class="material-symbols-outlined text-[18px]">add</span>
+                  </button>
+                </div>
+
+                <button id="addToCartButton" type="submit"
+                  class="flex-1 bg-[#E10600] hover:bg-[#c00500] text-white font-headline text-base uppercase tracking-wider font-bold rounded-lg px-4 flex items-center justify-center gap-2.5 shadow-lg transition-all">
+                  <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                  Ajouter au panier
+                </button>
+              </div>
+
+              <p id="cartFeedback" class="text-sm text-emerald-700 hidden"></p>
+            </div>
+          </form>
+
+          <!-- SERVICES -->
+          <div class="mt-6 pt-6 border-t border-stone-200 flex flex-col gap-3">
+            <div class="flex items-center gap-3 text-xs text-stone-700">
+              <span class="material-symbols-outlined text-emerald-600 text-xl">local_shipping</span>
+              <span><strong class="font-semibold text-stone-900">Livraison</strong> selon votre wilaya.</span>
+            </div>
+
+            <div class="flex items-center gap-3 text-xs text-stone-700">
+              <span class="material-symbols-outlined text-blue-600 text-xl">published_with_changes</span>
+              <span><strong class="font-semibold text-stone-900">Service client</strong> pour vos commandes.</span>
+            </div>
+
+            <div class="flex items-center gap-3 text-xs text-stone-700">
+              <span class="material-symbols-outlined text-red-600 text-xl">sports_martial_arts</span>
+              <span><strong class="font-semibold text-stone-900">NIZAL</strong> — plateforme de sports de combat.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESCRIPTION + SIZE GUIDE -->
+      <section class="mt-16 border-t border-stone-200 pt-8">
+
+        <!-- DESCRIPTION -->
+        <div class="mb-10">
+          <h2 class="font-headline text-2xl text-stone-900 mb-4 uppercase">
+            Description du produit
+          </h2>
+
+          <div id="productDescription" class="text-sm leading-7 text-stone-600 whitespace-pre-line">
+            Chargement de la description...
+          </div>
+        </div>
+
+        <!-- SIZE GUIDE -->
+        <div class="border-t border-stone-200 pt-8">
+          <div class="flex gap-8 border-b border-stone-200 mb-6">
+            <button type="button" class="tab-btn py-3 border-b-2 border-red-600 text-stone-950 font-bold"
+              data-tab="size-guide">
+              Guide des tailles
+            </button>
+          </div>
+
+          <div id="tab-size-guide" class="tab-panel text-sm leading-7 text-stone-600">
+            <h2 class="font-headline text-xl text-stone-900 mb-3">
+              Guide des tailles
+            </h2>
+            <p>Choisissez parmi les tailles disponibles pour ce produit.</p>
+            <p class="mt-2">
+              Les tailles affichées dépendent des variantes retournées par le serveur.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+
+    </section>
+  </main>
+
+  <!-- CART TOAST -->
+  <div id="cartToast"
+    class="hidden-toast fixed bottom-5 right-5 z-50 max-w-sm w-[calc(100%-2.5rem)] bg-stone-900 text-white rounded-xl shadow-2xl p-4">
+    <div class="flex items-start gap-3">
+      <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+
+      <div class="flex-1">
+        <p class="font-semibold text-sm">Produit ajouté au panier</p>
+        <p id="toastMessage" class="text-xs text-stone-300 mt-1"></p>
+        <a href="cart.html" class="inline-block mt-3 text-xs underline underline-offset-4">Voir le panier</a>
+      </div>
+
+      <button type="button" id="closeToast" aria-label="Fermer" class="text-stone-300 hover:text-white">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-stone-950 text-stone-200 mt-10">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <span class="font-headline text-2xl uppercase tracking-wider">NIZAL</span>
+            <span class="w-2 h-2 rounded-full bg-red-600"></span>
+          </div>
+          <p class="text-sm text-stone-400 max-w-xs">
+            Le monde des sports de combat, réuni au même endroit.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-headline uppercase tracking-wide mb-3">Navigation</h2>
+          <nav class="flex flex-col gap-2 text-sm text-stone-400">
+            <a href="../articles/actualites.html" class="hover:text-white">Actualités</a>
+            <a href="../athletes/athletes.html" class="hover:text-white">Athlètes</a>
+            <a href="../event/events.html" class="hover:text-white">Événements</a>
+            <a href="shop.html" class="hover:text-white">Boutique</a>
+          </nav>
+        </div>
+
+        <div>
+          <h2 class="font-headline uppercase tracking-wide mb-3">Informations</h2>
+          <nav class="flex flex-col gap-2 text-sm text-stone-400">
+            <a href="../about.html" class="hover:text-white">À propos</a>
+            <a href="../contact.html" class="hover:text-white">Contact</a>
+            <a href="../faq.html" class="hover:text-white">FAQ</a>
+          </nav>
+        </div>
+
+        <div>
+          <h2 class="font-headline uppercase tracking-wide mb-3">Suivez-nous</h2>
+          <div class="flex flex-col gap-2 text-sm text-stone-400">
+            <a href="#" class="hover:text-white">Instagram</a>
+            <a href="#" class="hover:text-white">Facebook</a>
+            <a href="#" class="hover:text-white">YouTube</a>
+            <a href="#" class="hover:text-white">TikTok</a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-8 pt-5 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500">
+        <p>© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider">Plateforme Combat Sports Haute Performance</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../nav.js"></script>
+
+  <script>
+    // =====================================
+    // CONFIGURATION
+    // =====================================
+
+    const params = new URLSearchParams(
+      window.location.search.replace(/\s+/g, "")
+    );
+
+    const productId = params.get("id");
+
+    const API_URL = productId
+      ? `http://localhost:5000/api/products/${encodeURIComponent(productId)}`
+      : null;
+
+    const CART_KEY = "nizalCart";
+
+    let currentProduct = null;
+    let galleryImages = [];
+    let productVariants = [];
+    let selectedVariant = null;
+    let selectedColor = null;
+    let selectedSize = null;
+    let selectedQuantity = 1;
+    let toastTimeout = null;
+
+    const $ = selector => document.querySelector(selector);
+    const $$ = selector => [...document.querySelectorAll(selector)];
+
+    // =====================================
+    // API HELPERS
+    // =====================================
+
+    function unwrapProduct(result) {
+      let product = result;
+
+      if (product && product.data !== undefined) {
+        product = product.data;
+      }
+
+      if (product && product.product !== undefined) {
+        product = product.product;
+      }
+
+      if (Array.isArray(product)) {
+        product = product[0];
+      }
+
+      return product;
+    }
+
+    function firstValue(object, keys) {
+      for (const key of keys) {
+        if (
+          object &&
+          object[key] !== undefined &&
+          object[key] !== null &&
+          object[key] !== ""
+        ) {
+          return object[key];
+        }
+      }
+
+      return null;
+    }
+
+    function formatPrice(value) {
+      if (value === null || value === undefined || value === "") {
+        return "Prix indisponible";
+      }
+
+      const number = Number(value);
+
+      if (!Number.isFinite(number)) {
+        return String(value);
+      }
+
+      return number.toLocaleString("fr-DZ", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }) + " DA";
+    }
+
+    function normalizeImageUrl(value) {
+      if (!value || typeof value !== "string") return null;
+
+      const image = value.trim();
+
+      if (/^(https?:|data:|blob:)/i.test(image)) {
+        return image;
+      }
+
+      return "http://localhost:5000/" + image.replace(/^\/+/, "");
+    }
+
+    function extractImages(product) {
+      const images = [];
+
+      const mainImage = firstValue(product, [
+        "image", "imageUrl", "image_url",
+        "photo", "photoUrl", "picture", "thumbnail"
+      ]);
+
+      if (typeof mainImage === "string") {
+        images.push(mainImage);
+      }
+
+      const extraImages = firstValue(product, [
+        "images", "photos", "gallery", "pictures"
+      ]);
+
+      if (Array.isArray(extraImages)) {
+        extraImages.forEach(item => {
+          if (typeof item === "string") {
+            images.push(item);
+          } else if (item && typeof item === "object") {
+            const image = firstValue(item, [
+              "url", "image", "imageUrl", "image_url", "path"
+            ]);
+
+            if (image) images.push(image);
+          }
+        });
+      }
+
+      return [...new Set(images.map(normalizeImageUrl).filter(Boolean))];
+    }
+
+    function showMessage(message, isError = false) {
+      const element = $("#pageMessage");
+
+      element.textContent = message;
+      element.classList.remove("hidden", "text-red-600", "text-stone-500");
+      element.classList.add(isError ? "text-red-600" : "text-stone-500");
+    }
+
+    // =====================================
+    // LOAD PRODUCT
+    // =====================================
+
+    async function loadProduct() {
+      if (!API_URL) {
+        showMessage("ID du produit manquant dans l'URL.", true);
+        $("#productName").textContent = "Produit indisponible";
+        $("#addToCartButton").disabled = true;
+        return;
+      }
+
+      showMessage("Chargement du produit...");
+
+      try {
+        const response = await fetch(API_URL, {
+          method: "GET",
+          headers: { "Accept": "application/json" }
+        });
+
+        if (!response.ok) {
+          throw new Error("Erreur HTTP " + response.status);
+        }
+
+        const result = await response.json();
+        const product = unwrapProduct(result);
+
+        if (!product || typeof product !== "object") {
+          throw new Error("Réponse API invalide ou produit introuvable.");
+        }
+
+        currentProduct = product;
+        renderProduct(product);
+        $("#pageMessage").classList.add("hidden");
+
+        console.log("Produit reçu du backend :", product);
+        console.log("Variantes reçues :", product.variants);
+
+      } catch (error) {
+        console.error("Erreur API :", error);
+
+        showMessage(
+          "Impossible de charger le produit. Vérifiez le serveur et l'URL de l'API.",
+          true
+        );
+
+        $("#productName").textContent = "Produit indisponible";
+        $("#stockStatus").textContent = "Produit impossible à charger.";
+        $("#addToCartButton").disabled = true;
+      }
+    }
+
+    // =====================================
+    // RENDER PRODUCT
+    // =====================================
+
+
+    function renderProduct(product) {
+      const name = firstValue(product, [
+        "name", "nom", "title", "productName"
+      ]);
+
+      $("#productName").textContent = name || "Produit NIZAL";
+      document.title = "NIZAL — " + (name || "Produit");
+
+      // =========================
+      // PRICE + DISCOUNT
+      // =========================
+
+      const price = Number(firstValue(product, [
+        "price", "prix", "sellingPrice", "selling_price"
+      ])) || 0;
+
+      const discount = Number(firstValue(product, [
+        "discount", "reduction"
+      ])) || 0;
+
+      const finalPrice = Math.max(0, price - discount);
+
+      const priceElement = $("#productPrice");
+      const oldPriceElement = $("#productOldPrice");
+      const discountBadge = $("#discountBadge");
+
+      // Final price
+      priceElement.textContent = formatPrice(finalPrice);
+
+      // Original price + discount badge
+      if (discount > 0) {
+        oldPriceElement.textContent = formatPrice(price);
+        oldPriceElement.classList.remove("hidden");
+
+        discountBadge.textContent =
+          "-" + formatPrice(discount);
+
+        discountBadge.classList.remove("hidden");
+      } else {
+        oldPriceElement.textContent = "";
+        oldPriceElement.classList.add("hidden");
+
+        discountBadge.textContent = "";
+        discountBadge.classList.add("hidden");
+      }
+
+      // =========================
+      // DESCRIPTION
+      // =========================
+
+      const description = firstValue(product, [
+        "description",
+        "details",
+        "productDescription",
+        "product_description",
+        "description_fr",
+        "shortDescription",
+        "short_description"
+      ]);
+
+      $("#productDescription").textContent =
+        description || "Aucune description disponible pour ce produit.";
+
+      // =========================
+      // GALLERY + VARIANTS
+      // =========================
+
+      galleryImages = extractImages(product);
+      renderGallery();
+      renderVariants(product);
+    }// =====================================
+    // PRODUCT IMAGE GALLERY
+    // =====================================
+
+    function renderGallery() {
+      const mainImage = $("#mainProductImage");
+      const placeholder = $("#imagePlaceholder");
+      const thumbnails = $$("#thumbnailGallery .thumb-btn");
+
+      if (galleryImages.length === 0) {
+        mainImage.removeAttribute("src");
+        placeholder.textContent = "Image non disponible";
+        placeholder.classList.remove("hidden");
+
+        thumbnails.forEach(button => button.classList.add("hidden"));
+        return;
+      }
+
+      placeholder.classList.add("hidden");
+      mainImage.src = galleryImages[0];
+
+      mainImage.onerror = function () {
+        this.removeAttribute("src");
+        placeholder.textContent = "Impossible de charger l'image";
+        placeholder.classList.remove("hidden");
+      };
+
+      thumbnails.forEach((button, index) => {
+        const image = button.querySelector("img");
+
+        if (galleryImages[index]) {
+          button.classList.remove("hidden");
+          image.src = galleryImages[index];
+          image.alt = "Image " + (index + 1);
+          button.classList.toggle("active", index === 0);
+          button.classList.toggle("opacity-75", index !== 0);
+        } else {
+          button.classList.add("hidden");
+        }
+      });
+    }
+
+    function changeImage(index) {
+      if (!galleryImages[index]) return;
+
+      const mainImage = $("#mainProductImage");
+      const placeholder = $("#imagePlaceholder");
+
+      placeholder.classList.add("hidden");
+      mainImage.style.opacity = "0.3";
+      mainImage.src = galleryImages[index];
+
+      mainImage.onload = () => {
+        mainImage.style.opacity = "1";
+      };
+
+      mainImage.onerror = () => {
+        mainImage.style.opacity = "1";
+        mainImage.removeAttribute("src");
+        placeholder.textContent = "Impossible de charger l'image";
+        placeholder.classList.remove("hidden");
+      };
+
+      $$("#thumbnailGallery .thumb-btn").forEach((button, i) => {
+        button.classList.toggle("active", i === index);
+        button.classList.toggle("opacity-75", i !== index);
+      });
+    }
+
+    $("#thumbnailGallery").addEventListener("click", event => {
+      const button = event.target.closest(".thumb-btn");
+      if (!button) return;
+
+      changeImage(Number(button.dataset.imageIndex));
+    });
+
+    // =====================================
+    // COLOR MAPPING
+    // =====================================
+
+    function normalizeColorName(colorName) {
+      return String(colorName || "")
+        .trim()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function getColorStyle(colorName) {
+      const color = normalizeColorName(colorName);
+
+      const colorMap = {
+        rouge: "#e10600",
+        red: "#e10600",
+        bleu: "#1565c0",
+        blue: "#1565c0",
+        "bleu clair": "#64b5f6",
+        "bleu fonce": "#0d47a1",
+        noir: "#171717",
+        black: "#171717",
+        blanc: "#ffffff",
+        white: "#ffffff",
+        vert: "#2e7d32",
+        green: "#2e7d32",
+        jaune: "#fdd835",
+        yellow: "#fdd835",
+        rose: "#ec407a",
+        pink: "#ec407a",
+        gris: "#9e9e9e",
+        gray: "#9e9e9e",
+        grey: "#9e9e9e",
+        orange: "#fb8c00",
+        violet: "#7e57c2",
+        purple: "#7e57c2",
+        marron: "#795548",
+        brown: "#795548",
+        beige: "#d7c3a3"
+      };
+
+      return colorMap[color] || "#e7e5e4";
+    }
+
+    function isLightColor(colorName) {
+      const color = normalizeColorName(colorName);
+
+      return [
+        "blanc", "white", "jaune", "yellow",
+        "beige", "gris", "gray", "grey"
+      ].includes(color);
+    }
+
+    // =====================================
+    // VARIANTS FROM product.variants
+    // =====================================
+
+    function renderVariants(product) {
+      const colorContainer = $("#colorOptions");
+      const sizeContainer = $("#sizeOptions");
+
+      colorContainer.replaceChildren();
+      sizeContainer.replaceChildren();
+
+      productVariants = Array.isArray(product.variants)
+        ? product.variants.filter(variant =>
+          variant &&
+          variant.id != null &&
+          variant.color != null &&
+          variant.size != null
+        )
+        : [];
+
+      selectedVariant = null;
+      selectedColor = null;
+      selectedSize = null;
+      selectedQuantity = 1;
+      $("#qtyInput").value = 1;
+
+      if (productVariants.length === 0) {
+        $("#colorSection").classList.add("hidden");
+        $("#sizeSection").classList.add("hidden");
+
+        $("#stockStatus").textContent = "Aucune variante disponible";
+        $("#stockStatus").className = "text-xs mt-2 text-red-600";
+        $("#addToCartButton").disabled = true;
+        return;
+      }
+
+      $("#colorSection").classList.remove("hidden");
+      $("#sizeSection").classList.remove("hidden");
+
+      const colors = [
+        ...new Set(productVariants.map(v => String(v.color)))
+      ];
+
+      selectedColor =
+        colors.find(color =>
+          productVariants.some(v =>
+            String(v.color) === color && Number(v.stock) > 0
+          )
+        ) || colors[0];
+
+      selectedVariant = productVariants.find(v =>
+        String(v.color) === String(selectedColor) &&
+        Number(v.stock) > 0
+      ) || null;
+
+      selectedSize = selectedVariant
+        ? String(selectedVariant.size)
+        : null;
+
+      renderColorButtons();
+      renderSizeButtons();
+      updateSelectedVariant();
+    }
+
+    function renderColorButtons() {
+      const container = $("#colorOptions");
+      container.replaceChildren();
+
+      const colors = [
+        ...new Set(productVariants.map(v => String(v.color)))
+      ];
+
+      colors.forEach(color => {
+        const variantsForColor = productVariants.filter(
+          v => String(v.color) === color
+        );
+
+        const hasStock = variantsForColor.some(
+          v => Number(v.stock) > 0
+        );
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.dataset.color = color;
+        button.className = "color-btn";
+        button.textContent = color;
+        button.disabled = !hasStock;
+
+        button.style.backgroundColor = getColorStyle(color);
+        button.style.color = isLightColor(color) ? "#171717" : "#ffffff";
+
+        button.classList.toggle("active", color === selectedColor);
+        button.title = hasStock
+          ? color
+          : color + " — Rupture de stock";
+
+        button.addEventListener("click", () => {
+          if (button.disabled) return;
+
+          selectedColor = color;
+          selectedVariant = null;
+          selectedSize = null;
+
+          const firstAvailable = productVariants.find(v =>
+            String(v.color) === String(selectedColor) &&
+            Number(v.stock) > 0
+          );
+
+          if (firstAvailable) {
+            selectedVariant = firstAvailable;
+            selectedSize = String(firstAvailable.size);
+          }
+
+          renderColorButtons();
+          renderSizeButtons();
+          updateSelectedVariant();
+        });
+
+        container.appendChild(button);
+      });
+
+      $("#selectedColorName").textContent = selectedColor || "—";
+    }
+
+    function renderSizeButtons() {
+      const container = $("#sizeOptions");
+      container.replaceChildren();
+
+      const matchingVariants = productVariants.filter(
+        v => String(v.color) === String(selectedColor)
+      );
+
+      matchingVariants.forEach(variant => {
+        const size = String(variant.size);
+        const stock = Number(variant.stock) || 0;
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.dataset.size = size;
+        button.dataset.variantId = String(variant.id);
+        button.textContent = size;
+        button.className = "size-btn rounded-lg border p-3";
+
+        button.classList.toggle(
+          "active",
+          Boolean(selectedVariant) &&
+          String(selectedVariant.id) === String(variant.id)
+        );
+
+        button.disabled = stock <= 0;
+        button.title = stock > 0
+          ? `Stock disponible : ${stock}`
+          : "Rupture de stock";
+
+        button.addEventListener("click", () => {
+          if (stock <= 0) return;
+
+          selectedVariant = variant;
+          selectedSize = size;
+
+          renderSizeButtons();
+          updateSelectedVariant();
+        });
+
+        container.appendChild(button);
+      });
+
+      $("#selectedSize").textContent = selectedSize || "—";
+    }
+
+    function updateSelectedVariant() {
+      if (
+        selectedVariant &&
+        (
+          String(selectedVariant.color) !== String(selectedColor) ||
+          String(selectedVariant.size) !== String(selectedSize)
+        )
+      ) {
+        selectedVariant = null;
+      }
+
+      const stockStatus = $("#stockStatus");
+      const addButton = $("#addToCartButton");
+
+      if (!selectedVariant || Number(selectedVariant.stock) <= 0) {
+        stockStatus.textContent = "Cette variante est indisponible.";
+        stockStatus.className = "text-xs mt-2 text-red-600";
+        addButton.disabled = true;
+
+        $$("#sizeOptions .size-btn").forEach(button => {
+          button.classList.remove("active");
+        });
+
+        return;
+      }
+
+      const stock = Number(selectedVariant.stock);
+
+      stockStatus.className = "text-xs mt-2 text-emerald-700";
+
+      addButton.disabled = false;
+
+      selectedQuantity = Math.min(
+        Math.max(1, selectedQuantity),
+        stock
+      );
+
+      $("#qtyInput").value = selectedQuantity;
+
+      $$("#colorOptions .color-btn").forEach(button => {
+        button.classList.toggle(
+          "active",
+          button.dataset.color === String(selectedVariant.color)
+        );
+      });
+
+      $$("#sizeOptions .size-btn").forEach(button => {
+        button.classList.toggle(
+          "active",
+          button.dataset.variantId === String(selectedVariant.id)
+        );
+      });
+
+      $("#selectedColorName").textContent = selectedVariant.color;
+      $("#selectedSize").textContent = selectedVariant.size;
+    }
+
+    // =====================================
+    // QUANTITY
+    // =====================================
+
+    function adjustQty(amount) {
+      const stock = Number(selectedVariant?.stock) || 0;
+
+      if (stock <= 0) return;
+
+      selectedQuantity = Math.max(
+        1,
+        Math.min(stock, selectedQuantity + amount)
+      );
+
+      $("#qtyInput").value = selectedQuantity;
+    }
+
+    $("#decreaseQty").addEventListener("click", () => adjustQty(-1));
+    $("#increaseQty").addEventListener("click", () => adjustQty(1));
+
+    // =====================================
+    // SIZE GUIDE
+    // =====================================
+
+    function switchTab(tabName) {
+      $$(".tab-panel").forEach(panel => {
+        panel.classList.toggle(
+          "hidden",
+          panel.id !== "tab-" + tabName
+        );
+      });
+
+      $$(".tab-btn").forEach(button => {
+        const active = button.dataset.tab === tabName;
+
+        button.classList.toggle("border-red-600", active);
+        button.classList.toggle("text-stone-950", active);
+        button.classList.toggle("font-bold", active);
+        button.classList.toggle("border-transparent", !active);
+        button.classList.toggle("text-stone-500", !active);
+      });
+    }
+
+    $$(".tab-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        switchTab(button.dataset.tab);
+      });
+    });
+
+    $("#sizeGuideButton").addEventListener("click", () => {
+      switchTab("size-guide");
+
+      $("#tab-size-guide").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    });
+
+    // =====================================
+    // CART STORAGE
+    // =====================================
+
+    function getCart() {
+      try {
+        const cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+        return Array.isArray(cart) ? cart : [];
+      } catch (error) {
+        console.error("Panier invalide :", error);
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function addToCart(event) {
+      event.preventDefault();
+
+      if (!currentProduct) {
+        showCartFeedback("Le produit n'est pas encore chargé.", true);
+        return;
+      }
+
+      if (!selectedVariant) {
+        showCartFeedback(
+          "Veuillez sélectionner une variante disponible.",
+          true
+        );
+        return;
+      }
+
+      const stock = Number(selectedVariant.stock) || 0;
+
+      if (stock <= 0 || selectedQuantity > stock) {
+        showCartFeedback("Stock insuffisant pour cette variante.", true);
+        return;
+      }
+
+      const priceValue = firstValue(currentProduct, [
+        "price", "prix", "sellingPrice", "selling_price"
+      ]);
+
+      const parsedPrice = Number(priceValue);
+
+      const item = {
+        productId: currentProduct.id ?? currentProduct._id ?? productId,
+        variantId: selectedVariant.id,
+        name: firstValue(currentProduct, [
+          "name", "nom", "title", "productName"
+        ]) || "Produit NIZAL",
+        price: Number.isFinite(parsedPrice) ? parsedPrice : 0,
+        image: galleryImages[0] || null,
+        color: selectedVariant.color,
+        size: selectedVariant.size,
+        quantity: selectedQuantity
+      };
+
+      const cart = getCart();
+
+      const existingItem = cart.find(cartItem =>
+        String(cartItem.productId) === String(item.productId) &&
+        String(cartItem.variantId) === String(item.variantId)
+      );
+
+      const newQuantity = (Number(existingItem?.quantity) || 0)
+        + item.quantity;
+
+      if (newQuantity > stock) {
+        showCartFeedback(
+          `Quantité limite pour cette variante : ${stock}.`,
+          true
+        );
+        return;
+      }
+
+      if (existingItem) {
+        existingItem.quantity = newQuantity;
+      } else {
+        cart.push(item);
+      }
+
+      try {
+        saveCart(cart);
+      } catch (error) {
+        console.error("Impossible d'enregistrer le panier :", error);
+        showCartFeedback("Impossible d'enregistrer le panier.", true);
+        return;
+      }
+
+      showToast(item);
+      updateCartCount();
+    }
+
+    function showCartFeedback(message, isError = false) {
+      const feedback = $("#cartFeedback");
+
+      feedback.textContent = message;
+      feedback.classList.remove(
+        "hidden",
+        "text-red-600",
+        "text-emerald-700"
+      );
+
+      feedback.classList.add(
+        isError ? "text-red-600" : "text-emerald-700"
+      );
+    }
+
+    function showToast(item) {
+      const toast = $("#cartToast");
+
+      $("#toastMessage").textContent =
+        `${item.quantity} × ${item.name} (${item.size} — ${item.color})`;
+
+      toast.classList.remove("hidden-toast");
+
+      clearTimeout(toastTimeout);
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.add("hidden-toast");
+      }, 4000);
+
+      showCartFeedback("Produit ajouté au panier.");
+    }
+
+    function hideToast() {
+      $("#cartToast").classList.add("hidden-toast");
+    }
+
+    function updateCartCount() {
+      const cart = getCart();
+
+      const count = cart.reduce(
+        (total, item) => total + (Number(item.quantity) || 0),
+        0
+      );
+
+      const cartLink = document.querySelector(
+        'a[aria-label="Cart"], a[aria-label="Panier"]'
+      );
+
+      if (cartLink) {
+        cartLink.dataset.cartCount = count;
+        cartLink.setAttribute("aria-label", `Panier (${count})`);
+      }
+    }
+
+    $("#productForm").addEventListener("submit", addToCart);
+    $("#closeToast").addEventListener("click", hideToast);
+
+    // =====================================
+    // INITIALIZE
+    // =====================================
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadProduct();
+      updateCartCount();
+    });
+  </script>
+
+</body>
+
+</html>

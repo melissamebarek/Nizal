@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIZAL — Modifier le produit</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="edit-product.css">
+
+    <link rel="stylesheet" href="../sidabar.css">
+
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <img src="../../assest/logo.png" alt="logo" class="logoimg">
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="../index.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Accueil</span>
+                </a>
+
+                <a href="../articles/articles.html" class="nav-item active">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+
+                <a href="./products.html" class="nav-item">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Produits & Boutique</span>
+                </a>
+
+                <a href="../competitions/competitions.html" class="nav-item">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Compétitions</span>
+                </a>
+
+                <a href="../registrations/registrations.html" class="nav-item">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <span>Inscriptions</span>
+                </a>
+
+                <a href="../orders/orders.html" class="nav-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Commandes</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-title">
+                    Produits & Boutique
+                </div>
+
+
+
+            </header>
+
+
+            <!-- CONTENT -->
+            <section class="content">
+
+                <!-- BREADCRUMB -->
+                <div class="breadcrumb">
+
+                    <a href="products.html">
+                        Produits & Boutique
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <a href="product-details.html">
+                        NIZAL Fight T-Shirt
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Modifier</span>
+
+                </div>
+
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+
+                    <div>
+                        <h1>Modifier le produit</h1>
+
+                        <p>
+                            Modifiez les informations du produit et son stock.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="productForm">
+
+
+                    <!-- =========================
+                     PHOTOS
+                ========================== -->
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Photos du produit</h2>
+
+                                <p>
+                                    Ajoutez plusieurs photos et choisissez
+                                    l'image principale.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="photos-section">
+
+                            <div class="photo-grid" id="photoGrid">
+
+                                <!-- PHOTO 1 -->
+                                <div class="photo-item">
+
+                                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80"
+                                        alt="Produit">
+
+                                    <div class="photo-actions">
+
+                                        <button type="button" class="photo-btn delete-photo" title="Supprimer">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                        <button type="button" class="photo-btn set-main"
+                                            title="Définir comme principale">
+                                            <i class="fa-solid fa-star"></i>
+                                        </button>
+
+                                    </div>
+
+                                    <span class="main-photo">
+                                        Photo principale
+                                    </span>
+
+                                </div>
+
+
+                                <!-- PHOTO 2 -->
+                                <div class="photo-item">
+
+                                    <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=500&q=80"
+                                        alt="Produit">
+
+                                    <div class="photo-actions">
+
+                                        <button type="button" class="photo-btn delete-photo" title="Supprimer">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                        <button type="button" class="photo-btn set-main"
+                                            title="Définir comme principale">
+                                            <i class="fa-solid fa-star"></i>
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- PHOTO 3 -->
+                                <div class="photo-item">
+
+                                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=500&q=80"
+                                        alt="Produit">
+
+                                    <div class="photo-actions">
+
+                                        <button type="button" class="photo-btn delete-photo" title="Supprimer">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                        <button type="button" class="photo-btn set-main"
+                                            title="Définir comme principale">
+                                            <i class="fa-solid fa-star"></i>
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ADD PHOTO -->
+                                <label class="add-photo">
+
+                                    <input type="file" id="photoInput" accept="image/*" multiple>
+
+                                    <i class="fa-solid fa-plus"></i>
+
+                                    <span>Ajouter des photos</span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                     INFORMATIONS
+                ========================== -->
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Informations du produit</h2>
+
+                                <p>
+                                    Informations générales du produit.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-content">
+
+                            <div class="form-grid">
+
+
+                                <!-- NAME -->
+                                <div class="form-group full">
+
+                                    <label for="productName">
+                                        Nom du produit
+                                        <span>*</span>
+                                    </label>
+
+                                    <input type="text" id="productName" value="NIZAL Fight T-Shirt" required>
+
+                                </div>
+
+
+                                <!-- CATEGORY -->
+                                <div class="form-group">
+
+                                    <label for="category">
+                                        Catégorie
+                                        <span>*</span>
+                                    </label>
+
+                                    <select id="category" required>
+
+                                        <option value="femme" selected>
+                                            femme
+                                        </option>
+
+                                        <option value="homme">
+                                            homme
+                                        </option>
+
+                                        <option value="enfant">
+                                            enfant
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <!-- PRICE -->
+                                <div class="form-group">
+
+                                    <label for="price">
+                                        Prix
+                                        <span>*</span>
+                                    </label>
+
+                                    <div class="input-with-suffix">
+
+                                        <input type="number" id="price" value="3500" min="0" required>
+
+                                        <span>DZD</span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- DISCOUNT -->
+                                <div class="form-group">
+
+                                    <label for="discount">
+                                        Réduction
+                                    </label>
+
+                                    <div class="input-with-suffix">
+
+                                        <input type="number" id="discount" value="10" min="0" max="100">
+
+                                        <span>%</span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- FINAL PRICE -->
+                                <div class="form-group">
+
+                                    <label>
+                                        Prix après réduction
+                                    </label>
+
+                                    <div class="calculated-price" id="finalPrice">
+                                        3 150 DZD
+                                    </div>
+
+                                </div>
+
+
+                                <!-- DESCRIPTION -->
+                                <div class="form-group full">
+
+                                    <label for="description">
+                                        Description
+                                    </label>
+
+                                    <textarea id="description"
+                                        rows="6">T-shirt officiel NIZAL conçu pour les passionnés de sports de combat. Coupe confortable et tissu adapté à une utilisation quotidienne ou sportive.</textarea>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                     VARIANTS
+                ========================== -->
+
+                    <div class="card">
+
+                        <div class="card-header variant-header">
+
+                            <div>
+                                <h2>Variantes & Stock</h2>
+
+                                <p>
+                                    Gérez les couleurs, tailles et quantités
+                                    disponibles.
+                                </p>
+                            </div>
+
+                            <button type="button" class="btn btn-secondary" id="addVariantBtn">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                Ajouter une variante
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="variants-wrapper">
+
+                            <div class="variant-table">
+
+                                <div class="variant-row variant-head">
+
+                                    <div>Couleur</div>
+                                    <div>Taille</div>
+                                    <div>Stock</div>
+                                    <div>Statut</div>
+                                    <div></div>
+
+                                </div>
+
+
+                                <div id="variantsContainer">
+
+
+                                    <!-- VARIANT -->
+                                    <div class="variant-row">
+
+                                        <div>
+
+                                            <div class="color-input">
+                                                <input type="text" value="Rouge" class="color-name-input">
+                                            </div>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <select class="size-input">
+
+                                                <option>S</option>
+                                                <option selected>M</option>
+                                                <option>L</option>
+                                                <option>XL</option>
+                                                <option>XXL</option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <input type="number" class="stock-input" value="5" min="0">
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span class="variant-status available">
+                                                Disponible
+                                            </span>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <button type="button" class="remove-variant" title="Supprimer">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- VARIANT -->
+                                    <div class="variant-row">
+
+                                        <div>
+
+                                            <div class="color-input">
+
+                                                <input type="color" value="#ef4444">
+
+                                                <input type="text" value="Rouge" class="color-name-input">
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <select class="size-input">
+
+                                                <option>S</option>
+                                                <option selected>M</option>
+                                                <option>L</option>
+                                                <option>XL</option>
+                                                <option>XXL</option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <input type="number" class="stock-input" value="0" min="0">
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span class="variant-status unavailable">
+                                                Indisponible
+                                            </span>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <button type="button" class="remove-variant">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- VARIANT -->
+                                    <div class="variant-row">
+
+                                        <div>
+
+                                            <div class="color-input">
+
+                                                <input type="color" value="#111827">
+
+                                                <input type="text" value="Noir" class="color-name-input">
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <select class="size-input">
+
+                                                <option>S</option>
+                                                <option selected>M</option>
+                                                <option>L</option>
+                                                <option>XL</option>
+                                                <option>XXL</option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <input type="number" class="stock-input" value="8" min="0">
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span class="variant-status available">
+                                                Disponible
+                                            </span>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <button type="button" class="remove-variant">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- VARIANT -->
+                                    <div class="variant-row">
+
+                                        <div>
+
+                                            <div class="color-input">
+
+                                                <input type="color" value="#111827">
+
+                                                <input type="text" value="Noir" class="color-name-input">
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <select class="size-input">
+
+                                                <option>S</option>
+                                                <option>M</option>
+                                                <option selected>L</option>
+                                                <option>XL</option>
+                                                <option>XXL</option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <input type="number" class="stock-input" value="2" min="0">
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span class="variant-status low">
+                                                Stock faible
+                                            </span>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <button type="button" class="remove-variant">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- STOCK SUMMARY -->
+
+                            <div class="stock-summary">
+
+                                <div>
+                                    <span>Stock total</span>
+                                    <strong id="totalStock">15</strong>
+                                </div>
+
+                                <div>
+                                    <span>Variantes</span>
+                                    <strong id="variantCount">4</strong>
+                                </div>
+
+                                <div>
+                                    <span>Disponibles</span>
+                                    <strong id="availableCount">3</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                     ACTIONS
+                ========================== -->
+
+                    <div class="form-actions">
+
+                        <a href="product-details.html" class="btn btn-cancel">
+
+                            Annuler
+
+                        </a>
+
+                        <button type="submit" class="btn btn-primary">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Enregistrer les modifications
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- SUCCESS MESSAGE -->
+
+    <div class="toast" id="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <div>
+            <strong>Produit modifié</strong>
+            <span>Les modifications ont été enregistrées.</span>
+        </div>
+
+    </div>
+
+
+    <script src="edit-product.js"></script>
+
+</body>
+
+</html>

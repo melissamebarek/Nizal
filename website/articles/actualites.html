@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>NIZAL - Combat Sports Platform</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    @layer base {
+
+      html,
+
+      body {
+
+        margin: 0;
+
+        padding: 0;
+
+      }
+
+      body {
+
+        overscroll-behavior: none;
+
+      }
+
+      main>:first-child {
+
+        margin-top: 0 !important;
+
+      }
+
+      main>:last-child {
+
+        margin-bottom: 0 !important;
+
+      }
+
+    }
+
+    ::-webkit-scrollbar {
+
+      display: none;
+
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script
+    id="tailwind-config">tailwind.config = { "darkMode": "class", "theme": { "extend": { "colors": { "on-primary": "#ffffff", "outline-variant": "#e5e7eb", "inverse-on-surface": "#f3f4f6", "surface-tint": "#e10600", "primary-fixed-dim": "#ffb4a8", "secondary-container": "#0057ff", "primary-container": "#e10600", "on-tertiary-fixed-variant": "#4b5563", "primary": "#e10600", "surface-container-lowest": "#ffffff", "inverse-surface": "#111827", "surface-container-highest": "#e5e7eb", "on-tertiary-container": "#1f2937", "on-surface-variant": "#4b5563", "on-surface": "#0f1115", "surface-container-high": "#f3f4f6", "secondary-fixed": "#dce1ff", "error-container": "#fee2e2", "surface-variant": "#f3f4f6", "tertiary": "#4b5563", "on-primary-fixed-variant": "#930300", "on-secondary-fixed-variant": "#003ab2", "background": "#ffffff", "inverse-primary": "#ffb4a8", "surface-bright": "#ffffff", "surface": "#ffffff", "error": "#dc2626", "primary-fixed": "#ffdad4", "surface-container-low": "#f8f9fa", "on-tertiary-fixed": "#111827", "tertiary-fixed": "#e2e2e2", "outline": "#d1d5db", "secondary-fixed-dim": "#b6c4ff", "on-primary-fixed": "#410100", "secondary": "#0057ff", "surface-dim": "#e5e7eb", "on-secondary-container": "#ffffff", "on-tertiary": "#ffffff", "tertiary-container": "#f3f4f6", "on-background": "#0f1115", "on-primary-container": "#ffffff", "surface-container": "#f3f4f6", "on-secondary-fixed": "#001550", "tertiary-fixed-dim": "#c6c6c7", "on-error": "#ffffff", "on-error-container": "#7f1d1d", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter": "1.5rem", "space-sm": "0.5rem", "margin": "2rem", "gutter-sm": "1rem", "space-xs": "0.25rem", "margin-sm": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-sm": ["Oswald"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Oswald"], "title-md": ["Inter"], "display-lg-mobile": ["Oswald"], "data-metric": ["Oswald"], "display-xl": ["Oswald"], "headline-md": ["Oswald"], "display-xl-mobile": ["Oswald"], "body-md": ["Inter"], "label-lg": ["Inter"], "body-lg": ["Inter"], "display-lg": ["Oswald"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }], "data-metric": ["28px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "700" }], "display-xl": ["64px", { "lineHeight": "68px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-xl-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "0.03em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.03em", "fontWeight": "700" }] } } } }</script>
+
+  <link rel="stylesheet" href="../nav.css">
+
+</head>
+
+<body class="bg-white font-body-md text-gray-900 min-h-screen flex flex-col">
+
+  <header class="" id="header">
+
+    <!-- LOGO -->
+
+    <a href="../index.html" class="logo-link">
+
+      <img src="../../assest/logo.png" alt="Logo" class="logo">
+
+    </a>
+
+    <!-- NAVIGATION -->
+
+    <nav id="mainNav">
+
+      <ul>
+
+        <li>
+
+          <a href="../index.html">HOME</a>
+
+        </li>
+
+        <li>
+
+          <a href="actualites.html" class="active">ACTUALITES</a>
+
+        </li>
+
+        <li>
+
+          <a href="../event/events.html">EVENEMENTS</a>
+
+        </li>
+
+        <li>
+
+          <a href="../boutique/shop.html">BOUTIQUE</a>
+
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <!-- ACTIONS -->
+
+    <div class="actions">
+
+      <a href="../search.html" aria-label="Search">
+
+        <i class="fas fa-search"></i>
+
+      </a>
+
+      <a href="../boutique/cart.html" aria-label="Cart">
+
+        <i class="fas fa-shopping-cart"></i>
+
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+
+        <i class="fas fa-bars"></i>
+
+      </button>
+
+    </div>
+
+  </header>
+
+  <main class="w-full bg-white flex-1">
+
+    <div class="flex flex-col w-full text-gray-900">
+
+      <!-- ==================== SECTION 1: À LA UNE ==================== -->
+
+      <section class="w-full py-space-xl bg-white">
+
+        <div class="max-w-[1440px] mx-auto px-gutter">
+
+          <div class="flex items-center justify-between mb-space-lg">
+
+            <div class="flex items-center gap-space-sm">
+
+              <span class="w-1.5 h-6 bg-[#e10600] inline-block"></span>
+
+              <h2 class="font-headline-lg text-headline-lg uppercase tracking-tight text-gray-950 m-0">À LA UNE</h2>
+
+            </div>
+
+            <span class="font-label-md text-label-md uppercase text-gray-500 tracking-widest">DOSSIER SPÉCIAL ÉDITION
+
+              MONDIALE</span>
+
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+
+            <!-- Giant Lead Story (Left 8 cols) -->
+
+            <article
+              class="lg:col-span-8 bg-white border border-gray-200 flex flex-col group overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+
+              <div class="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
+
+                <img id="featured-image" alt="Article à la une"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                <div class="absolute top-space-md left-space-md flex gap-space-xs">
+
+                  <span id="featured-category"
+                    class="px-space-sm py-1 bg-[#e10600] text-white font-label-md text-label-md uppercase tracking-wider font-bold">
+
+                    ACTUALITÉS
+
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+
+                <div>
+
+                  <div
+                    class="flex items-center gap-space-sm text-gray-500 font-label-md text-label-md uppercase tracking-widest mb-space-xs">
+
+                    <span id="featured-date"></span>
+
+                    <span class="">•</span>
+
+                    <span id="featured-author" class="text-[#e10600] font-semibold">NIZAL</span>
+
+                  </div>
+
+                  <h3 id="featured-title"
+                    class="font-headline-lg text-headline-lg uppercase text-gray-950 tracking-tight group-hover:text-[#e10600] transition-colors m-0 leading-tight">
+                    Chargement de l’actualité…</h3>
+
+                  <div id="featured-content"
+                    class="font-body-md text-body-md text-gray-600 mt-space-sm leading-relaxed">Les actualités seront
+                    affichées ici.</div>
+
+                </div>
+
+                <div class="pt-space-md flex items-center justify-between border-t border-gray-100">
+
+                  <a id="featured-link"
+                    class="inline-flex items-center gap-space-sm px-space-lg py-space-sm bg-[#e10600] text-white font-label-lg text-label-lg uppercase tracking-wider hover:bg-black transition-colors"
+                    href="./article.html">
+
+                    <span class="">LIRE L'ARTICLE</span>
+
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+
+                  </a>
+
+                </div>
+
+              </div>
+
+            </article>
+
+            <!-- Right 3 Stacked Secondary Stories (4 cols) -->
+
+            <div class="lg:col-span-4 flex flex-col gap-space-md justify-between">
+
+              <div id="secondary-articles" class="flex flex-col gap-space-md justify-between"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ==================== SECTION 2: TENDANCES (TICKER) ==================== -->
+
+      <section class="w-full bg-[#f8f9fa] border-y border-gray-200 py-space-sm overflow-hidden">
+
+        <div class="max-w-[1440px] mx-auto px-gutter flex items-center gap-space-md">
+
+          <div class="flex items-center gap-space-xs shrink-0 pr-space-md bg-[#f8f9fa] z-10">
+
+            <span class="material-symbols-outlined text-[#e10600] text-[20px]">trending_up</span>
+
+            <span class="font-label-lg text-label-lg uppercase tracking-wider text-gray-950 font-bold">Catégories</span>
+
+          </div>
+
+          <div
+            class="flex items-center gap-space-md overflow-x-auto no-scrollbar py-1 text-gray-700 font-label-lg text-label-lg">
+
+            <a data-category-filter="all" aria-pressed="true"
+              class="category-filter is-active px-space-sm py-1 bg-[#e10600] text-white border border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">Toutes</a>
+
+            <a data-category-filter="boxing" aria-pressed="false"
+              class="category-filter px-space-sm py-1 bg-white border border-gray-200 hover:bg-[#e10600] hover:text-white hover:border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">Boxing</a>
+
+            <a data-category-filter="karate" aria-pressed="false"
+              class="category-filter px-space-sm py-1 bg-white border border-gray-200 hover:bg-[#e10600] hover:text-white hover:border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">Karaté</a>
+
+            <a data-category-filter="judo" aria-pressed="false"
+              class="category-filter px-space-sm py-1 bg-white border border-gray-200 hover:bg-[#e10600] hover:text-white hover:border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">Judo</a>
+
+            <a data-category-filter="wrestling" aria-pressed="false"
+              class="category-filter px-space-sm py-1 bg-white border border-gray-200 hover:bg-[#e10600] hover:text-white hover:border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">Wrestling</a>
+
+            <a data-category-filter="nizal-news" aria-pressed="false"
+              class="category-filter px-space-sm py-1 bg-white border border-gray-200 hover:bg-[#e10600] hover:text-white hover:border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">NIZAL News</a>
+
+            <a data-category-filter="interviews" aria-pressed="false"
+              class="category-filter px-space-sm py-1 bg-white border border-gray-200 hover:bg-[#e10600] hover:text-white hover:border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">Interviews</a>
+
+            <a data-category-filter="events" aria-pressed="false"
+              class="category-filter px-space-sm py-1 bg-white border border-gray-200 hover:bg-[#e10600] hover:text-white hover:border-[#e10600] transition-colors shrink-0 font-medium"
+              href="#news-matrix-container">Events</a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ==================== SECTION 3: DERNIÈRES ACTUALITÉS + SIDEBAR ==================== -->
+
+      <section class="w-full py-space-xl bg-white">
+
+        <div class="max-w-[1440px] mx-auto px-gutter">
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+
+            <!-- Left: News Grid (8 cols) -->
+
+            <div class="lg:col-span-8 flex flex-col gap-space-lg">
+
+              <div class="flex items-center justify-between">
+
+                <div class="flex items-center gap-space-sm">
+
+                  <span class="w-1.5 h-6 bg-[#0057ff] inline-block"></span>
+
+                  <h2 class="font-headline-lg text-headline-lg uppercase tracking-tight text-gray-950 m-0">DERNIÈRES
+
+                    ACTUALITÉS</h2>
+
+                </div>
+
+                <div class="flex items-center gap-2">
+
+                  <span class="font-label-md text-label-md uppercase text-gray-500 font-semibold">FLUX EN TEMPS
+
+                    RÉEL</span>
+
+                </div>
+
+              </div>
+
+              <!-- 3x2 News Card Matrix -->
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter" id="news-matrix-container">
+
+                <!-- Les cartes sont générées depuis l’API -->
+              </div>
+
+              <!-- Load More CTA -->
+
+              <div class="flex justify-center pt-space-md">
+
+                <button
+                  class="px-space-xl py-space-sm bg-white border border-gray-300 hover:bg-gray-100 text-gray-900 font-label-lg text-label-lg uppercase tracking-wider transition-colors flex items-center gap-space-sm shadow-xs font-semibold"
+                  id="load-more-btn">
+
+                  <span id="load-more-text" class="">CHARGER PLUS D'ACTUALITÉS</span>
+
+                  <span class="material-symbols-outlined text-[20px]" id="load-more-icon">expand_more</span>
+
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- Right: Sidebar (4 cols) -->
+
+            <aside class="lg:col-span-4 flex flex-col gap-space-lg">
+
+              <!-- Block "LES PLUS LUS" -->
+
+              <div class="bg-[#f8f9fa] border border-gray-200 p-space-lg shadow-xs">
+
+                <div class="flex items-center justify-between pb-space-sm mb-space-md border-b border-gray-200">
+
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-gray-950 tracking-wider m-0">
+
+                    last news
+
+                  </h3>
+
+                </div>
+
+                <div class="flex flex-col gap-space-md">
+                  <div id="most-read-articles" class="flex flex-col gap-space-md"></div>
+                </div>
+              </div>
+
+            </aside>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+
+        <div class="flex flex-col gap-space-sm">
+
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+
+            même endroit. Tournois, classements et billetterie officielle.</p>
+
+        </div>
+
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="actualites" href="../boutique/shop.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="athletes" href="../boutique/shop.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="evenements" href="../boutique/shop.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="boutique" href="../boutique/shop.html">Boutique</a></nav>
+
+        </div>
+
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="a-propos" href="../boutique/shop.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="../boutique/shop.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="faq" href="../boutique/shop.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="conditions-generales" href="../boutique/shop.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="politique-de-confidentialite" href="../boutique/shop.html">Politique de confidentialité</a>
+          </nav>
+
+        </div>
+
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">TikTok</a></div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+
+        <p class="">© 2026 NIZAL. Tous droits réservés.</p>
+
+        <p class="uppercase tracking-wider font-label-sm text-label-sm text-on-surface-variant">Plateforme Combat Sports
+
+          Haute Performance</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="../nav.js"></script>
+
+  <script src="./actualites.js"></script>
+
+</body>
+
+</html>

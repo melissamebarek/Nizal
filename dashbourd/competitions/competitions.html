@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIZAL — Compétitions</title>
+
+    <link rel="stylesheet" href="competitions.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+    
+        <div class="logo">
+            <span>NIZ</span><strong>AL</strong>
+        </div>
+    
+        <nav class="navigation">
+    
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+    
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+    
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-store"></i>
+                <span>Produits & Boutique</span>
+            </a>
+    
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+    
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Inscriptions</span>
+            </a>
+    
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+    
+        </nav>
+    
+        <div class="sidebar-footer">
+            <div class="admin-mini">
+                <div class="admin-avatar">A</div>
+    
+                <div>
+                    <strong>Administrateur</strong>
+                    <small>Admin</small>
+                </div>
+            </div>
+        </div>
+    
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- PAGE -->
+        <section class="page-content">
+
+
+            <!-- PAGE HEADER -->
+            <div class="content-header">
+                <div>
+                    <div class="mobile-menu" id="mobileMenu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <div>
+                        <h2>Liste des compétitions</h2>
+                        
+                        <p>
+                            Consultez et gérez toutes les compétitions.
+                        </p>
+                    </div>
+                </div>
+            
+                <a href="./create_competition.html">
+                    <button class="primary-btn" id="newCompetitionBtn">
+                        <i class="fa-solid fa-plus"></i>
+                        Nouvelle compétition
+                    </button>
+                </a>
+            
+            </div>
+            
+            
+            <div class="search-box">
+            
+                <i class="fa-solid fa-magnifying-glass"></i>
+            
+                <input type="text" id="searchInput" placeholder="Rechercher une compétition, un sport ou un lieu...">
+            
+            </div>
+
+
+            <!-- TABLE -->
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Compétition</th>
+                            <th>Sport</th>
+                            <th>Lieu</th>
+                            <th>Date</th>
+                            <th>Inscriptions</th>
+                            <th>Statut</th>
+                            <th></th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="competitionTable">
+
+
+                        <!-- ROW 1 -->
+                        <tr>
+
+                            <td>
+
+                                <div class="competition-name">
+
+                                    <div class="competition-image">
+                                        <i class="fa-solid fa-trophy"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>
+                                            NIZAL Fight Championship
+                                        </strong>
+
+                                        <span>
+                                            NIZAL Championship
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                MMA
+                            </td>
+
+                            <td>
+                                Alger
+                            </td>
+
+                            <td>
+                                18 Oct. 2026
+                            </td>
+
+                            <td>
+                                32 / 50
+                            </td>
+
+                            <td>
+                                <span class="status open">
+                                    Inscription ouverte
+                                </span>
+                            </td>
+
+                            <td>
+
+                            <a href="competition-details.html" class="action-btn">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ROW 2 -->
+                        <tr>
+
+                            <td>
+
+                                <div class="competition-name">
+
+                                    <div class="competition-image">
+                                        <i class="fa-solid fa-trophy"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Algeria Kickboxing Cup
+                                        </strong>
+
+                                        <span>
+                                            Kickboxing
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Kickboxing
+                            </td>
+
+                            <td>
+                                Oran
+                            </td>
+
+                            <td>
+                                02 Nov. 2026
+                            </td>
+
+                            <td>
+                                0 / 80
+                            </td>
+
+                            <td>
+                                <span class="status upcoming">
+                                    À venir
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <a href="competition-details.html" class="action-btn">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ROW 3 -->
+                        <tr>
+
+                            <td>
+
+                                <div class="competition-name">
+
+                                    <div class="competition-image">
+                                        <i class="fa-solid fa-trophy"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            NIZAL MMA Open
+                                        </strong>
+
+                                        <span>
+                                            MMA Open
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                MMA
+                            </td>
+
+                            <td>
+                                Constantine
+                            </td>
+
+                            <td>
+                                15 Nov. 2026
+                            </td>
+
+                            <td>
+                                0 / 60
+                            </td>
+
+                            <td>
+                                <span class="status upcoming">
+                                    À venir
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <a href="competition-details.html" class="action-btn">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ROW 4 -->
+                        <tr>
+
+                            <td>
+
+                                <div class="competition-name">
+
+                                    <div class="competition-image">
+                                        <i class="fa-solid fa-trophy"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            NIZAL Muay Thai Cup
+                                        </strong>
+
+                                        <span>
+                                            Muay Thai
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Muay Thai
+                            </td>
+
+                            <td>
+                                Tlemcen
+                            </td>
+
+                            <td>
+                                28 Nov. 2026
+                            </td>
+
+                            <td>
+                                0 / 40
+                            </td>
+
+                            <td>
+                                <span class="status closed">
+                                    Inscription fermée
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <a href="competition-details.html" class="action-btn">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+
+                <!-- EMPTY STATE -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                    <h3>Aucune compétition trouvée</h3>
+
+                    <p>
+                        Essayez une autre recherche.
+                    </p>
+
+                </div>
+
+
+                <!-- TABLE FOOTER -->
+                <div class="table-footer">
+
+                    <span>
+                        4 compétitions
+                    </span>
+
+                    <div class="pagination">
+
+                        <button disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="current">
+                            1
+                        </button>
+
+                        <button>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="./competitions.js"></script>
+
+</body>
+
+</html>

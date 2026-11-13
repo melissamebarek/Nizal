@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inscriptions — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="registrations.css">
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-mark">N</div>
+
+                <div>
+                    <strong>NIZAL</strong>
+                    <span>Administration</span>
+                </div>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="index.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+
+                <a href="products.html">
+                    <i class="fa-solid fa-store"></i>
+                    <span>Produits & Boutique</span>
+                </a>
+
+                <a href="competitions.html">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Compétitions</span>
+                </a>
+
+                <a href="registrations.html" class="active">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Inscriptions</span>
+                </a>
+
+                <a href="orders.html">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Commandes</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+
+
+            <!-- CONTENT -->
+            <section class="page-content">
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+
+                    <div>
+                        <button class="menu-btn" id="menuBtn">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+
+                        <div>
+                            <h1>Inscriptions</h1>
+
+                            <p>
+                                Consultez et examinez les inscriptions aux compétitions.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- TOOLBAR -->
+                <div class="toolbar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchInput" placeholder="Rechercher une inscription, un participant...">
+
+                    </div>
+
+
+                    <select id="statusFilter">
+
+                        <option value="">Tous les statuts</option>
+
+                        <option value="Inscription envoyée">
+                            Inscription envoyée
+                        </option>
+
+                        <option value="En cours d’examen">
+                            En cours d’examen
+                        </option>
+
+                        <option value="Acceptée">
+                            Acceptée
+                        </option>
+
+                        <option value="Refusée">
+                            Refusée
+                        </option>
+
+                        <option value="Annulée">
+                            Annulée
+                        </option>
+
+                    </select>
+
+
+                    <select id="competitionFilter">
+
+                        <option value="">Toutes les compétitions</option>
+
+                        <option value="NIZAL Fight Championship">
+                            NIZAL Fight Championship
+                        </option>
+
+                        <option value="Algeria Kickboxing Cup">
+                            Algeria Kickboxing Cup
+                        </option>
+
+                        <option value="NIZAL MMA Open">
+                            NIZAL MMA Open
+                        </option>
+
+                    </select>
+
+
+                    <select id="sportFilter">
+
+                        <option value="">Tous les sports</option>
+
+                        <option value="Boxing">
+                            Boxing
+                        </option>
+
+                        <option value="Karaté">
+                            Karaté
+                        </option>
+
+                        <option value="Judo">
+                            Judo
+                        </option>
+
+                        <option value="Wrestling">
+                            Wrestling
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TABLE CARD -->
+                <div class="table-card">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Inscription</th>
+
+                                    <th>Participant</th>
+
+                                    <th>Compétition</th>
+
+                                    <th>Catégorie</th>
+
+                                    <th>Date</th>
+
+                                    <th>Statut</th>
+
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="registrationsTable">
+
+
+                                <!-- ROW 1 -->
+                                <tr data-search="INS-00128 Mohamed Benali mohamed@example.com NIZAL Fight Championship MMA Senior moins 70 kg"
+                                    data-status="En cours d’examen" data-competition="NIZAL Fight Championship"
+                                    data-sport="MMA">
+
+                                    <td>
+                                        <strong>#INS-00128</strong>
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="participant">
+
+                                            <div class="participant-avatar">
+                                                MB
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Mohamed Benali
+                                                </strong>
+
+                                                <span>
+                                                    mohamed@example.com
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <strong>
+                                            NIZAL Fight Championship
+                                        </strong>
+
+                                        <span class="sub-text">
+                                            MMA
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="category">
+                                            Senior
+                                        </span>
+
+                                        <span class="sub-text">
+                                            -70 kg
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+                                        24 Sept. 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="status reviewing">
+                                            En cours d’examen
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <a href="registration-details.html?id=128" class="view-btn"
+                                            title="Voir les détails">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ROW 2 -->
+                                <tr data-search="INS-00127 Sarah Haddad sarah@example.com Algeria Kickboxing Cup Kickboxing Senior moins 60 kg"
+                                    data-status="Acceptée" data-competition="Algeria Kickboxing Cup"
+                                    data-sport="Kickboxing">
+
+                                    <td>
+                                        <strong>#INS-00127</strong>
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="participant">
+
+                                            <div class="participant-avatar">
+                                                SH
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Sarah Haddad
+                                                </strong>
+
+                                                <span>
+                                                    sarah@example.com
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <strong>
+                                            Algeria Kickboxing Cup
+                                        </strong>
+
+                                        <span class="sub-text">
+                                            Kickboxing
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="category">
+                                            Senior
+                                        </span>
+
+                                        <span class="sub-text">
+                                            -60 kg
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+                                        23 Sept. 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="status accepted">
+                                            Acceptée
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <a href="registration-details.html?id=127" class="view-btn"
+                                            title="Voir les détails">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ROW 3 -->
+                                <tr data-search="INS-00126 Yacine Boudiaf yacine@example.com NIZAL MMA Open MMA Junior moins 65 kg"
+                                    data-status="Inscription envoyée" data-competition="NIZAL MMA Open"
+                                    data-sport="MMA">
+
+                                    <td>
+                                        <strong>#INS-00126</strong>
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="participant">
+
+                                            <div class="participant-avatar">
+                                                YB
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Yacine Boudiaf
+                                                </strong>
+
+                                                <span>
+                                                    yacine@example.com
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <strong>
+                                            NIZAL MMA Open
+                                        </strong>
+
+                                        <span class="sub-text">
+                                            MMA
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="category">
+                                            Junior
+                                        </span>
+
+                                        <span class="sub-text">
+                                            -65 kg
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+                                        22 Sept. 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="status submitted">
+                                            Inscription envoyée
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <a href="registration-details.html?id=126" class="view-btn"
+                                            title="Voir les détails">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ROW 4 -->
+                                <tr data-search="INS-00125 Lina Merabet lina@example.com NIZAL Fight Championship MMA Senior moins 55 kg"
+                                    data-status="Refusée" data-competition="NIZAL Fight Championship" data-sport="MMA">
+
+                                    <td>
+                                        <strong>#INS-00125</strong>
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="participant">
+
+                                            <div class="participant-avatar">
+                                                LM
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Lina Merabet
+                                                </strong>
+
+                                                <span>
+                                                    lina@example.com
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <strong>
+                                            NIZAL Fight Championship
+                                        </strong>
+
+                                        <span class="sub-text">
+                                            MMA
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="category">
+                                            Senior
+                                        </span>
+
+                                        <span class="sub-text">
+                                            -55 kg
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+                                        21 Sept. 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="status rejected">
+                                            Refusée
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <a href="registration-details.html?id=125" class="view-btn"
+                                            title="Voir les détails">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- ROW 5 -->
+                                <tr data-search="INS-00124 Karim Belkacem karim@example.com Algeria Kickboxing Cup Kickboxing Senior moins 75 kg"
+                                    data-status="Inscription envoyée" data-competition="Algeria Kickboxing Cup"
+                                    data-sport="Kickboxing">
+
+                                    <td>
+                                        <strong>#INS-00124</strong>
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="participant">
+
+                                            <div class="participant-avatar">
+                                                KB
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    Karim Belkacem
+                                                </strong>
+
+                                                <span>
+                                                    karim@example.com
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <strong>
+                                            Algeria Kickboxing Cup
+                                        </strong>
+
+                                        <span class="sub-text">
+                                            Kickboxing
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="category">
+                                            Senior
+                                        </span>
+
+                                        <span class="sub-text">
+                                            -75 kg
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+                                        20 Sept. 2026
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="status submitted">
+                                            Inscription envoyée
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <a href="registration-details.html?id=124" class="view-btn"
+                                            title="Voir les détails">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- EMPTY STATE -->
+                        <div class="empty-state" id="emptyState">
+
+                            <div class="empty-icon">
+                                <i class="fa-solid fa-clipboard-list"></i>
+                            </div>
+
+                            <h3>
+                                Aucune inscription trouvée
+                            </h3>
+
+                            <p>
+                                Essayez de modifier votre recherche ou vos filtres.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PAGINATION -->
+                    <div class="pagination">
+
+
+
+                        <div class="pagination-buttons">
+
+                            <button disabled>
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+
+                            <button class="active">
+                                1
+                            </button>
+
+                            <button>
+                                2
+                            </button>
+
+                            <button>
+                                3
+                            </button>
+
+                            <button>
+                                4
+                            </button>
+
+                            <button>
+                                5
+                            </button>
+
+                            <button>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="registrations.js"></script>
+
+</body>
+
+</html>

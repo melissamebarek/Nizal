@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed-dim": "#b4c5ff", "primary-fixed-dim": "#ffb4a8", "inverse-surface": "#2f3035", "surface-container-lowest": "#ffffff", "on-surface": "#1a1c20", "surface-tint": "#c00500", "on-secondary": "#ffffff", "secondary-fixed-dim": "#b6c4ff", "surface": "#f9f9ff", "outline-variant": "#e9bcb5", "primary-container": "#e10600", "on-primary-fixed-variant": "#930300", "surface-container-low": "#f3f3f9", "tertiary-container": "#0163ff", "surface-container-high": "#e8e8ed", "surface-dim": "#d9d9df", "inverse-on-surface": "#f0f0f6", "tertiary": "#004dcb", "surface-variant": "#e2e2e8", "on-tertiary-container": "#f4f4ff", "on-primary-container": "#fff2f0", "background": "#f9f9ff", "on-primary": "#ffffff", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed": "#001550", "primary": "#b30400", "primary-fixed": "#ffdad4", "on-surface-variant": "#5e3f3a", "surface-container": "#ededf3", "surface-container-highest": "#e2e2e8", "on-primary-fixed": "#410100", "outline": "#936e68", "inverse-primary": "#ffb4a8", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-error-container": "#93000a", "on-background": "#1a1c20", "on-tertiary-fixed": "#00174a", "secondary": "#0042c7", "surface-bright": "#f9f9ff", "secondary-container": "#0056fd", "on-tertiary-fixed-variant": "#003ea7", "on-secondary-fixed-variant": "#003ab2", "secondary-fixed": "#dce1ff", "on-secondary-container": "#e4e7ff", "error-container": "#ffdad6", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": ["Oswald"], "body-md": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "display-mobile": ["Oswald"], "label-lg": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Oswald"], "label-sm": ["Inter"], "display": ["Oswald"], "headline-md": ["Oswald"], "headline-lg": ["Oswald"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }], "display": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } };</script>
+  <title>Choix de la catégorie | NIZAL</title>
+</head>
+
+<body class="bg-background font-body-md text-on-surface antialiased">
+  <header class="" id="header">
+
+    <!-- LOGO -->
+    <a href="../index.html" class="logo-link">
+      <img src="../../assest/logo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+      <ul>
+        <li>
+          <a href="../index.html">HOME</a>
+        </li>
+
+        <li>
+          <a href="../articles/actualites.html">ACTUALIT?S</a>
+        </li>
+
+        <li>
+          <a href="events.html" class="active">?V?NEMENTS</a>
+        </li>
+
+        <li>
+          <a href="../boutique/shop.html">BOUTIQUE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+
+      <a href="../search.html" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </a>
+
+      <a href="../boutique/cart.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </header>
+  <main class="w-full bg-background min-h-screen">
+    <div class="max-w-[900px] mx-auto px-margin-mobile md:px-gutter py-space-xl">
+      <div class="flex flex-col w-full">
+        <div class="w-full max-w-[920px] mx-auto py-10 px-4">
+          <div class="mb-8">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
+                COMPÉTITION OFFICIELLE · NIZAL FIGHT NIGHT 01
+              </span>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <div>
+                <h1 class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-surface">
+                  Inscription à la compétition
+                </h1>
+                <div
+                  class="mt-2.5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface">
+                  <span class="material-symbols-outlined text-[16px] text-tertiary">sports_mma</span>
+                  <span class="font-label-md text-label-md font-semibold">Alger, 25 Octobre 2026 · MMA Amateur &amp;
+                    Pro</span>
+                </div>
+              </div>
+              <!-- Weigh-in Notice Indicator -->
+              <div
+                class="flex items-center gap-3 bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-surface-container-highest">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-[20px]">scale</span>
+                </div>
+                <div>
+                  <p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Pesée Officielle</p>
+                  <p class="font-headline-sm text-headline-sm text-on-surface">24 OCT · 08:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav aria-label="Progression de l'inscription"
+            class="w-full bg-surface-container-lowest rounded-xl p-4 mb-8 shadow-sm">
+            <ol class="grid grid-cols-2 md:grid-cols-6 gap-3">
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">01
+                    Info</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Informations</span>
+                </div>
+              </li>
+              <!-- Step 2: Completed -->
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-label-md text-label-md font-bold">
+                  <span class="material-symbols-outlined text-[16px]">check</span>
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">02
+                    Fiche</span>
+                  <span class="block font-body-sm text-body-sm font-semibold text-on-surface truncate">Profil</span>
+                </div>
+              </li>
+              <!-- Step 3: Active -->
+              <li aria-current="step" class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md font-bold shadow-sm">
+                  03
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold truncate">03
+                    Poids</span>
+                  <span class="block font-body-sm text-body-sm font-bold text-secondary truncate">Catégorie</span>
+                </div>
+              </li>
+              <!-- Step 4:  -->
+              <li class="flex items-center gap-2.5 opacity-55">
+                <span class=" flex-shrink-0 w-7 h-7 rounded-full bg-surface-container text-on-surface-variant flex
+                          items-center justify-center font-label-md text-label-md font-semibold">
+                  04
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold truncate">04
+                    Pièces</span>
+                  <span class="block font-body-sm text-body-sm font-bold text-on-surface truncate">Documents</span>
+                </div>
+              </li>
+              <!-- Step 5: Inactive -->
+              <li class="flex items-center gap-2.5 opacity-55">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-semibold">
+                  05
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">05
+                    Revue</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-medium text-on-surface-variant truncate">Vérification</span>
+                </div>
+              </li>
+              <!-- Step 6: Inactive -->
+              <li class="flex items-center gap-2.5 opacity-55">
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-semibold">
+                  06
+                </span>
+                <div class="min-w-0">
+                  <span
+                    class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">06
+                    Final</span>
+                  <span
+                    class="block font-body-sm text-body-sm font-medium text-on-surface-variant truncate">Confirmation</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+          <!-- Main Registration Card -->
+          <div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
+            <div
+              class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-secondary via-secondary-container to-primary">
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6">
+              <div>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-sm uppercase tracking-wider font-bold mb-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> ÉTAPE 03 / 06
+                </span>
+                <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight">Choix de la
+                  catégorie</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-1">Sélectionnez la division correspondant
+                  à vos caractéristiques physiques et d'âge.</p>
+              </div>
+            </div>
+            <form id="category-form" class="space-y-4" novalidate>
+              <fieldset class="space-y-4 m-0 p-0 border-0">
+                <legend class="sr-only">Sélectionnez votre division de combat</legend>
+                <label id="card-option-1"
+                  class="category-card group relative flex flex-col p-5 sm:p-6 rounded-xl cursor-pointer transition-all duration-200 border-2 border-secondary bg-secondary-container/5 shadow-sm">
+                  <input class="sr-only" name="competition_category" type="radio" value="lightweight" checked
+                    required />
+                  <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                    <div class="flex-1 min-w-0 pr-8 sm:pr-0">
+                      <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span
+                          class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide group-hover:text-secondary transition-colors">MMA
+                          Amateur — Lightweight (-70 kg)</span>
+                      </div>
+                      <div class="flex flex-wrap items-center gap-2 mb-4">
+                        <span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">Hommes</span>
+                        <span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">18–24
+                          ans</span>
+                        <span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface font-bold">-70
+                          kg</span>
+                        <span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">Amateur</span>
+                        <span
+                          class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-2.5 py-1 rounded font-semibold">3
+                          rounds x 3 min</span>
+                      </div>
+                      <p class="font-body-md text-body-md text-on-surface font-semibold">Frais d'inscription : <span
+                          class="font-headline-sm text-headline-sm tracking-wide">2 000 DA</span></p>
+                    </div>
+                    <div class="category-indicator absolute top-5 right-5 sm:static flex items-center justify-center">
+                      <span
+                        class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md"><span
+                          class="material-symbols-outlined text-[18px] font-bold">check</span></span>
+                    </div>
+                  </div>
+                </label>
+                <label id="card-option-2"
+                  class="category-card group relative flex flex-col p-5 sm:p-6 rounded-xl cursor-pointer transition-all duration-200 border-2 border-transparent bg-surface-container-lowest hover:bg-surface-container-low shadow-sm">
+                  <input class="sr-only" name="competition_category" type="radio" value="featherweight" />
+                  <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                    <div class="flex-1 min-w-0 pr-8 sm:pr-0">
+                      <div class="flex flex-wrap items-center gap-2 mb-2"><span
+                          class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide group-hover:text-secondary transition-colors">MMA
+                          Amateur — Featherweight (-66 kg)</span></div>
+                      <div class="flex flex-wrap items-center gap-2 mb-4"><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">Hommes</span><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">18–24
+                          ans</span><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface font-bold">-66
+                          kg</span><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">Amateur</span>
+                      </div>
+                      <p class="font-body-md text-body-md text-on-surface font-semibold">Frais d'inscription : <span
+                          class="font-headline-sm text-headline-sm tracking-wide">2 000 DA</span></p>
+                    </div>
+                    <div class="category-indicator absolute top-5 right-5 sm:static flex items-center justify-center">
+                      <span
+                        class="w-6 h-6 rounded-full border-2 border-surface-container-high bg-surface-container-lowest"></span>
+                    </div>
+                  </div>
+                </label>
+                <label id="card-option-3"
+                  class="category-card group relative flex flex-col p-5 sm:p-6 rounded-xl cursor-pointer transition-all duration-200 border-2 border-transparent bg-surface-container-lowest hover:bg-surface-container-low shadow-sm">
+                  <input class="sr-only" name="competition_category" type="radio" value="welterweight" />
+                  <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                    <div class="flex-1 min-w-0 pr-8 sm:pr-0">
+                      <div class="flex flex-wrap items-center gap-2 mb-2"><span
+                          class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide group-hover:text-secondary transition-colors">MMA
+                          Amateur — Welterweight (-77 kg)</span></div>
+                      <div class="flex flex-wrap items-center gap-2 mb-4"><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">Hommes</span><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">18–24
+                          ans</span><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface font-bold">-77
+                          kg</span><span
+                          class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-on-surface-variant font-medium">Amateur</span>
+                      </div>
+                      <p class="font-body-md text-body-md text-on-surface font-semibold">Frais d'inscription : <span
+                          class="font-headline-sm text-headline-sm tracking-wide">2 000 DA</span></p>
+                    </div>
+                    <div class="category-indicator absolute top-5 right-5 sm:static flex items-center justify-center">
+                      <span
+                        class="w-6 h-6 rounded-full border-2 border-surface-container-high bg-surface-container-lowest"></span>
+                    </div>
+                  </div>
+                </label>
+              </fieldset>
+              <aside class="mt-6 p-4 rounded-xl bg-surface-container-low flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-[22px] shrink-0">scale</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant font-medium"><strong
+                    class="text-on-surface font-semibold">Protocole officiel :</strong> Tolérance de pesée officielle de
+                  <span class="text-secondary font-bold">0.5 kg</span> le matin de l'événement sur la balance calibrée
+                  du comité NIZAL.
+                </p>
+              </aside>
+              <div
+                class="pt-6 mt-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-4 border-t border-surface-container-high">
+                <a href="./etap2.html"
+                  class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-2"><span
+                    class="material-symbols-outlined text-[18px]">arrow_back</span><span>Retour</span></a>
+                <button id="continue-category"
+                  class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm uppercase tracking-wider font-bold transition-all shadow-sm active:translate-y-px flex items-center justify-center gap-2"
+                  type="submit"><span>Continuer vers les documents</span><span
+                    class="material-symbols-outlined text-[20px]">arrow_forward</span></button>
+              </div>
+              <p id="category-message" class="hidden font-body-sm text-body-sm text-primary font-semibold"
+                role="status"></p>
+            </form>
+          </div>
+          <!-- Security & Trust Badges -->
+          <div
+            class="mt-8 flex flex-wrap items-center justify-center gap-6 text-on-surface-variant font-label-sm uppercase tracking-wider">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-secondary">gavel</span>
+              Règlementation Unifiée MMA
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-secondary">lock</span>
+              Données Médicales Chiffrées
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-secondary">sports_score</span>
+              Système de Tirage Certifié
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-low  shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+            même endroit. Tournois, classements et billetterie officielle.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="actualites" href="../boutique/shop.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="athletes" href="../boutique/shop.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="evenements" href="../boutique/shop.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="boutique" href="../boutique/shop.html">Boutique</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="a-propos" href="../boutique/shop.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="../boutique/shop.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="faq" href="../boutique/shop.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="conditions-generales" href="../boutique/shop.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="politique-de-confidentialite" href="../boutique/shop.html">Politique de confidentialité</a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">TikTok</a></div>
+        </div>
+      </div>
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+        <p class="">© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider font-label-sm text-label-sm text-on-surface-variant">Plateforme Combat Sports
+          Haute Performance</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./nav.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      const API_BASE_URL = "http://localhost:5000/api/competitions";
+      const STORAGE_KEY = "nizalRegistrationDraft";
+
+      const params = new URLSearchParams(window.location.search);
+
+      const form = document.getElementById("category-form");
+      const message = document.getElementById("category-message");
+
+      if (!form || !message) {
+        console.error(
+          "Formulaire ou zone de message introuvable pour l'étape 3."
+        );
+        return;
+      }
+
+      let competition = null;
+      let categories = [];
+      let competitionId = null;
+
+      const originalFieldset = form.querySelector("fieldset");
+
+      const cardsContainer = document.createElement("div");
+      cardsContainer.id = "categories-container";
+      cardsContainer.className = "space-y-4";
+
+      if (originalFieldset) {
+        originalFieldset.replaceWith(cardsContainer);
+      } else {
+        const submitButton = form.querySelector('[type="submit"]');
+
+        if (submitButton && submitButton.parentElement) {
+          submitButton.parentElement.before(cardsContainer);
+        } else {
+          form.appendChild(cardsContainer);
+        }
+      }
+
+      function getDraft() {
+        try {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          return saved ? JSON.parse(saved) : {};
+        } catch (error) {
+          console.error("Erreur de lecture du brouillon :", error);
+          return {};
+        }
+      }
+
+      function getCompetitionId() {
+        const urlId =
+          params.get("id") ||
+          params.get("competitionId") ||
+          params.get("competition_id");
+
+        if (urlId && /^\d+$/.test(urlId.trim())) {
+          return urlId.trim();
+        }
+
+        const draft = getDraft();
+        const savedId = draft.competitionId || draft.competition_id;
+
+        if (savedId != null && /^\d+$/.test(String(savedId))) {
+          return String(savedId);
+        }
+
+        return null;
+      }
+
+      function saveDraft(category) {
+        const draft = getDraft();
+
+        draft.competitionId = String(competitionId);
+
+        draft.step3 = {
+          competitionId: Number(competitionId),
+          competitionName: competition.name,
+          categoryId: category.id,
+          sport: category.sport || competition.sport || "",
+          discipline: category.discipline || "",
+          gender: category.gender || "",
+          ageCategory: category.age_category || "",
+          weightCategory: category.weight_category || "",
+          registrationFee: competition.registration_fee
+        };
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+      }
+
+      function showMessage(text) {
+        message.textContent = text;
+        message.classList.remove("hidden");
+      }
+
+      function hideMessage() {
+        message.textContent = "";
+        message.classList.add("hidden");
+      }
+
+      function updateCardAppearance(card, selected) {
+        card.classList.toggle("border-secondary", selected);
+        card.classList.toggle("border-transparent", !selected);
+        card.classList.toggle("bg-secondary-container/5", selected);
+        card.classList.toggle("bg-surface-container-lowest", !selected);
+
+        const indicator = card.querySelector(".category-indicator");
+
+        if (indicator) {
+          indicator.innerHTML = selected
+            ? `<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md">
+             <span class="material-symbols-outlined text-[18px] font-bold">check</span>
+           </span>`
+            : `<span class="w-6 h-6 rounded-full border-2 border-surface-container-high bg-surface-container-lowest"></span>`;
+        }
+      }
+
+      function createCategoryCard(category, index, selectedId) {
+        const card = document.createElement("label");
+        const isSelected =
+          selectedId != null &&
+          String(category.id) === String(selectedId);
+
+        card.id = "card-option-" + (index + 1);
+        card.className =
+          "category-card group relative flex flex-col p-5 sm:p-6 rounded-xl cursor-pointer transition-all duration-200 border-2 shadow-sm";
+
+        const radio = document.createElement("input");
+        radio.className = "sr-only";
+        radio.type = "radio";
+        radio.name = "competition_category";
+        radio.value = String(category.id);
+        radio.required = true;
+        radio.checked = isSelected;
+
+        const content = document.createElement("div");
+        content.className =
+          "flex flex-col sm:flex-row sm:items-start justify-between gap-4";
+
+        const details = document.createElement("div");
+        details.className = "flex-1 min-w-0 pr-8 sm:pr-0";
+
+        const heading = document.createElement("div");
+        heading.className = "flex flex-wrap items-center gap-2 mb-2";
+
+        const title = document.createElement("span");
+        title.className =
+          "font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide group-hover:text-secondary transition-colors";
+
+        title.textContent = [
+          category.sport || competition.sport || "",
+          category.discipline || "",
+          category.weight_category || ""
+        ].filter(Boolean).join(" — ");
+
+        heading.appendChild(title);
+
+        const tags = document.createElement("div");
+        tags.className = "flex flex-wrap items-center gap-2 mb-4";
+
+        const tagValues = [
+          category.gender,
+          category.age_category,
+          category.weight_category,
+          category.discipline
+        ].filter(Boolean);
+
+        tagValues.forEach(function (value, tagIndex) {
+          const tag = document.createElement("span");
+
+          tag.className =
+            "font-label-sm text-label-sm px-2.5 py-1 rounded font-medium " +
+            (tagIndex === 2
+              ? "bg-surface-container text-on-surface font-bold"
+              : "bg-surface-container text-on-surface-variant");
+
+          tag.textContent = value;
+          tags.appendChild(tag);
+        });
+
+        const feeParagraph = document.createElement("p");
+        feeParagraph.className =
+          "font-body-md text-body-md text-on-surface font-semibold";
+
+        feeParagraph.appendChild(
+          document.createTextNode("Frais d'inscription : ")
+        );
+
+        const feeValue = document.createElement("span");
+        feeValue.className =
+          "font-headline-sm text-headline-sm tracking-wide";
+
+        const fee = Number(competition.registration_fee);
+
+        feeValue.textContent =
+          competition.registration_fee != null &&
+            competition.registration_fee !== "" &&
+            Number.isFinite(fee)
+            ? fee.toLocaleString("fr-FR") + " DA"
+            : "À confirmer";
+
+        feeParagraph.appendChild(feeValue);
+
+        details.append(heading, tags, feeParagraph);
+
+        const indicator = document.createElement("div");
+        indicator.className =
+          "category-indicator absolute top-5 right-5 sm:static flex items-center justify-center";
+
+        content.append(details, indicator);
+        card.append(radio, content);
+
+        updateCardAppearance(card, isSelected);
+
+        radio.addEventListener("change", function () {
+          if (!radio.checked) return;
+
+          cardsContainer
+            .querySelectorAll(".category-card")
+            .forEach(function (otherCard) {
+              const otherRadio = otherCard.querySelector(
+                'input[name="competition_category"]'
+              );
+
+              updateCardAppearance(
+                otherCard,
+                Boolean(otherRadio && otherRadio.checked)
+              );
+            });
+
+          try {
+            saveDraft(category);
+            hideMessage();
+          } catch (error) {
+            console.error("Erreur de sauvegarde :", error);
+            showMessage("Impossible de sauvegarder votre choix.");
+          }
+        });
+
+        return card;
+      }
+
+      function updateCompetitionHeader() {
+        if (!competition) return;
+
+        const headerLabel = document.querySelector(
+          "main .mb-8 .font-label-sm"
+        );
+
+        if (headerLabel && competition.name) {
+          headerLabel.textContent =
+            "COMPÉTITION OFFICIELLE · " + competition.name;
+        }
+
+        const infoLine = document.querySelector(
+          "main .mt-2\\.5 .font-label-md"
+        );
+
+        if (infoLine) {
+          const city = competition.city || competition.location || "";
+
+          const dateValue =
+            competition.start_date || competition.start_date_time;
+
+          const date = dateValue
+            ? new Date(dateValue).toLocaleDateString("fr-FR", {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+              timeZone: "Africa/Algiers"
+            })
+            : "";
+
+          const discipline =
+            competition.discipline || competition.sport || "";
+
+          const info = [city, date, discipline]
+            .filter(Boolean)
+            .join(" · ");
+
+          if (info) infoLine.textContent = info;
+        }
+      }
+
+      async function loadCategories() {
+        cardsContainer.innerHTML = "";
+        hideMessage();
+
+        competitionId = getCompetitionId();
+
+        if (!competitionId) {
+          showMessage(
+            "Identifiant de compétition introuvable. " +
+            "Retournez aux compétitions et recommencez l'inscription."
+          );
+          return;
+        }
+
+        const loading = document.createElement("p");
+        loading.className =
+          "font-body-md text-body-md text-on-surface-variant";
+        loading.textContent = "Chargement des catégories...";
+        cardsContainer.appendChild(loading);
+
+        try {
+          const response = await fetch(
+            `${API_BASE_URL}/${encodeURIComponent(competitionId)}`
+          );
+
+          if (!response.ok) {
+            throw new Error("Erreur HTTP " + response.status);
+          }
+
+          const result = await response.json();
+
+          if (!result.success || !result.data) {
+            throw new Error("Données de compétition invalides.");
+          }
+
+          competition = result.data;
+
+          categories = Array.isArray(competition.categories)
+            ? competition.categories
+            : [];
+
+          const draft = getDraft();
+          draft.competitionId = String(competitionId);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+
+          cardsContainer.innerHTML = "";
+          updateCompetitionHeader();
+
+          if (categories.length === 0) {
+            cardsContainer.textContent =
+              "Aucune catégorie n'est disponible pour cette compétition.";
+            return;
+          }
+
+          const saved = draft.step3;
+
+          const savedCategoryIsValid =
+            saved &&
+            String(saved.competitionId) === String(competitionId) &&
+            categories.some(function (category) {
+              return String(category.id) === String(saved.categoryId);
+            });
+
+          const selectedId = savedCategoryIsValid
+            ? saved.categoryId
+            : null;
+
+          categories.forEach(function (category, index) {
+            cardsContainer.appendChild(
+              createCategoryCard(category, index, selectedId)
+            );
+          });
+
+          // Ne sauvegarder que si une catégorie avait déjà été choisie.
+          if (savedCategoryIsValid) {
+            const savedCategory = categories.find(function (category) {
+              return String(category.id) === String(selectedId);
+            });
+
+            if (savedCategory) saveDraft(savedCategory);
+          }
+
+        } catch (error) {
+          console.error("Erreur de chargement des catégories :", error);
+          cardsContainer.innerHTML = "";
+
+          showMessage(
+            "Impossible de charger les catégories. " +
+            "Vérifiez que le backend est démarré et que l'API est accessible."
+          );
+        }
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        hideMessage();
+
+        const selectedRadio = form.querySelector(
+          'input[name="competition_category"]:checked'
+        );
+
+        if (!selectedRadio) {
+          showMessage(
+            "Veuillez sélectionner une catégorie avant de continuer."
+          );
+          return;
+        }
+
+        const selectedCategory = categories.find(function (category) {
+          return String(category.id) === selectedRadio.value;
+        });
+
+        if (!selectedCategory || !competition || !competitionId) {
+          showMessage(
+            "La catégorie sélectionnée est invalide. Rechargez la page."
+          );
+          return;
+        }
+
+        try {
+          saveDraft(selectedCategory);
+
+          const nextUrl = new URL(
+            "./nizal-inscription-etape4-documents.html",
+            window.location.href
+          );
+
+          nextUrl.searchParams.set("id", competitionId);
+          window.location.href = nextUrl.toString();
+
+        } catch (error) {
+          console.error("Erreur de sauvegarde :", error);
+          showMessage("Impossible de sauvegarder votre choix. Réessayez.");
+        }
+      });
+
+      loadCategories();
+    })();
+  </script>
+
+</body>
+
+</html>

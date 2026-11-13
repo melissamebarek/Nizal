@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../nav.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed-dim": "#b6c4ff", "on-primary-fixed": "#410100", "on-surface": "#e5e1e6", "on-secondary-fixed-variant": "#003ab2", "on-tertiary-fixed": "#1a1c1c", "on-error-container": "#ffdad6", "surface-container-highest": "#353438", "primary-fixed": "#ffdad4", "on-background": "#e5e1e6", "on-surface-variant": "#e9bcb5", "surface-container-low": "#1b1b1e", "on-error": "#690005", "inverse-primary": "#c00500", "error-container": "#93000a", "primary": "#ffb4a8", "on-tertiary-fixed-variant": "#454747", "on-secondary-container": "#e4e7ff", "on-secondary-fixed": "#001550", "secondary-fixed": "#dce1ff", "on-secondary": "#00277f", "surface-tint": "#ffb4a8", "surface-container": "#201f22", "surface-dim": "#131316", "outline": "#af8781", "on-primary-fixed-variant": "#930300", "on-tertiary-container": "#f5f5f5", "inverse-surface": "#e5e1e6", "primary-container": "#e10600", "surface": "#131316", "inverse-on-surface": "#303033", "background": "#131316", "on-primary": "#680200", "error": "#ffb4ab", "secondary": "#b6c4ff", "surface-bright": "#39393c", "secondary-container": "#0056fd", "tertiary-container": "#6f7070", "on-tertiary": "#2f3131", "outline-variant": "#5e3f3a", "primary-fixed-dim": "#ffb4a8", "tertiary-fixed": "#e2e2e2", "surface-variant": "#353438", "tertiary-fixed-dim": "#c6c6c7", "surface-container-lowest": "#0e0e11", "tertiary": "#c6c6c7", "on-primary-container": "#fff2f0", "surface-container-high": "#2a2a2d" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-lg": "1.5rem", "margin": "2rem", "gutter-sm": "1rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-sm": "1rem" }, "fontFamily": { "headline-lg": ["Oswald"], "label-lg": ["Inter"], "data-metric": ["Oswald"], "headline-sm": ["Oswald"], "display-lg-mobile": ["Oswald"], "body-sm": ["Inter"], "headline-md": ["Oswald"], "body-lg": ["Inter"], "label-md": ["Inter"], "display-xl-mobile": ["Oswald"], "title-md": ["Inter"], "display-lg": ["Oswald"], "display-xl": ["Oswald"], "body-md": ["Inter"] }, "fontSize": { "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "data-metric": ["28px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "0.02em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }], "display-xl-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "0.03em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.03em", "fontWeight": "700" }], "display-xl": ["64px", { "lineHeight": "68px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-white text-on-tertiary-fixed font-body-md text-body-md antialiased min-h-screen flex flex-col">
+  <header class="" id="header">
+
+    <!-- LOGO -->
+    <a href="../index.html" class="logo-link">
+      <img src="../../assest/logo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+      <ul>
+        <li>
+          <a href="../index.html">HOME</a>
+        </li>
+
+        <li>
+          <a href="../articles/actualites.html">ACTUALITES</a>
+        </li>
+
+        <li>
+          <a href="events.html" class="active">EVENEMENTS</a>
+        </li>
+
+        <li>
+          <a href="../boutique/shop.html">BOUTIQUE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+
+      <a href="../search.html" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </a>
+
+      <a href="../boutique/cart.html" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </header>
+  <main class="w-full bg-white flex-1">
+    <div
+      class="flex flex-col w-full font-body-md text-on-tertiary-fixed bg-white antialiased selection:bg-primary-container selection:text-white">
+      <!-- 1. HERO SECTION -->
+      <section class="relative w-full overflow-hidden bg-neutral-950">
+        <div class="relative w-full min-h-[560px] lg:min-h-[640px] flex items-center justify-center">
+          <!-- High-impact dynamic combat background -->
+          <div class="absolute inset-0 z-0">
+            <img alt="Championnat du Monde NIZAL Combat"
+              class="w-full h-full object-cover object-center transform scale-105 opacity-40 filter contrast-125"
+              src="../../assest/hero-bg.png" />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-neutral-950/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-transparent to-neutral-950/90"></div>
+          </div>
+          <!-- Hero Content Container -->
+          <div
+            class="relative z-10 max-w-[1440px] w-full mx-auto px-margin-sm md:px-margin py-space-xl flex flex-col items-center text-center">
+            <!-- Official Badge -->
+            <div
+              class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md shadow-sm mb-space-md">
+              <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              <span class="font-label-md text-label-md uppercase tracking-widest text-white">CALENDRIER OFFICIEL 2026 ·
+                HOMOLOGUÉ</span>
+            </div>
+            <!-- Main Title -->
+            <h1
+              class="font-display-xl text-display-xl uppercase tracking-tight text-white max-w-4xl mx-auto drop-shadow-sm leading-none">
+              ENTREZ DANS <span class="text-primary-container">L'ARÈNE.</span>
+            </h1>
+            <!-- Short Lead -->
+            <p class="mt-space-md font-body-lg text-body-lg text-neutral-200 max-w-2xl mx-auto font-normal">
+              Découvrez les prochaines compétitions et participez à votre prochain défi. Les arènes majeures des sports
+              de combat en direct sur NIZAL.
+            </p>
+            <!-- CTA Action Buttons -->
+            <div class="mt-space-lg flex flex-col sm:flex-row items-center gap-space-md w-full justify-center">
+              <a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-8 py-3.5 bg-primary-container hover:bg-inverse-primary text-white font-label-lg text-label-lg uppercase tracking-wider rounded-lg shadow-lg hover:shadow-primary-container/30 transition-all duration-200 group"
+                href="#competitions-grid">
+                <span>Voir les compétitions</span>
+                <span
+                  class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">arrow_downward</span>
+              </a>
+              <a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md font-label-lg text-label-lg uppercase tracking-wider rounded-lg transition-all duration-200"
+                href="#process-section">
+                <span class="material-symbols-outlined text-[18px]">verified_user</span>
+                <span>Règlements &amp; Homologations</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Telemetry Stats Strip -->
+        <div class="w-full bg-neutral-900/95 border-t border-white/10 backdrop-blur-md py-4">
+          <div
+            class="max-w-[1440px] mx-auto px-margin-sm md:px-margin grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="flex flex-col items-center">
+              <span class="font-data-metric text-data-metric text-white">12</span>
+              <span class="font-label-md text-label-md text-neutral-400 uppercase tracking-wider mt-0.5">Événements
+                Majeurs</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="font-data-metric text-data-metric text-primary-container">850+</span>
+              <span class="font-label-md text-label-md text-neutral-400 uppercase tracking-wider mt-0.5">Athlètes
+                Inscrits</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="font-data-metric text-data-metric text-white">4</span>
+              <span class="font-label-md text-label-md text-neutral-400 uppercase tracking-wider mt-0.5">Disciplines
+                Olympiques &amp; Pro</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="font-data-metric text-data-metric text-secondary-fixed-dim">100%</span>
+              <span class="font-label-md text-label-md text-neutral-400 uppercase tracking-wider mt-0.5">Homologué &amp;
+                Arbitré</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 2. FILTER & SEARCH BAR SECTION -->
+      <section
+        class="w-full bg-neutral-50 py-space-md border-b border-neutral-200 fix top-20 z-30 shadow-sm backdrop-blur-md bg-neutral-50/95">
+        <div class="max-w-[1440px] mx-auto px-margin-sm md:px-margin flex flex-col gap-space-md">
+          <!-- Top Row: Discipline Badges & Quick Search -->
+          <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+            <!-- Discipline Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none"
+              id="discipline-filter-group">
+              <button
+                class="filter-pill active whitespace-nowrap px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all bg-neutral-900 text-white shadow-sm"
+                data-filter="all" type="button">Tous les sports</button>
+              <button
+                class="filter-pill whitespace-nowrap px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all bg-white hover:bg-neutral-100 text-neutral-700 shadow-sm"
+                data-filter="Boxing" type="button">Boxing</button>
+              <button
+                class="filter-pill whitespace-nowrap px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all bg-white hover:bg-neutral-100 text-neutral-700 shadow-sm"
+                data-filter="Karaté" type="button">Karaté</button>
+              <button
+                class="filter-pill whitespace-nowrap px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all bg-white hover:bg-neutral-100 text-neutral-700 shadow-sm"
+                data-filter="Judo" type="button">Judo</button>
+              <button
+                class="filter-pill whitespace-nowrap px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all bg-white hover:bg-neutral-100 text-neutral-700 shadow-sm"
+                data-filter="Wrestling" type="button">Wrestling</button>
+            </div>
+            <!-- Search Input -->
+            <div class="relative w-full lg:w-96">
+              <span
+                class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400 text-[20px]">search</span>
+              <input
+                class="w-full pl-10 pr-4 py-2 bg-white rounded-lg text-body-sm font-body-sm text-neutral-900 placeholder:text-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary-container"
+                id="tournament-search" placeholder="Rechercher un tournoi, une arène ou une ville..." type="text" />
+            </div>
+          </div>
+          <!-- Secondary Filters & Results Counter -->
+          <div class="flex flex-wrap items-center justify-between gap-space-sm pt-2 text-neutral-600">
+            <div class="flex flex-wrap items-center gap-space-sm">
+              <!-- Period Selector -->
+              <div class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg shadow-sm">
+                <span class="material-symbols-outlined text-[18px] text-neutral-500">calendar_month</span>
+                <select id="date-filter"
+                  class="bg-transparent text-body-sm font-body-sm text-neutral-800 focus:outline-none cursor-pointer pr-2">
+                  <option value="all">Toutes les dates</option>
+                  <option value="upcoming">À venir</option>
+                  <option value="month">Ce mois-ci</option>
+                  <option value="past">Événements passés</option>
+                </select>
+              </div>
+              <!-- Location Selector -->
+              <div class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg shadow-sm">
+                <span class="material-symbols-outlined text-[18px] text-neutral-500">location_on</span>
+                <select id="location-filter"
+                  class="bg-transparent text-body-sm font-body-sm text-neutral-800 focus:outline-none cursor-pointer pr-2">
+                  <option value="all">Tous les lieux</option>
+                </select>
+              </div>
+            </div>
+            <!-- Live Results Count -->
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="font-body-sm text-body-sm font-medium text-neutral-700" id="results-count">4 compétitions
+                majeures trouvées</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 3. PROCHAINES COMPÉTITIONS (Bento Cards Grid) -->
+      <section class="w-full bg-white py-space-xl" id="competitions-grid">
+        <div class="max-w-[1440px] mx-auto px-margin-sm md:px-margin">
+          <!-- Section Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="h-4 w-1 bg-primary-container rounded-full"></span>
+                <span class="font-label-lg text-label-lg uppercase tracking-wider text-secondary-container">Tournois
+                  Officiels</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-neutral-950 font-bold tracking-tight">
+                Prochaines Compétitions</h2>
+            </div>
+            <p class="font-body-sm text-body-sm text-neutral-500 max-w-md">
+              Chaque combat est homologué sous la supervision des comités officiels et des protocoles d'arbitrage
+              fédéral NIZAL.
+            </p>
+          </div>
+          <!-- Les compétitions sont chargées depuis l'API -->
+          <div id="competitions-list" class="grid grid-cols-1 lg:grid-cols-2 gap-gutter" aria-live="polite">
+            <div class="lg:col-span-2 rounded-xl bg-neutral-50 p-8 text-center text-neutral-600"
+              id="competitions-message">
+              <span class="material-symbols-outlined animate-spin text-3xl">progress_activity</span>
+              <p class="mt-2">Chargement des compétitions...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 4. PROCESSUS D'INSCRIPTION SIMPLE (3 ÉTAPES) -->
+      <section class="w-full bg-neutral-50 py-space-xl border-y border-neutral-200" id="process-section">
+        <div class="max-w-[1440px] mx-auto px-margin-sm md:px-margin">
+          <!-- Section Header -->
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white shadow-sm mb-3">
+              <span class="material-symbols-outlined text-secondary-container text-[16px]">how_to_reg</span>
+              <span class="font-label-md text-label-md uppercase tracking-wider text-secondary-container">Protocole
+                Fédéral</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg uppercase text-neutral-950 font-bold tracking-tight">
+              Comment Participer à une Compétition
+            </h2>
+            <p class="mt-2 font-body-md text-body-md text-neutral-600">
+              Un processus fluide, transparent et conforme aux directives médicales et sportives des fédérations
+              officielles.
+            </p>
+          </div>
+          <!-- 3 Steps Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter relative">
+            <!-- Step 1 -->
+            <div
+              class="bg-white p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-space-md">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+                    <span class="material-symbols-outlined text-[26px]">tune</span>
+                  </div>
+                  <span class="font-headline-lg text-headline-lg font-bold text-neutral-200">01</span>
+                </div>
+                <h3 class="font-title-md text-title-md uppercase font-bold text-neutral-900 mb-2">
+                  Sélectionnez votre tournoi &amp; catégorie
+                </h3>
+                <p class="font-body-sm text-body-sm text-neutral-600">
+                  Choisissez l'arène adaptée à votre niveau, discipline et catégorie de poids exacte. Les tableaux sont
+                  actualisés en temps réel.
+                </p>
+              </div>
+              <div
+                class="mt-6 pt-4 border-t border-neutral-100 flex items-center gap-2 text-neutral-500 font-label-md text-label-md uppercase">
+                <span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+                <span>Accréditation instantanée</span>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div
+              class="bg-white p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-space-md">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary-container">
+                    <span class="material-symbols-outlined text-[26px]">clinical_notes</span>
+                  </div>
+                  <span class="font-headline-lg text-headline-lg font-bold text-neutral-200">02</span>
+                </div>
+                <h3 class="font-title-md text-title-md uppercase font-bold text-neutral-900 mb-2">
+                  Déposez certificat &amp; licence fédérale
+                </h3>
+                <p class="font-body-sm text-body-sm text-neutral-600">
+                  Téléversez vos examens médicaux obligatoires (fond d'œil, IRM/EEG selon la division) et votre
+                  attestation de club en ligne.
+                </p>
+              </div>
+              <div
+                class="mt-6 pt-4 border-t border-neutral-100 flex items-center gap-2 text-neutral-500 font-label-md text-label-md uppercase">
+                <span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+                <span>Vérification médicale sous 48h</span>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div
+              class="bg-white p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-space-md">
+                  <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
+                    <span class="material-symbols-outlined text-[26px]">scale</span>
+                  </div>
+                  <span class="font-headline-lg text-headline-lg font-bold text-neutral-200">03</span>
+                </div>
+                <h3 class="font-title-md text-title-md uppercase font-bold text-neutral-900 mb-2">
+                  Validez la pesée et entrez dans l'arène
+                </h3>
+                <p class="font-body-sm text-body-sm text-neutral-600">
+                  Présentez-vous à la pesée officielle la veille du combat, recevez votre passe athlète avec puce RFID
+                  et montez sur la toile.
+                </p>
+              </div>
+              <div
+                class="mt-6 pt-4 border-t border-neutral-100 flex items-center gap-2 text-neutral-500 font-label-md text-label-md uppercase">
+                <span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+                <span>Protocole sécurité garanti</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <script>
+      (() => {
+        "use strict";
+
+        // API backend Express du projet NIZAL.
+        const API_URL = "http://localhost:5000/api/competitions/";
+        const DETAILS_PAGE = "./eventDetails.html";
+        const FALLBACK_IMAGE = "../../assest/hero-bg.png";
+
+        const list = document.getElementById("competitions-list");
+        const searchInput = document.getElementById("tournament-search");
+        const dateFilter = document.getElementById("date-filter");
+        const locationFilter = document.getElementById("location-filter");
+        const resultsCount = document.getElementById("results-count");
+        const filterPills = [...document.querySelectorAll(".filter-pill")];
+
+        let competitions = [];
+        let currentSport = "all";
+
+        const normalize = (value) => String(value ?? "")
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          .toLocaleLowerCase("fr").trim();
+
+        const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
+          "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+        })[char]);
+
+        function getDate(value) {
+          if (!value) return null;
+          const date = new Date(value);
+          return Number.isNaN(date.getTime()) ? null : date;
+        }
+
+        function formatDate(value) {
+          const date = getDate(value);
+          if (!date) return "Date à confirmer";
+          return new Intl.DateTimeFormat("fr-FR", {
+            day: "2-digit", month: "long", year: "numeric"
+          }).format(date);
+        }
+
+        function formatTime(value) {
+          if (!value) return "";
+          const match = String(value).match(/^(\d{1,2}):(\d{2})/);
+          return match ? `${match[1].padStart(2, "0")}:${match[2]}` : "";
+        }
+
+        function getImage(item) {
+          const image = item.cover_image || item.image || item.image_url || "";
+          if (typeof image !== "string" || !image.trim()) return FALLBACK_IMAGE;
+          if (image.startsWith("data:image/") || /^https?:\/\//i.test(image) || image.startsWith("../../") || image.startsWith("../")) return image;
+          // Accepte également un chemin d'image relatif renvoyé par l'API.
+          return image.startsWith("/") ? `http://localhost:5000${image}` : image;
+        }
+
+        function getLocation(item) {
+          return [item.city, item.location].filter(Boolean).join(" · ") || "Lieu à confirmer";
+        }
+
+        function getSport(item) {
+          return item.sport || item.discipline || "Sport de combat";
+        }
+
+        function renderCard(item) {
+          const id = item.id;
+          const title = item.name || item.title || "Compétition NIZAL";
+          const description = item.description || "Retrouvez les informations de cette compétition et préparez votre participation.";
+          const sport = getSport(item);
+          const discipline = item.discipline && normalize(item.discipline) !== normalize(sport) ? item.discipline : "";
+          const dateText = formatDate(item.start_date);
+          const timeText = formatTime(item.start_time);
+          const location = getLocation(item);
+          const image = getImage(item);
+          const detailsUrl = `${DETAILS_PAGE}?id=${encodeURIComponent(id)}`;
+
+          return `
+            <article class="competition-card group bg-neutral-50 hover:bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              data-id="${escapeHTML(id)}" data-sport="${escapeHTML(sport)}" data-discipline="${escapeHTML(item.discipline || "")}" data-date="${escapeHTML(item.start_date || "")}" data-location="${escapeHTML(location)}">
+              <div>
+                <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-neutral-900">
+                  <img alt="${escapeHTML(title)}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="${escapeHTML(image)}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}'">
+                  <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent"></div>
+                  <div class="absolute top-4 left-4 right-4 flex items-start justify-between gap-2">
+                    <span class="px-3 py-1 bg-secondary-container text-white font-label-md text-label-md uppercase tracking-wider rounded shadow-md">${escapeHTML(sport)}</span>
+                    <span class="px-3 py-1 bg-emerald-500/90 text-white font-label-md text-label-md uppercase tracking-wider rounded shadow-md">${getDate(item.start_date) && getDate(item.start_date) >= new Date(new Date().setHours(0, 0, 0, 0)) ? "À venir" : "Compétition"}</span>
+                  </div>
+                  <div class="absolute bottom-4 left-4 right-4">
+                    ${discipline ? `<span class="font-label-md text-label-md text-secondary-fixed-dim uppercase tracking-wider">${escapeHTML(discipline)}</span>` : ""}
+                    <h3 class="font-headline-md text-headline-md font-bold text-white uppercase tracking-tight group-hover:text-primary-container transition-colors">${escapeHTML(title)}</h3>
+                  </div>
+                </div>
+                <div class="p-space-md sm:p-space-lg space-y-space-sm">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-space-sm border-b border-neutral-200">
+                    <div class="flex items-start gap-2 text-neutral-800"><span class="material-symbols-outlined text-secondary-container text-[20px]">calendar_today</span><span class="font-body-md text-body-md font-medium">${escapeHTML(dateText)}${timeText ? ` · ${escapeHTML(timeText)}` : ""}</span></div>
+                    <div class="flex items-start gap-2 text-neutral-800"><span class="material-symbols-outlined text-primary-container text-[20px]">location_on</span><span class="font-body-md text-body-md font-medium">${escapeHTML(location)}</span></div>
+                  </div>
+                  <div class="space-y-2 pt-1 text-neutral-600"><p class="font-body-sm text-body-sm">${escapeHTML(description)}</p>${item.organizer ? `<p class="font-body-sm text-body-sm"><strong class="text-neutral-900">Organisateur :</strong> ${escapeHTML(item.organizer)}</p>` : ""}</div>
+                </div>
+              </div>
+              <div class="px-space-md sm:px-space-lg pb-space-md sm:pb-space-lg pt-0">
+                <a class="w-full py-3 bg-primary-container hover:bg-inverse-primary text-white font-label-lg text-label-lg uppercase tracking-wider rounded-lg flex items-center justify-center gap-2 transition-colors shadow-sm" href="${detailsUrl}">
+                  <span>Voir la compétition</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </article>`;
+        }
+
+        function populateLocations() {
+          if (!locationFilter) return;
+          const current = locationFilter.value || "all";
+          const locations = [...new Set(competitions.map(getLocation).filter(value => value && value !== "Lieu à confirmer"))]
+            .sort((a, b) => a.localeCompare(b, "fr"));
+          locationFilter.innerHTML = '<option value="all">Tous les lieux</option>' + locations.map(location =>
+            `<option value="${escapeHTML(normalize(location))}">${escapeHTML(location)}</option>`
+          ).join("");
+          if ([...locationFilter.options].some(option => option.value === current)) locationFilter.value = current;
+        }
+
+        function updateVisibility() {
+          const cards = [...document.querySelectorAll(".competition-card")];
+          const query = normalize(searchInput?.value || "");
+          const dateMode = dateFilter?.value || "all";
+          const selectedLocation = locationFilter?.value || "all";
+          const now = new Date();
+          const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+          let visibleCount = 0;
+
+          cards.forEach(card => {
+            const sport = normalize(card.dataset.sport);
+            const discipline = normalize(card.dataset.discipline);
+            const text = normalize(card.textContent);
+            const date = getDate(card.dataset.date);
+            const matchesSport = currentSport === "all" || sport === normalize(currentSport) || discipline === normalize(currentSport);
+            const matchesSearch = !query || text.includes(query) || sport.includes(query) || discipline.includes(query);
+            const matchesLocation = selectedLocation === "all" || normalize(card.dataset.location) === selectedLocation;
+            let matchesDate = true;
+            if (dateMode === "upcoming") matchesDate = !!date && date >= today;
+            if (dateMode === "past") matchesDate = !!date && date < today;
+            if (dateMode === "month") matchesDate = !!date && date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear();
+
+            const visible = matchesSport && matchesSearch && matchesLocation && matchesDate;
+            card.style.display = visible ? "flex" : "none";
+            if (visible) visibleCount++;
+          });
+
+          if (resultsCount) resultsCount.textContent = `${visibleCount} compétition${visibleCount !== 1 ? "s" : ""} trouvée${visibleCount !== 1 ? "s" : ""}`;
+          const empty = document.getElementById("empty-competitions");
+          if (empty) empty.remove();
+          if (visibleCount === 0 && list) {
+            const message = document.createElement("div");
+            message.id = "empty-competitions";
+            message.className = "lg:col-span-2 rounded-xl bg-neutral-50 p-8 text-center text-neutral-600";
+            message.innerHTML = '<span class="material-symbols-outlined text-3xl">search_off</span><p class="mt-2">Aucune compétition ne correspond à vos filtres.</p>';
+            list.appendChild(message);
+          }
+        }
+
+        async function loadCompetitions() {
+          try {
+            const response = await fetch(API_URL, { headers: { "Accept": "application/json" } });
+            if (!response.ok) throw new Error(`Erreur HTTP ${response.status}`);
+            const payload = await response.json();
+            const data = Array.isArray(payload) ? payload : payload.data;
+            if (payload.success === false || !Array.isArray(data)) throw new Error(payload.message || "Format de réponse API invalide.");
+
+            competitions = data;
+            if (list) {
+              if (competitions.length === 0) {
+                list.innerHTML = '<div class="lg:col-span-2 rounded-xl bg-neutral-50 p-8 text-center text-neutral-600"><span class="material-symbols-outlined text-3xl">event_busy</span><p class="mt-2">Aucune compétition publiée pour le moment.</p></div>';
+              } else {
+                list.innerHTML = competitions.map(renderCard).join("");
+              }
+            }
+            populateLocations();
+            updateVisibility();
+          } catch (error) {
+            console.error("Erreur chargement compétitions :", error);
+            if (list) list.innerHTML = `<div class="lg:col-span-2 rounded-xl border border-red-200 bg-red-50 p-6 text-center text-red-800"><strong>Impossible de charger les compétitions.</strong><p class="mt-2 text-sm">Vérifiez que le serveur backend est démarré et que l'API <code>${API_URL}</code> répond correctement.</p><p class="mt-1 text-sm">${escapeHTML(error.message || "Erreur inconnue")}</p><button id="retry-competitions" type="button" class="mt-4 rounded-lg bg-red-700 px-4 py-2 text-white">Réessayer</button></div>`;
+            document.getElementById("retry-competitions")?.addEventListener("click", loadCompetitions);
+            if (resultsCount) resultsCount.textContent = "Chargement impossible";
+          }
+        }
+
+        filterPills.forEach(pill => pill.addEventListener("click", () => {
+          filterPills.forEach(button => {
+            button.classList.remove("active", "bg-neutral-900", "text-white");
+            button.classList.add("bg-white", "text-neutral-700");
+          });
+          pill.classList.add("active", "bg-neutral-900", "text-white");
+          pill.classList.remove("bg-white", "text-neutral-700");
+          currentSport = pill.dataset.filter || "all";
+          updateVisibility();
+        }));
+
+        searchInput?.addEventListener("input", updateVisibility);
+        dateFilter?.addEventListener("change", updateVisibility);
+        locationFilter?.addEventListener("change", updateVisibility);
+        loadCompetitions();
+      })();
+    </script>
+  </main>
+  <footer class="w-full bg-surface-container-low  shadow-[0_1px_8px_rgba(0,0,0,0.02)]">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-space-sm"><span
+              class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">NIZAL</span><span
+              class="w-2 h-2 rounded-full bg-primary-container"></span></div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Le monde des sports de combat, réuni au
+            même endroit. Tournois, classements et billetterie officielle.</p>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Navigation</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="actualites" href="../boutique/shop.html">Actualités</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="athletes" href="../boutique/shop.html">Athlètes</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="evenements" href="../boutique/shop.html">Événements</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="boutique" href="../boutique/shop.html">Boutique</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Informations</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-secondary font-body-md"><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="a-propos" href="../boutique/shop.html">À propos</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="../boutique/shop.html">Contact</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="faq" href="../boutique/shop.html">FAQ</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="conditions-generales" href="../boutique/shop.html">Conditions générales</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="politique-de-confidentialite" href="../boutique/shop.html">Politique de confidentialité</a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Suivez-nous</span>
+          <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Instagram</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">Facebook</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">YouTube</a><a
+              class="hover:text-on-surface transition-colors" href="../boutique/shop.html">TikTok</a></div>
+        </div>
+      </div>
+      <div
+        class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md">
+        <p class="">© 2026 NIZAL. Tous droits réservés.</p>
+        <p class="uppercase tracking-wider font-label-sm text-label-sm text-on-surface-variant">Plateforme Combat Sports
+          Haute Performance</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./nav.js"></script>
+</body>
+
+</html>

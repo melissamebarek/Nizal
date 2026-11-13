@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ajouter un produit — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="add-product.css">
+
+    <link rel="stylesheet" href="../sidabar.css">
+
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+        
+            <div class="logo">
+                <img src="../../assest/logo.png" alt="logo" class="logoimg">
+            </div>
+        
+            <nav class="sidebar-nav">
+        
+                <a href="../index.html" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Accueil</span>
+                </a>
+        
+                <a href="../articles/articles.html" class="nav-item active">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+        
+                <a href="./products.html" class="nav-item">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Produits & Boutique</span>
+                </a>
+        
+                <a href="../competitions/competitions.html" class="nav-item">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Compétitions</span>
+                </a>
+        
+                <a href="../registrations/registrations.html" class="nav-item">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <span>Inscriptions</span>
+                </a>
+        
+                <a href="../orders/orders.html" class="nav-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Commandes</span>
+                </a>
+        
+            </nav>
+        
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-title">
+                    Produits & Boutique
+                </div>
+
+            </header>
+
+
+            <!-- CONTENT -->
+            <section class="page-content">
+
+                <!-- BREADCRUMB -->
+                <div class="breadcrumb">
+
+                    <a href="products.html">
+                        Produits & Boutique
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Ajouter un produit</span>
+
+                </div>
+
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+
+                    <div>
+                        <h1>Ajouter un produit</h1>
+
+                        <p>
+                            Ajoutez un nouveau produit à la boutique NIZAL.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="productForm">
+
+                    <div class="form-layout">
+
+
+                        <!-- LEFT COLUMN -->
+                        <div class="main-column">
+
+
+                            <!-- PHOTOS -->
+                            <section class="card">
+
+                                <div class="card-header">
+
+                                    <div>
+                                        <h2>Photos du produit</h2>
+
+                                        <p>
+                                            Ajoutez plusieurs photos et choisissez la photo principale.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="photos-grid" id="photosGrid">
+
+                                    <label class="add-photo">
+
+                                        <input type="file" id="photoInput" accept="image/*" multiple>
+
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                                        <strong>Ajouter des photos</strong>
+
+                                        <span>
+                                            PNG, JPG ou WEBP
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+                                <div class="photo-help">
+                                    <i class="fa-solid fa-circle-info"></i>
+
+                                    <span>
+                                        La première photo ajoutée sera utilisée comme photo principale.
+                                        Vous pourrez modifier ce choix avant l'enregistrement.
+                                    </span>
+                                </div>
+
+                            </section>
+
+
+                            <!-- INFORMATIONS -->
+                            <section class="card">
+
+                                <div class="card-header">
+
+                                    <div>
+                                        <h2>Informations du produit</h2>
+
+                                        <p>
+                                            Informations générales du produit.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-grid">
+
+                                    <!-- NAME -->
+                                    <div class="form-group full">
+
+                                        <label for="productName">
+                                            Nom du produit
+                                            <span>*</span>
+                                        </label>
+
+                                        <input type="text" id="productName" placeholder="Ex. NIZAL Fight T-Shirt"
+                                            required>
+
+                                    </div>
+
+
+                                    <!-- CATEGORY -->
+                                    <div class="form-group">
+
+                                        <label for="category">
+                                            Catégorie
+                                            <span>*</span>
+                                        </label>
+
+                                        <select id="category" required>
+
+                                            <option value="">
+                                                Sélectionner une catégorie
+                                            </option>
+
+                                            <option value="femme">
+                                                femme
+                                            </option>
+
+                                            <option value="homme">
+                                                homme
+                                            </option>
+
+                                            <option value="enfant">
+                                                enfant
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- PRICE -->
+                                    <div class="form-group">
+
+                                        <label for="price">
+                                            Prix (DZD)
+                                            <span>*</span>
+                                        </label>
+
+                                        <div class="input-with-suffix">
+
+                                            <input type="number" id="price" min="0" placeholder="3500" required>
+
+                                            <span>DZD</span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- DISCOUNT -->
+                                    <div class="form-group">
+
+                                        <label for="discount">
+                                            Réduction
+                                        </label>
+
+                                        <div class="input-with-suffix">
+
+                                            <input type="number" id="discount" min="0" max="100" value="0">
+
+                                            <span>%</span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- FINAL PRICE -->
+                                    <div class="form-group">
+
+                                        <label>
+                                            Prix après réduction
+                                        </label>
+
+                                        <div class="calculated-price">
+
+                                            <strong id="finalPrice">
+                                                0 DZD
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- DESCRIPTION -->
+                                    <div class="form-group full">
+
+                                        <label for="description">
+                                            Description
+                                        </label>
+
+                                        <textarea id="description" rows="6"
+                                            placeholder="Décrivez le produit..."></textarea>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+                            <!-- VARIANTS -->
+                            <section class="card">
+
+                                <div class="card-header variant-header">
+
+                                    <div>
+
+                                        <h2>Variantes & Stock</h2>
+
+                                        <p>
+                                            Définissez les couleurs, tailles et stocks disponibles.
+                                        </p>
+
+                                    </div>
+
+                                    <button type="button" class="btn btn-secondary" id="addVariantBtn">
+                                        <i class="fa-solid fa-plus"></i>
+                                        Ajouter une variante
+                                    </button>
+
+                                </div>
+
+
+                                <div class="variants-container" id="variantsContainer">
+
+                                    <!-- EMPTY STATE -->
+                                    <div class="variant-empty" id="variantEmpty">
+
+                                        <i class="fa-solid fa-layer-group"></i>
+
+                                        <strong>
+                                            Aucune variante
+                                        </strong>
+
+                                        <span>
+                                            Ajoutez une variante pour définir le stock du produit.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+
+                        </div>
+
+
+                        <!-- RIGHT COLUMN -->
+                        <aside class="side-column">
+
+
+
+                            <!-- ACTIONS -->
+                            <section class="card actions-card">
+
+                                <button type="submit" class="btn btn-primary btn-full">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Ajouter le produit
+                                </button>
+
+                                <a href="products.html" class="btn btn-light btn-full">
+                                    Annuler
+                                </a>
+
+                            </section>
+
+                        </aside>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div>
+            <strong>Produit ajouté</strong>
+
+            <span>
+                Le produit a été ajouté avec succès.
+            </span>
+        </div>
+
+    </div>
+
+
+    <script src="add-product.js"></script>
+
+</body>
+
+</html>

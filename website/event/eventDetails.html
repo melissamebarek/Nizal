@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Détails de la compétition | NIZAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../nav.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --red: #b30400;
+      --blue: #0042c7
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Inter, sans-serif
+    }
+
+    h1,
+    h2,
+    h3,
+    .display {
+      font-family: Oswald, sans-serif
+    }
+
+    .shell {
+      width: min(1440px, 100%);
+      margin: auto;
+      padding-inline: clamp(16px, 4vw, 48px)
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .panel,
+    .category-card,
+    .document-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: #fff;
+      padding: 22px
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.1;
+      text-transform: uppercase
+    }
+
+    .meta-label {
+      color: #737373;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      font-weight: 700
+    }
+
+    .meta-value {
+      display: block;
+      margin-top: 7px;
+      font-weight: 700
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 20px;
+      background: var(--red);
+      color: white;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      border-radius: 5px
+    }
+
+    .btn:hover {
+      background: #8f0300
+    }
+
+    .btn-alt {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 17px;
+      border: 1px solid #d4d4d4;
+      border-radius: 5px;
+      font-weight: 700
+    }
+
+    .required {
+      background: #fee2e2;
+      color: #991b1b
+    }
+
+    .optional {
+      background: #e5e7eb;
+      color: #404040
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: .7rem;
+      font-weight: 800
+    }
+
+    .notice {
+      padding: 16px;
+      border-radius: 10px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af
+    }
+
+    .error {
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #fecaca;
+      background: #fef2f2;
+      color: #991b1b
+    }
+
+    #competition-image {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      max-height: 560px;
+      object-fit: cover;
+      background: #f5f5f5
+    }
+
+    .placeholder {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #171717, #404040);
+      color: #fff
+    }
+
+    [hidden] {
+      display: none !important
+    }
+
+    @media(max-width:640px) {
+
+      .panel,
+      .category-card,
+      .document-card {
+        padding: 17px
+      }
+
+      #competition-image {
+        min-height: 230px
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-white text-neutral-900">
+  <header id="header">
+    <a href="../index.html" class="logo-link"><img src="../../assest/logo.png" alt="Logo NIZAL" class="logo"></a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../articles/actualites.html">ACTUALITÉS</a></li>
+        <li><a href="./events.html" class="active">ÉVÉNEMENTS</a></li>
+        <li><a href="../boutique/shop.html">BOUTIQUE</a></li>
+      </ul>
+    </nav>
+    <div class="actions"><a href="../search.html" aria-label="Recherche"><i class="fas fa-search"></i></a><a
+        href="../boutique/cart.html" aria-label="Panier"><i class="fas fa-shopping-cart"></i></a><button
+        class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button></div>
+  </header>
+  <main class="flex-1">
+    <div class="bg-neutral-50 border-b border-neutral-200">
+      <div class="shell py-4 flex flex-wrap gap-2 items-center text-sm text-neutral-500"><a
+          href="../index.html">Accueil</a><span>/</span><a href="./events.html">Compétitions</a><span>/</span><span
+          id="breadcrumb-name" class="font-semibold text-neutral-900">Détails</span></div>
+    </div>
+    <div id="loading-state" class="shell py-8 text-neutral-500">Chargement des informations de la compétition…</div>
+    <div id="error-state" class="shell py-10" hidden>
+      <div class="error">
+        <h2 class="text-xl font-bold mb-2">Impossible de charger cette compétition</h2>
+        <p id="error-message" class="mb-4"></p>
+        <div class="flex flex-wrap gap-3"><button id="retry-button" class="btn" type="button">Réessayer <span
+              class="material-symbols-outlined">refresh</span></button><a class="btn-alt" href="./events.html">Retour
+            aux compétitions</a></div>
+      </div>
+    </div>
+    <div id="competition-content" hidden>
+      <section class="py-8 md:py-12 border-b border-neutral-200">
+        <div class="shell grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div class="space-y-6">
+            <div>
+              <div class="flex items-center gap-3 mb-4"><span
+                  class="inline-block w-2 h-10 bg-red-700 -skew-x-12"></span><span class="eyebrow">Compétition
+                  NIZAL</span></div>
+              <h1 id="competition-name" class="display text-4xl md:text-6xl uppercase leading-tight">Compétition</h1>
+              <p id="competition-description" class="mt-4 text-neutral-600 leading-relaxed"></p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="p-4 bg-neutral-50 border border-neutral-200 rounded-xl"><span class="meta-label">Date de
+                  début</span><span id="competition-date" class="meta-value">—</span><span id="competition-time"
+                  class="block text-sm text-neutral-500 mt-1"></span></div>
+              <div class="p-4 bg-neutral-50 border border-neutral-200 rounded-xl"><span
+                  class="meta-label">Lieu</span><span id="competition-location" class="meta-value">—</span><span
+                  id="competition-city" class="block text-sm text-neutral-500 mt-1"></span></div>
+              <div class="p-4 bg-neutral-50 border border-neutral-200 rounded-xl"><span
+                  class="meta-label">Sport</span><span id="competition-sport" class="meta-value">—</span><span
+                  id="competition-discipline" class="block text-sm text-neutral-500 mt-1"></span></div>
+              <div class="p-4 bg-neutral-50 border border-neutral-200 rounded-xl"><span class="meta-label">Frais
+                  d'inscription</span><span id="competition-fee" class="meta-value">—</span><span
+                  id="competition-capacity" class="block text-sm text-neutral-500 mt-1"></span></div>
+            </div>
+            <div class="flex flex-wrap gap-3"><a class="btn-alt" href="./events.html"><span
+                  class="material-symbols-outlined">arrow_back</span>Toutes les
+                compétitions</a><a id="register-button" class="btn"
+                href="./nizal-inscription-informations(1).html">S'inscrire <span
+                  class="material-symbols-outlined">arrow_forward</span></a></div>
+            <p id="registration-period" class="text-sm text-neutral-500"></p>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-neutral-200 shadow-lg"><img id="competition-image"
+              alt="Affiche de la compétition" hidden>
+            <div id="image-placeholder" class="placeholder">
+              <div class="text-center p-8"><span class="material-symbols-outlined text-6xl">sports_mma</span>
+                <p class="mt-3 font-bold uppercase tracking-wider">NIZAL Combat Sports</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-neutral-50 border-b border-neutral-200">
+        <div class="shell">
+          <div class="mb-7">
+            <p class="eyebrow">Informations officielles</p>
+            <h2 class="section-title mt-2">Fiche de la compétition</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="panel"><span class="material-symbols-outlined text-3xl text-blue-700">calendar_month</span>
+              <h3 class="font-bold uppercase mt-3 mb-2">Dates</h3>
+              <p id="detail-dates" class="text-neutral-600 leading-relaxed">—</p>
+            </div>
+            <div class="panel"><span class="material-symbols-outlined text-3xl text-blue-700">location_on</span>
+              <h3 class="font-bold uppercase mt-3 mb-2">Localisation</h3>
+              <p id="detail-location" class="text-neutral-600 leading-relaxed">—</p>
+            </div>
+            <div class="panel"><span class="material-symbols-outlined text-3xl text-blue-700">sports_martial_arts</span>
+              <h3 class="font-bold uppercase mt-3 mb-2">Sport & discipline</h3>
+              <p id="detail-sport" class="text-neutral-600 leading-relaxed">—</p>
+            </div>
+            <div class="panel"><span class="material-symbols-outlined text-3xl text-red-700">payments</span>
+              <h3 class="font-bold uppercase mt-3 mb-2">Frais</h3>
+              <p id="detail-fee" class="text-neutral-600 leading-relaxed">—</p>
+            </div>
+            <div class="panel"><span class="material-symbols-outlined text-3xl text-blue-700">groups</span>
+              <h3 class="font-bold uppercase mt-3 mb-2">Participants</h3>
+              <p id="detail-capacity" class="text-neutral-600 leading-relaxed">—</p>
+            </div>
+            <div class="panel"><span class="material-symbols-outlined text-3xl text-red-700">verified_user</span>
+              <h3 class="font-bold uppercase mt-3 mb-2">Conditions d'accès</h3>
+              <p id="detail-eligibility" class="text-neutral-600 leading-relaxed">—</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 border-b border-neutral-200" id="divisions">
+        <div class="shell">
+          <div class="mb-7">
+            <p class="eyebrow">Grille des combats</p>
+            <h2 class="section-title mt-2">Catégories & divisions</h2>
+            <p class="text-neutral-600 mt-3 max-w-3xl">Catégories renvoyées par l'API pour cette compétition.</p>
+          </div>
+          <div id="categories-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+          <p id="categories-empty" class="notice" hidden>Aucune catégorie n'a été enregistrée pour cette compétition.
+          </p>
+        </div>
+      </section>
+      <section class="py-12 bg-neutral-50 border-b border-neutral-200">
+        <div class="shell">
+          <div class="mb-7">
+            <p class="eyebrow">Dossier de participation</p>
+            <h2 class="section-title mt-2">Documents requis</h2>
+          </div>
+          <div id="documents-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+          <p id="documents-empty" class="notice" hidden>Aucun document n'a été défini pour cette compétition.</p>
+        </div>
+      </section>
+      <section class="py-12">
+        <div class="shell">
+          <div
+            class="rounded-2xl bg-neutral-900 text-white p-7 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <p class="text-red-400 font-bold text-xs tracking-widest uppercase">Prêt à participer ?</p>
+              <h2 class="display text-3xl md:text-4xl uppercase mt-2">Rejoignez la compétition</h2>
+              <p class="text-neutral-300 mt-2 max-w-2xl">Consultez les catégories et préparez les documents demandés
+                avant de poursuivre votre inscription.</p>
+            </div><a id="register-button-bottom" class="btn shrink-0"
+              href="./nizal-inscription-informations(1).html">Continuer l'inscription <span
+                class="material-symbols-outlined">arrow_forward</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="bg-neutral-950 text-neutral-300">
+    <div class="shell py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="display text-2xl font-bold text-white tracking-wider">NIZAL<span class="text-red-600">.</span></div>
+        <p class="mt-3 max-w-sm text-sm leading-relaxed">Le monde des sports de combat, réuni au même endroit.</p>
+      </div>
+      <div>
+        <h2 class="font-bold uppercase text-white mb-3">Navigation</h2>
+        <div class="flex flex-col gap-2 text-sm"><a href="../articles/actualites.html">Actualités</a><a
+            href="./events.html">Événements</a><a href="../boutique/shop.html">Boutique</a></div>
+      </div>
+      <div>
+        <h2 class="font-bold uppercase text-white mb-3">NIZAL Combat Sports</h2>
+        <p class="text-sm">© <span id="current-year"></span> NIZAL. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    'use strict';
+    const API_BASE_URL = 'http://localhost:5000/api/competitions';
+    const REGISTRATION_PAGE = './nizal-inscription-informations(1).html';
+    const $ = id => document.getElementById(id);
+    function setText(id, value, fallback = 'Non précisé') { const el = $(id); if (el) el.textContent = (value === null || value === undefined || String(value).trim() === '') ? fallback : String(value); }
+    function safe(value, fallback = 'Non précisé') { return value === null || value === undefined || String(value).trim() === '' ? fallback : String(value); }
+    function dateFr(value) { if (!value) return 'Non précisée'; const d = new Date(value); return Number.isNaN(d.getTime()) ? String(value) : new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }).format(d); }
+    function money(value) { if (value === null || value === undefined || value === '') return 'Non précisés'; const n = Number(value); return Number.isFinite(n) ? `${new Intl.NumberFormat('fr-DZ', { maximumFractionDigits: 2 }).format(n)} DZD` : `${value} DZD`; }
+    function add(parent, tag, cls, value) { const el = document.createElement(tag); if (cls) el.className = cls; el.textContent = value; parent.appendChild(el); return el; }
+    function renderCategories(categories) {
+      const list = $('categories-list'); list.replaceChildren(); const items = Array.isArray(categories) ? categories : []; $('categories-empty').hidden = items.length > 0;
+      items.forEach((c, i) => {
+        const card = document.createElement('article'); card.className = 'category-card'; add(card, 'p', 'eyebrow mb-2', `Catégorie ${i + 1}`); add(card, 'h3', 'text-xl uppercase font-bold mb-3', safe(c.discipline, safe(c.sport, 'Discipline non précisée')));
+        [['Sport', c.sport], ['Discipline', c.discipline], ['Genre', c.gender], ['Âge', c.age_category], ['Poids', c.weight_category]].forEach(([label, value]) => { const p = add(card, 'p', 'mt-2 text-sm text-neutral-600', ''); const b = add(p, 'strong', '', `${label} : `); p.appendChild(document.createTextNode(safe(value))); }); list.appendChild(card);
+      });
+    }
+    function renderDocuments(documents) {
+      const list = $('documents-list'); list.replaceChildren(); const items = Array.isArray(documents) ? documents : []; $('documents-empty').hidden = items.length > 0;
+      items.forEach((d, i) => { const card = document.createElement('article'); card.className = 'document-card'; const row = document.createElement('div'); row.className = 'flex items-start justify-between gap-3 mb-3'; add(row, 'h3', 'font-bold text-lg', safe(d.name, `Document ${i + 1}`)); const required = Number(d.is_required) === 1 || d.is_required === true; add(row, 'span', `tag ${required ? 'required' : 'optional'}`, required ? 'Obligatoire' : 'Facultatif'); card.appendChild(row); add(card, 'p', 'mb-3 text-sm text-neutral-600', safe(d.description, 'Aucune description fournie.')); add(card, 'p', 'text-sm', `Formats acceptés : ${safe(d.accepted_formats)}`); add(card, 'p', 'text-sm mt-1', `Taille maximale : ${safe(d.max_file_size, 'Non précisée')} Mo`); list.appendChild(card); });
+    }
+    function renderCompetition(c) {
+      setText('competition-name', c.name, 'Compétition sans nom'); setText('breadcrumb-name', c.name, 'Compétition'); setText('competition-description', c.description, 'Aucune description fournie.');
+      setText('competition-date', dateFr(c.start_date)); setText('competition-time', c.start_time ? `Début à ${c.start_time}${c.end_time ? ` · Fin à ${c.end_time}` : ''}` : ''); setText('competition-location', c.location); setText('competition-city', c.city, ''); setText('competition-sport', c.sport); setText('competition-discipline', c.discipline, ''); setText('competition-fee', money(c.registration_fee)); setText('competition-capacity', c.max_participants ? `Maximum : ${c.max_participants} participants` : 'Capacité non précisée');
+      setText('detail-dates', `Début : ${dateFr(c.start_date)}${c.start_time ? ` à ${c.start_time}` : ''}. Fin : ${c.end_time || 'non précisée'}. Ouverture des inscriptions : ${dateFr(c.opening_date)}. Clôture : ${dateFr(c.closing_date)}.`);
+      setText('detail-location', [c.location, c.city].filter(Boolean).join(', ')); setText('detail-sport', [c.sport, c.discipline].filter(Boolean).join(' · ')); setText('detail-fee', money(c.registration_fee)); setText('detail-capacity', c.max_participants ? `${c.max_participants} participants maximum.` : 'Capacité maximale non précisée.'); setText('detail-eligibility', c.eligibility);
+      setText('registration-period', `Ouverture : ${dateFr(c.opening_date)} · Clôture : ${dateFr(c.closing_date)}`);
+      const registerUrl = `${REGISTRATION_PAGE}?competition_id=${encodeURIComponent(c.id)}`; $('register-button').href = registerUrl; $('register-button-bottom').href = registerUrl;
+      const img = $('competition-image'), placeholder = $('image-placeholder'); if (typeof c.cover_image === 'string' && c.cover_image.trim()) { img.onload = () => { img.hidden = false; placeholder.hidden = true; }; img.onerror = () => { img.hidden = true; placeholder.hidden = false; }; img.src = c.cover_image; img.alt = `Affiche de ${safe(c.name, 'la compétition')}`; } else { img.removeAttribute('src'); img.hidden = true; placeholder.hidden = false; }
+      renderCategories(c.categories); renderDocuments(c.documents); $('loading-state').hidden = true; $('error-state').hidden = true; $('competition-content').hidden = false;
+    }
+    function showError(message) { $('loading-state').hidden = true; $('competition-content').hidden = true; $('error-state').hidden = false; setText('error-message', message); }
+    async function loadCompetition() {
+      const params = new URLSearchParams(location.search); const id = params.get('id') || params.get('competition_id'); $('loading-state').hidden = false; $('error-state').hidden = true; $('competition-content').hidden = true; if (!id) { showError('Aucun identifiant dans l’URL. Le lien doit contenir ?id=ID, par exemple eventDetails.html?id=4.'); return; }
+      try { const response = await fetch(`${API_BASE_URL}/${encodeURIComponent(id)}`); if (!response.ok) throw new Error(`Erreur HTTP ${response.status}. Vérifiez GET /api/competitions/:id.`); const result = await response.json(); if (result.success === false) throw new Error(result.message || 'Le serveur a refusé la requête.'); const c = result.data || result.competition || result; if (!c || !c.id) throw new Error('La réponse API ne contient pas de compétition valide.'); renderCompetition(c); } catch (err) { console.error('Erreur chargement compétition :', err); showError(`${err.message || 'Erreur inconnue'} Vérifiez que le backend fonctionne sur http://localhost:5000 et que CORS autorise la page.`); }
+    }
+    $('retry-button').addEventListener('click', loadCompetition); $('current-year').textContent = new Date().getFullYear(); document.addEventListener('DOMContentLoaded', loadCompetition);
+  </script>
+  <script src="./nav.js"></script>
+</body>
+
+</html>

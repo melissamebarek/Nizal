@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Articles — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="articles.css">
+
+    <link rel="stylesheet" href="../sidabar.css">
+
+    <script defer src="../sidebar.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <img src="../../assest/logo.png" alt="logo" class="logoimg">
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Accueil</span>
+            </a>
+
+            <a href="./articles.html" class="nav-item active">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Articles</span>
+            </a>
+
+            <a href="../boutique/products.html" class="nav-item">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Produits & Boutique</span>
+            </a>
+
+            <a href="../competitions/competitions.html" class="nav-item">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Compétitions</span>
+            </a>
+
+            <a href="../registrations/registrations.html" class="nav-item">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Inscriptions</span>
+            </a>
+
+            <a href="../orders/orders.html" class="nav-item">
+                <i class="fa-solid fa-box"></i>
+                <span>Commandes</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+        <!-- PAGE -->
+        <section class="page-content">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+
+                <div>
+                    <button class="mobile-menu" id="mobileMenu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <span>Accueil</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span>Articles</span>
+                    </div>
+
+                    <h1>Articles</h1>
+
+                    <p>
+                        Gérez les articles et actualités de NIZAL.
+                    </p>
+                </div>
+
+                <a href="create-article.html" class="primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Nouvel article
+                </a>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+            <div class="toolbar">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text" id="searchInput" placeholder="Rechercher un article..." autocomplete="off">
+                </div>
+
+                <div class="filter-box">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <select id="categoryFilter">
+                        <option value="all">Toutes les catégories</option>
+                        <option value="Karate">Karate</option>
+                        <option value="Boxing">Boxing</option>
+                        <option value="Judo">Judo</option>
+                        <option value="Wrestling">Wrestling</option>
+                        <option value="NIZAL News">NIZAL News</option>
+                        <option value="Interviews">Interviews</option>
+                        <option value="Events">Events</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE CARD -->
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <div>
+                        <h2>Liste des articles</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Article</th>
+                                <th>Catégorie</th>
+                                <th>Auteur</th>
+                                <th>Date</th>
+                                <th>Statut</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="articlesTable">
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- EMPTY STATE -->
+                    <div class="empty-state" id="emptyState">
+
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+
+                        <h3>Aucun article trouvé</h3>
+
+                        <p>
+                            Aucun article ne correspond à votre recherche.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div class="pagination">
+
+                    <div class="pagination-buttons">
+
+                        <button class="pagination-btn disabled">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="pagination-btn active">
+                            1
+                        </button>
+
+                        <button class="pagination-btn disabled">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="articles.js"></script>
+
+</body>
+
+</html>

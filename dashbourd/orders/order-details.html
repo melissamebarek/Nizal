@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails commande — NIZAL Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="order-details.css">
+
+    <script defer src="../sidebar.js"></script>
+    <script defer src="order-details.js"></script>
+</head>
+
+<body>
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-mark">N</div>
+                <div>
+                    <strong>NIZAL</strong>
+                    <span>Administration</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../index.html">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+
+                <a href="../products.html">
+                    <i class="fa-solid fa-store"></i>
+                    <span>Produits &amp; Boutique</span>
+                </a>
+
+                <a href="../competitions.html">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Compétitions</span>
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Inscriptions</span>
+                </a>
+
+                <a href="orders.html" class="active">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Commandes</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <button class="menu-btn" id="menuBtn" type="button" aria-label="Ouvrir le menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-title">Commandes</div>
+
+                <div class="admin-profile">
+                    <div class="admin-avatar">A</div>
+                    <div class="admin-info">
+                        <strong>Administrateur</strong>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="page-content">
+
+                <!-- BREADCRUMB -->
+                <div class="breadcrumb">
+                    <a href="orders.html">Commandes</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span id="breadcrumbOrderNumber">Chargement...</span>
+                </div>
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+                    <div>
+                        <div class="title-row">
+                            <h1 id="orderTitle">Chargement de la commande...</h1>
+                            <span class="status new" id="orderStatusBadge">
+                                Chargement...
+                            </span>
+                        </div>
+
+                        <p id="orderDate">Chargement de la date...</p>
+                    </div>
+
+                    <div class="header-actions">
+                        <button type="button" class="btn btn-primary" id="changeStatusBtn">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            Modifier le statut
+                        </button>
+
+                        <button type="button" class="btn btn-danger-outline" id="cancelOrderBtn">
+                            <i class="fa-solid fa-ban"></i>
+                            Annuler la commande
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STATUS PROGRESS -->
+                <section class="card status-card">
+                    <div class="card-header">
+                        <div>
+                            <h2>Suivi de la commande</h2>
+                            <p>Évolution du statut de la commande.</p>
+                        </div>
+                    </div>
+
+                    <div class="status-progress">
+                        <div class="progress-step" data-status="new">
+                            <div class="step-icon">
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+                            <strong>Nouvelle commande</strong>
+                        </div>
+
+                        <div class="progress-line"></div>
+
+                        <div class="progress-step" data-status="preparing">
+                            <div class="step-icon">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <strong>En préparation</strong>
+                        </div>
+
+                        <div class="progress-line"></div>
+
+                        <div class="progress-step" data-status="shipped">
+                            <div class="step-icon">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+                            <strong>Expédiée</strong>
+                        </div>
+
+                        <div class="progress-line"></div>
+
+                        <div class="progress-step" data-status="delivered">
+                            <div class="step-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <strong>Livrée</strong>
+                        </div>
+                    </div>
+
+                    <p id="statusNotice" hidden></p>
+                </section>
+
+                <!-- DETAILS LAYOUT -->
+                <div class="details-layout">
+
+                    <div class="main-column">
+
+                        <!-- PRODUCTS -->
+                        <section class="card">
+                            <div class="card-header">
+                                <div>
+                                    <h2>Produits commandés</h2>
+                                    <p>Articles inclus dans cette commande.</p>
+                                </div>
+                            </div>
+
+                            <div class="products-list" id="orderProducts">
+                                <p>Chargement des produits...</p>
+                            </div>
+                        </section>
+
+                        <!-- SUMMARY -->
+                        <section class="card">
+                            <div class="card-header">
+                                <h2>Résumé de la commande</h2>
+                            </div>
+
+                            <div class="summary">
+                                <div>
+                                    <span>Sous-total</span>
+                                    <strong id="orderSubtotal">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Livraison</span>
+                                    <strong id="orderShipping">—</strong>
+                                </div>
+
+                                <div class="summary-total">
+                                    <span>Total</span>
+                                    <strong id="orderTotal">—</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- HISTORY -->
+                        <section class="card">
+                            <div class="card-header">
+                                <div>
+                                    <h2>Historique</h2>
+                                    <p>Informations disponibles sur la commande.</p>
+                                </div>
+                            </div>
+
+                            <div class="history" id="orderHistory">
+                                <div class="history-item">
+                                    <div class="history-icon">
+                                        <i class="fa-solid fa-receipt"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Commande enregistrée</strong>
+                                        <span id="historyCreatedAt">Chargement...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <!-- SIDE COLUMN -->
+                    <aside class="side-column">
+
+                        <!-- CUSTOMER -->
+                        <section class="card">
+                            <div class="card-header">
+                                <h2>Client</h2>
+                            </div>
+
+                            <div class="customer-card" id="customerCard">
+                                <div class="customer-avatar" id="customerAvatar">
+                                    —
+                                </div>
+
+                                <div>
+                                    <strong id="customerName">Chargement...</strong>
+                                    <span id="customerEmail">—</span>
+                                    <span id="customerPhone">—</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ORDER INFO -->
+                        <section class="card">
+                            <div class="card-header">
+                                <h2>Informations</h2>
+                            </div>
+
+                            <div class="info-list" id="orderInfo">
+                                <div>
+                                    <span>N° commande</span>
+                                    <strong id="infoOrderNumber">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Date</span>
+                                    <strong id="infoOrderDate">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Articles</span>
+                                    <strong id="orderItemsCount">0</strong>
+                                </div>
+
+                                <div>
+                                    <span>Total</span>
+                                    <strong id="infoOrderTotal">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Mode de livraison</span>
+                                    <strong id="orderDeliveryType">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Adresse</span>
+                                    <strong id="orderAddress">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Paiement</span>
+                                    <strong id="orderPayment">
+                                        Paiement à la livraison
+                                    </strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- WARNING -->
+                        <section class="card warning-card">
+                            <div class="warning-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+
+                            <div>
+                                <strong>Gestion du stock</strong>
+                                <p>
+                                    Vérifiez le stock avant toute modification
+                                    de commande.
+                                </p>
+                            </div>
+                        </section>
+
+                    </aside>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- STATUS MODAL -->
+    <div class="modal-overlay" id="statusModal">
+        <div class="modal">
+            <button class="modal-close" id="closeStatusModal" type="button" aria-label="Fermer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon blue">
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+
+            <h3>Modifier le statut</h3>
+            <p>Sélectionnez le nouveau statut de cette commande.</p>
+
+            <div class="status-options">
+                <button type="button" data-status="new">
+                    Nouvelle commande
+                </button>
+
+                <button type="button" data-status="preparing">
+                    En préparation
+                </button>
+
+                <button type="button" data-status="shipped">
+                    Expédiée
+                </button>
+
+                <button type="button" data-status="delivered">
+                    Livrée
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANCEL MODAL -->
+    <div class="modal-overlay" id="cancelModal">
+        <div class="modal">
+            <button class="modal-close" id="closeCancelModal" type="button" aria-label="Fermer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon red">
+                <i class="fa-solid fa-ban"></i>
+            </div>
+
+            <h3>Annuler la commande ?</h3>
+            <p>
+                Cette action modifiera le statut de la commande en « Annulée ».
+            </p>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-light" id="keepOrderBtn">
+                    Garder la commande
+                </button>
+
+                <button type="button" class="btn btn-danger" id="confirmCancelBtn">
+                    Annuler la commande
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div>
+            <strong id="toastTitle">Information</strong>
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>
